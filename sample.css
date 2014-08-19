@@ -1,0 +1,34 @@
+/**
+* CONTENTS
+* 
+* MIXINS
+*	Colours
+*	Sizes 
+*
+* Font face imports
+*
+* Global selectors
+*
+* Specific selectors
+*
+* MEDIA QUERIES
+* 	Smallest.............320px to 640px
+* 	Medium...............641px to 768px
+* 	Largest..............769px +
+*/
+/*-------------------------------*\
+	#THIS-IS-A-SECTION-HEADING
+\*-------------------------------*/
+/*-------------------------------*\
+	#GLOBAL-SELECTORS
+\*-------------------------------*/
+.camelCase {
+  property: value;
+}
+
+.classWithNesting {
+  property: value;
+}
+.classWithNesting .nestedClass {
+  nested-property: value;
+}
