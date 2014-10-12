@@ -8,6 +8,7 @@
 ?>
 <html>
 	<head>
+		<link rel="stylesheet" type="text/css" href="styles/main.min.css">
 		<script src="/SDP/view/js/jquery-1.11.1.min.js"></script>
 		<script type="text/javascript">
 		console.log("started");
@@ -66,6 +67,16 @@
 		</script>
 	</head>
 	<body>
+
+		<div id="nav-bar">
+			<ul><img src="img/icon.png" alt="BeanSprouts"></ul>
+			<ul>Login</ul>
+			<ul>Register</ul>
+			<ul>View Events</ul>
+			<ul>View Profile</ul>
+		</div>
+
+
 		<form action="" method="post">
 		User ID: <input type="text" id="username"><br>
 		Password: <input type="text" id="password"><br>

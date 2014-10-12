@@ -1,4 +1,37 @@
+//Variables
+$text-color: #000;
+$lt-grey: #F0F0F0;
+$dark-grey: #121212;
+$nav-grey: #7A7A7A;
+
+$base-green: #60A040; //lightest green
+$dark-green: #048A04;
+$med-green: #00AA55;
+
+
+$logo: "img/beansprouts-icon.png";
+
+
+
+
 body {
-	background-color: red;
-	font-family: arial;
+	background-color: $lt-grey;
+	font-family: "Helvetica Neue", Arial, sans-serif;
+	display: inline;
+}
+
+
+#nav-bar {
+	background-color: $dark-grey;
+	width: 100%;
+	position: relative;
+	color: $nav-grey;
+
+	&:hover {
+		color: $base-green; //#todo : change to li
+	}
+
+	#selected {
+		border-top-color: $base-green;
+	}
 }
