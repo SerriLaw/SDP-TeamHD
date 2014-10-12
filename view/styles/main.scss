@@ -15,7 +15,7 @@ $logo-font: "Patrick Hand SC", cursive;
 $nav-size: 14px;
 $body-size: 14px;
 
-
+$break-sml: 500px;
 
 body {
 	background-color: $lt-grey;
@@ -81,5 +81,34 @@ body {
 
 	#selected {
 		border-top-color: $base-green;
+	}
+
+	#ham {
+		display: none;
+	}
+
+	@media screen and (max-width: $break-sml) {
+		li {
+			display: block;
+			padding: 5px;
+		}
+
+		#ham {
+			display: inline;
+			position: absolute;
+			right: 25px;
+			top: 15px;
+			font-size: 20px;
+
+			a {
+				color: $nav-grey;
+			}
+
+		}
+
+		.h {
+			display: none;
+		}
+
 	}
 }
