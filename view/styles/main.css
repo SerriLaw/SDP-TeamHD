@@ -51,3 +51,25 @@ body {
 #nav-bar #selected {
   border-top-color: #60a040;
 }
+#nav-bar #ham {
+  display: none;
+}
+@media screen and (max-width: 500px) {
+  #nav-bar li {
+    display: block;
+    padding: 5px;
+  }
+  #nav-bar #ham {
+    display: inline;
+    position: absolute;
+    right: 25px;
+    top: 15px;
+    font-size: 20px;
+  }
+  #nav-bar #ham a {
+    color: #7a7a7a;
+  }
+  #nav-bar .h {
+    display: none;
+  }
+}
