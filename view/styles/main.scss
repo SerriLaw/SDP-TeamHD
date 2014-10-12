@@ -4,7 +4,7 @@ $lt-grey: #F0F0F0;
 $dark-grey: #121212;
 $nav-grey: #7A7A7A;
 
-$base-green: #60A040; //lightest green - mmmmmmmmmmmmmm
+$base-green: #60A040; //lightest green 
 $dark-green: #048A04;
 $med-green: #00AA55;
 
@@ -22,6 +22,16 @@ body {
 	font-family: "Helvetica Neue", Arial, sans-serif;
 	font-size: $body-size;
 	display: inline;
+}
+
+#wrap {
+	width: 80%;
+	margin: 15px auto;
+
+	form {
+		width: 300px;
+		margin: 0 auto;
+	}
 }
 
 
@@ -57,6 +67,15 @@ body {
 
 		img {
 			height: 25px;
+		}
+
+		a {
+			color: $nav-grey;
+			text-decoration: none;
+
+			&:hover {
+				color: $base-green;
+			}
 		}
 	}
 

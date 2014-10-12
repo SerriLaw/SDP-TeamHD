@@ -5,6 +5,15 @@ body {
   display: inline;
 }
 
+#wrap {
+  width: 80%;
+  margin: 15px auto;
+}
+#wrap form {
+  width: 300px;
+  margin: 0 auto;
+}
+
 #nav-bar {
   background-color: #121212;
   color: #7a7a7a;
@@ -31,6 +40,13 @@ body {
 }
 #nav-bar li img {
   height: 25px;
+}
+#nav-bar li a {
+  color: #7a7a7a;
+  text-decoration: none;
+}
+#nav-bar li a:hover {
+  color: #60a040;
 }
 #nav-bar #selected {
   border-top-color: #60a040;

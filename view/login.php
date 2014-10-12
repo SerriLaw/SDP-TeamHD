@@ -72,20 +72,21 @@
 
 		<div id="nav-bar">
 			<ul>
-				<li><img src="img/icon.png" alt="BeanSprouts"><span id="logo">BeanSprouts</span></li>
-				<li>Login</li>
-				<li>Register</li>
-				<li>View Events</li>
+				<li><a href=""><img src="img/icon.png" alt="BeanSprouts"><span id="logo">BeanSprouts</span></a></li>
+				<li><a href="login.php">Login</a></li>
+				<li><a href="">Register</a></li>
+				<li><a href="viewEvent.php">View Events</a></li>
 			</ul>
 			
 		</div>
 
-
-		<form action="" method="post">
-		User ID: <input type="text" id="username"><br>
-		Password: <input type="text" id="password"><br>
-		<input type="submit" value="Login" id="login">
-		<div id="error"></div>
-		</form>
+		<div id="wrap">
+			<form action="" method="post">
+			<span class="textfield">User ID: <input type="text" id="username"></span><br>
+			<span class="textfield">Password: <input type="text" id="password" class="textfield"></span><br>
+			<input type="submit" value="Login" id="login" class="formButton">
+			<div id="error"></div>
+			</form>
+		</div>
 	</body>
 </html>
