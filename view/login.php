@@ -8,7 +8,9 @@
 ?>
 <html>
 	<head>
+		<link href='http://fonts.googleapis.com/css?family=Patrick+Hand+SC' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" type="text/css" href="styles/main.min.css">
+
 		<script src="/SDP/view/js/jquery-1.11.1.min.js"></script>
 		<script type="text/javascript">
 		console.log("started");
@@ -69,11 +71,13 @@
 	<body>
 
 		<div id="nav-bar">
-			<ul><img src="img/icon.png" alt="BeanSprouts"></ul>
-			<ul>Login</ul>
-			<ul>Register</ul>
-			<ul>View Events</ul>
-			<ul>View Profile</ul>
+			<ul>
+				<li><img src="img/icon.png" alt="BeanSprouts"><span id="logo">BeanSprouts</span></li>
+				<li>Login</li>
+				<li>Register</li>
+				<li>View Events</li>
+			</ul>
+			
 		</div>
 
 
