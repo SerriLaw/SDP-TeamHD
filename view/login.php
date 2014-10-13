@@ -8,6 +8,7 @@
 ?>
 <html>
 	<head>
+		<title>BeanSprouts</title>
 		<link href='http://fonts.googleapis.com/css?family=Patrick+Hand+SC' rel='stylesheet' type='text/css'>
 		<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="styles/main.min.css">
@@ -71,7 +72,7 @@
 	</head>
 	<body>
 		<div id="nav-bar">
-			<span id="ham"><a href="#" onCLick="$('.h').toggle()"><i class="fa fa-bars"></i></a></span>
+			<span id="ham"><a href="#" onClick="$('.h').toggle()"><i class="fa fa-bars"></i></a></span>
 			<ul>
 				<li><a href=""><img src="img/icon.png" alt="BeanSprouts"><span id="logo">BeanSprouts</span></a></li>
 				<li class="h"><a href="login.php">Login</a></li>
@@ -82,9 +83,11 @@
 		</div>
 
 		<div id="wrap">
+			<div id="hero"><img src="img/icon.png" alt="BeanSprouts" id="bigbean"><span id="bigbeantext">BeanSprouts</span></div>
+
 			<form action="" method="post">
 			<span class="textfield">User ID: <input type="text" id="username"></span><br>
-			<span class="textfield">Password: <input type="text" id="password" class="textfield"></span><br>
+			<span class="textfield">Password: <input type="text" id="password"></span><br>
 			<input type="submit" value="Login" id="login" class="formButton">
 			<div id="error"></div>
 			</form>
