@@ -10,57 +10,54 @@
 	<head>
 		<script src="/SDP/view/js/jquery-1.11.1.min.js"></script>
 			<script type="text/javascript">
-			$(document).ready(function() 
-			{
+			$(document).ready(function() {
 
-			$('#createEvent').click(function(event)
-			{
-			event.preventDefault();
-			var name=$("#name").val();
-			var description=$("#description").val();
-			var startDate=$("#startDate").val();
-			var endDate=$("#endDate").val();
-			var location=$("#location").val();
-			var managerID= <?php echo $_SESSION['userID'] ?>;
+			    $('#createEvent').click(function(event) {
+			        event.preventDefault();
+			        var name = $("#name").val();
+			        var description = $("#description").val();
+			        var startDate = $("#startDate").val();
+			        var endDate = $("#endDate").val();
+			        var location = $("#location").val();
+			        var managerID = <?php echo $_SESSION['userID'] ?>;
 
-			var dataString = 'name='+name+'&description='+description+"&startDate="+startDate+"&endDate="+endDate+"&location="+location+"&managerID="+managerID;
-			console.log(dataString);
-			if($.trim(name).length>0 && $.trim(description).length>0 && $.trim(startDate).length>0 && $.trim(endDate).length>0 && $.trim(location).length>0)
-			{
-			console.log("fire");
-			$.ajax({
-			type: "POST",
-			url: "/SDP/model/createEvent.php",
-			data: dataString,
-			cache: false,
-			beforeSend: function(){ $("#createEvent").val('Creating...');},
-			success: function(data){
-			if(data)
-			{
-				if(data == "SQLFAILURE"){
-					$("#error").html("<span style='color:#cc0000'>Error:</span> Internal Error. ");
-				}
-				else if (data == "FAILURE") {
-					$("#error").html("<span style='color:#cc0000'>Error:</span> LOLOLOLOL.");
-				}else{
-					console.log(data);
-					window.location.href = "/SDP/view/viewEvent.php?eventid="+data;
-				}
-			
-			}
-			else
-			{
-			$("#createEvent").val('Create Event');
-			$("#error").html("<span style='color:#cc0000'>Error:</span> Please fill in the above form.");
-			}
-			}
-			});
+			        var dataString = 'name=' + name + '&description=' + description + "&startDate=" + startDate + "&endDate=" + endDate + "&location=" + location + "&managerID=" + managerID;
+			        console.log(dataString);
+			        if ($.trim(name).length > 0 && $.trim(description).length > 0 && $.trim(startDate).length > 0 && $.trim(endDate).length > 0 && $.trim(location).length > 0) {
+			            console.log("fire");
+			            $.ajax({
+			                type: "POST",
+			                url: "/SDP/model/createEvent.php",
+			                data: dataString,
+			                cache: false,
+			                beforeSend: function() {
+			                    $("#createEvent").val('Creating...');
+			                },
+			                success: function(data) {
+			                    if (data) {
+			                        if (data == "SQLFAILURE") {
+			                            $("#error").html("<span style='color:#cc0000'>Error:</span> Internal Error. ");
+			                        } else if (data == "FAILURE") {
+			                            $("#error").html("<span style='color:#cc0000'>Error:</span> LOLOLOLOL.");
+			                        } else {
+			                            console.log(data);
+			                            window.location.href = "/SDP/view/viewEvent.php?eventid=" + data;
+			                        }
 
-			}
-			return false;
-			});
+			                    } else {
+			                        $("#createEvent").val('Create Event');
+			                        $("#error").html("<span style='color:#cc0000'>Error:</span> Please fill in the above form.");
+			                    }
+			                }
+			            });
 
-			});						
+			        }
+			        return false;
+			    });
+			});		
+		</script>
+		<script>
+
 		</script>
 		<title>BeanSprouts</title>
 		<link href='http://fonts.googleapis.com/css?family=Patrick+Hand+SC' rel='stylesheet' type='text/css'>
