@@ -9,9 +9,15 @@
 		<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="styles/main.min.css">
 		<script src="/SDP/view/js/jquery-1.11.1.min.js"></script>
-		<script type="text/javascript">
-
+		<script src="/SDP/view/js/script.js"></script>
+		
+		<script>
+			$(document).ready(function() {
+			    dateFormat("#date1");
+			    dateFormat("#date2");
+			});
 		</script>
+
 	</head>
 	<body>
 		<div id="nav-bar">
@@ -20,17 +26,28 @@
 				<li><a href=""><img src="img/icon.png" alt="BeanSprouts"><span id="logo">BeanSprouts</span></a></li>
 				<li class="h"><a href="login.php">Login</a></li>
 				<li class="h"><a href="">Register</a></li>
-				<li class="h"><a href="viewEvent.php">View Events</a></li>
+				<li class="h"><a href="">View Events</a></li>
 			</ul>			
 		</div>
 
 		<div id="wrap">
-			<div id="eventID">Event ID: <?php echo($row['eventID']); ?></div>
-			<div id="name"><?php echo($row['name']); ?></div>
-			<div id="description"><?php echo($row['description']); ?></div>
-			<div id="startDate"><?php echo($row['startDate']); ?></div>
-			<div id="endDate"><?php echo($row['endDate']); ?></div>
-			<div id="location"><?php echo($row['location']); ?></div>
+			<!-- <div id="eventID">Event ID: <?php echo($row['eventID']); ?></div> -->
+			<div id="hero">
+				<img src="img/BeanSprouts_large.png" alt="BeanSprouts Event" id="eventimg">
+				<div id="name"><?php echo($row['name']); ?></div>
+			</div>
+			<div id="container">
+				<div id="startDate" class="date"><i class="fa fa-calendar"></i> <span id="date1"><?php echo($row['startDate']); ?></span></div>
+				<div id="startTime" class="time"><i class="fa fa-clock-o"></i> Start time: </div>
+
+				<!-- <div id="endDate" class="date"><i class="fa fa-calendar"></i> End: <span id="date2"><?php echo($row['endDate']); ?></span></div> -->
+
+				<div id="location"><?php echo($row['location']); ?></div>
+
+				<div id="description"><?php echo($row['description']); ?></div>
+			</div>
+
+			
 		</div>
 	</body>
 </html>
