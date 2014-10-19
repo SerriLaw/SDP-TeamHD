@@ -30,10 +30,10 @@
 				<div id="name"><?php echo($row['name']); ?></div>
 			</div>
 			<div id="container">
-				<div id="startDate"><i class="fa fa-calendar"></i> <span id="date1"><?php echo($row['startDate']); ?></span></div>
-				<div id="startTime"><i class="fa fa-clock-o"></i> Start time: </div>
+				<div id="startDate" class="date"><i class="fa fa-calendar"></i> <span id="date1"><?php echo($row['startDate']); ?></span></div>
+				<div id="startTime" class="time"><i class="fa fa-clock-o"></i> Start time: </div>
 
-				<div id="endDate"><i class="fa fa-calendar"></i> End: <span id="date2"><?php echo($row['endDate']); ?></span></div>
+				<!-- <div id="endDate" class="date"><i class="fa fa-calendar"></i> End: <span id="date2"><?php echo($row['endDate']); ?></span></div> -->
 
 				<div id="location"><?php echo($row['location']); ?></div>
 

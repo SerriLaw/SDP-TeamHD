@@ -14,6 +14,7 @@ $logo-font: "Patrick Hand SC", cursive;
 
 $nav-size: 14px;
 $body-size: 14px;
+$h2-size: 18px;
 
 $break-sml: 500px;
 
@@ -46,7 +47,7 @@ body {
 	}
 
 	#hero {
-		border: 1px blue solid; // remove
+		//border: 1px blue solid; // remove
 		width: 80%;
 		margin: 5px auto;
 		text-align: center;
@@ -73,6 +74,10 @@ body {
 			}
 
 		}
+
+		@media screen and (max-width: $break-sml) {
+			width: 100%;
+		}
 	}
 
 	#error {
@@ -92,6 +97,16 @@ body {
 		float: right;
 		margin: 2px 30px;
 	}
+
+	.date {
+		font-size: $h2-size;
+		margin: 0 0 10px 0;
+	}
+
+	.time {
+
+	}
+
 
 	.formButton {
 		background: $dark-green;
