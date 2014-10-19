@@ -1,10 +1,3 @@
-$(document).ready(function() {
-    dateFormat("#date1");
-    dateFormat("#date2");
-});
-
-
-
 function dateFormat(param) {
 	var htmlDate = $(param).html().split("-")
     var month = (htmlDate[1] - 1);
@@ -17,3 +10,4 @@ function dateFormat(param) {
     $(param).html(string);
     
 }
+

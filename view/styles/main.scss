@@ -14,7 +14,7 @@ $logo-font: "Patrick Hand SC", cursive;
 
 $nav-size: 14px;
 $body-size: 14px;
-$h2-size: 18px;
+$h2-size: 20px;
 
 $break-sml: 500px;
 
@@ -98,15 +98,20 @@ body {
 		margin: 2px 30px;
 	}
 
+	#location {
+		font-style: italic;
+		margin: 0 0 30px 0;
+	}
+
 	.date {
 		font-size: $h2-size;
 		margin: 0 0 10px 0;
 	}
 
 	.time {
-
+		font-size: ($h2-size - 4);
+		margin: 0 0 10px 0;
 	}
-
 
 	.formButton {
 		background: $dark-green;

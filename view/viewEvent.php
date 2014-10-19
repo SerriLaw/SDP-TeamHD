@@ -11,6 +11,13 @@
 		<script src="/SDP/view/js/jquery-1.11.1.min.js"></script>
 		<script src="/SDP/view/js/script.js"></script>
 		
+		<script>
+			$(document).ready(function() {
+			    dateFormat("#date1");
+			    dateFormat("#date2");
+			});
+		</script>
+
 	</head>
 	<body>
 		<div id="nav-bar">
