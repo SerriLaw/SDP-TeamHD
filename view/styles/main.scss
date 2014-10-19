@@ -46,10 +46,33 @@ body {
 	}
 
 	#hero {
-		//border: 1px blue solid; // remove
+		border: 1px blue solid; // remove
 		width: 80%;
 		margin: 5px auto;
 		text-align: center;
+
+		#eventimg {
+			max-height: 400px;
+			max-width: 100%;
+		}
+
+		#name {
+			font-size: 30px;
+			font-weight: bold;
+			display: block;
+			bottom: 50px;
+			position: relative;
+			
+			margin: 0 auto;
+			background-color: rgba(240, 240, 240, 0.7);
+			line-height: 50px;
+			
+			@media screen and (max-width: $break-sml) {
+				font-size: 18px;
+				line-height: none;
+			}
+
+		}
 	}
 
 	#error {

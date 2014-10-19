@@ -77,7 +77,7 @@
 				<li><a href=""><img src="img/icon.png" alt="BeanSprouts"><span id="logo">BeanSprouts</span></a></li>
 				<li class="h"><a href="login.php">Login</a></li>
 				<li class="h"><a href="">Register</a></li>
-				<li class="h"><a href="viewEvent.php">View Events</a></li>
+				<li class="h"><a href="">View Events</a></li>
 			</ul>
 			
 		</div>
