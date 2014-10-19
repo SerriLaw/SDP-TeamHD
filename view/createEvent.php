@@ -62,18 +62,37 @@
 
 			});						
 		</script>
+		<title>BeanSprouts</title>
+		<link href='http://fonts.googleapis.com/css?family=Patrick+Hand+SC' rel='stylesheet' type='text/css'>
+		<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="styles/main.min.css">
+		<script src="/SDP/view/js/jquery-1.11.1.min.js"></script>
+		<script src="/SDP/view/js/script.js"></script>
 	<head>
 	<body>
-		<h1>Create an Event</h1>
-		<form action="" method="post">
-			Event Name: <input type="text" id="name"> <br>
-			Event Desc: <textarea id="description"></textarea> <br>
-			Start Date: <input type="date" id ="startDate"> <br>
-			End Date: <input type="date" id ="endDate"> <br>
-			Location: <input type="text" id="location"> <br>
-			<input type="submit" value="Create Event" id="createEvent"> <br>
-			<div id="error"></div>
-		</form>
-		<a href="/SDP/model/logout.php">Logout</a>
+		<div id="nav-bar">
+			<span id="ham"><a href="#" onClick="$('.h').toggle()"><i class="fa fa-bars"></i></a></span>
+			<ul>
+				<li><a href=""><img src="img/icon.png" alt="BeanSprouts"><span id="logo">BeanSprouts</span></a></li>
+				<li class="h"><a href="login.php">Login</a></li>
+				<li class="h"><a href="">Register</a></li>
+				<li class="h"><a href="">View Events</a></li>
+			</ul>			
+		</div>
+
+		<div id="wrap">
+			<h1>Create an Event</h1>
+			<form action="" method="post">
+				Event Name: <input type="text" id="name"> <br>
+				Event Desc: <textarea id="description"></textarea> <br>
+				Start Date: <input type="date" id ="startDate"> <br>
+				End Date: <input type="date" id ="endDate"> <br>
+				Location: <input type="text" id="location"> <br>
+				<input type="submit" value="Create Event" id="createEvent" class="formButton"> <br>
+				<div id="error"></div>
+			</form>
+			<a href="/SDP/model/logout.php">Logout</a>
+		</div>
+
 	</body>
 </html>
