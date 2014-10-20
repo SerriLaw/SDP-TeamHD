@@ -8,9 +8,15 @@
 ?>
 <html>
 	<head>
+		<title>BeanSprouts</title>
+		<link rel="stylesheet" type="text/css" href="styles/main.min.css">
 		<script src="/SDP/view/js/jquery-1.11.1.min.js"></script>
+		<script src="/SDP/view/js/script.js"></script>
+		<link href='http://fonts.googleapis.com/css?family=Patrick+Hand+SC' rel='stylesheet' type='text/css'>
+		<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 			<script type="text/javascript">
 			$(document).ready(function() {
+				validateChar();
 
 			    $('#createEvent').click(function(event) {
 			        event.preventDefault();
@@ -59,12 +65,7 @@
 		<script>
 
 		</script>
-		<title>BeanSprouts</title>
-		<link href='http://fonts.googleapis.com/css?family=Patrick+Hand+SC' rel='stylesheet' type='text/css'>
-		<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-		<link rel="stylesheet" type="text/css" href="styles/main.min.css">
-		<script src="/SDP/view/js/jquery-1.11.1.min.js"></script>
-		<script src="/SDP/view/js/script.js"></script>
+		
 	<head>
 	<body>
 		<div id="nav-bar">
@@ -81,10 +82,13 @@
 			<h1>Create an Event</h1>
 			<form action="" method="post">
 				Event Name: <input type="text" id="name"> <br>
+				<span class="errormsg" id="nameErr">Name has too many characters. Max 20.</span>
 				Event Desc: <textarea id="description"></textarea> <br>
+				<span class="errormsg" id="descErr">Description has too many characters. Max 300.</span>
 				Start Date: <input type="date" id ="startDate"> <br>
 				End Date: <input type="date" id ="endDate"> <br>
 				Location: <input type="text" id="location"> <br>
+				<span class="errormsg" id="locErr">Location has too many characters. Max 50.</span>
 				<input type="submit" value="Create Event" id="createEvent" class="formButton"> <br>
 				<div id="error"></div>
 			</form>
