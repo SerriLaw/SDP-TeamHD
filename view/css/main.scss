@@ -36,7 +36,7 @@ body {
 
 #wrap {
 	width: 80%;
-	margin: 15px auto;
+	margin: 20px auto 80px auto;
 	//border: 1px red solid; // remove
 
 	form {
@@ -85,12 +85,17 @@ body {
 		}
 	}
 
-	.event-details {
+	.event-details, .act-details {
 		margin: 0 0 40px 0;
 
 		#location {
-			margin: 0 0 30px 0;
+			margin: 10px 0 30px 0;
 			font-style: italic;
+		}
+
+		#name {
+			font-size: $h2-size;
+			margin: 20px 0 20px 0;
 		}
 
 		.date {
@@ -98,13 +103,13 @@ body {
 			margin: 0 0 10px 0;
 		}
 
-		.time {
-			font-size: ($h2-size - 4);
-			margin: 0 0 10px 0;
+		.act-time {
+			margin: 0 0 0 25px;
 		}
 
-		.event-edit {
+		.event-edit, .act-edit {
 			margin: 20px 0 0 20px;
+			line-height: 20px;
 		}
 	}
 
@@ -117,7 +122,7 @@ body {
 		}
 
 		.event-activity-edit {
-			margin: 5px 0 15px 20px;
+			margin: 5px 0 15px 0;
 		}
 	}
 
