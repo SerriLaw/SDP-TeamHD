@@ -31,11 +31,11 @@ body {
       margin: 0 auto;
       background-color: rgba(240, 240, 240, 0.7);
       line-height: 50px; }
-      @media screen and (max-width: 500px) {
+      @media screen and (max-width: 640px) {
         #wrap #hero #name {
           font-size: 18px;
           line-height: none; } }
-    @media screen and (max-width: 500px) {
+    @media screen and (max-width: 640px) {
       #wrap #hero {
         width: 100%; } }
   #wrap #error {
@@ -102,7 +102,7 @@ body {
     border-top-color: #60a040; }
   #nav-bar #ham {
     display: none; }
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 640px) {
     #nav-bar li {
       display: block;
       padding: 5px; }
