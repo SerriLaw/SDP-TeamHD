@@ -4,6 +4,7 @@
 		<link href='http://fonts.googleapis.com/css?family=Patrick+Hand+SC' rel='stylesheet' type='text/css'>
 		<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="view/css/main.min.css">
+		<link rel="icon" type="image/png" href="view/img/icon.png">
 		<script src="view/js/jquery-1.11.1.min.js"></script>
 		<script src="view/js/script.js"></script>
 		<script type="text/javascript">

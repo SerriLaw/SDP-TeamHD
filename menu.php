@@ -1,4 +1,5 @@
 <div id="nav-bar">
+
         <span id="ham"><a href="#" onClick="$('.h').toggle()"><i class="fa fa-bars"></i></a></span>
         <ul>
                 <li><a href="/SDP/home.php"><img src="view/img/icon.png" alt="BeanSprouts"><span id="logo">BeanSprouts</span></a></li>
