@@ -71,6 +71,8 @@
 	<body>
         <?php include("menu.php"); ?>
 		<div id="wrap">
+			<div id="hero"><img src="view/img/icon.png" alt="BeanSprouts" id="bigbean"><span id="bigbeantext">BeanSprouts</span></div>
+
 			<form action="" method="post">
 			<span class="textfield">User ID: <input type="text" id="username"></span>
 			<span class="textfield">Password: <input type="password" id="password"></span>
