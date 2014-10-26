@@ -1,7 +1,12 @@
 
 <html>
 	<head>
+		<title>BeanSprouts</title>
+		<link href='http://fonts.googleapis.com/css?family=Patrick+Hand+SC' rel='stylesheet' type='text/css'>
+		<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="css/main.min.css">
 		<script src="/SDP/view/js/jquery-1.11.1.min.js"></script>
+		<script src="/SDP/view/js/script.js"></script>
 		<script type="text/javascript">
 		console.log("started");
 			$(document).ready(function() 
@@ -64,11 +69,13 @@
 	</head>
 	<body>
         <?php include("menu.php"); ?>
-		<form action="" method="post">
-		User ID: <input type="text" id="username"><br>
-		Password: <input type="text" id="password"><br>
-		<input type="submit" value="Login" id="login">
-		<div id="error"></div>
-		</form>
+		<div id="wrap">
+			<form action="" method="post">
+			<span class="textfield">User ID: <input type="text" id="username"></span>
+			<span class="textfield">Password: <input type="password" id="password"></span>
+			<input type="submit" value="Login" id="login" class="formButton">
+			<div id="error"></div>
+			</form>
+		</div>
 	</body>
 </html>
