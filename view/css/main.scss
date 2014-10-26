@@ -17,6 +17,7 @@ $body-size: 14px;
 $h2-size: 20px;
 
 $break-sml: 640px;
+$break-med: 1100px;
 
 body {
 	background-color: $lt-grey;
@@ -84,6 +85,69 @@ body {
 			width: 100%;
 		}
 	}
+	.event-block-stream {
+		
+		text-align: center;
+
+		.event-block {
+			border: 2px solid;
+			border-radius: 10px;
+			border-color: rgba(96, 186, 64, 0.2);
+			
+
+			margin: 30px;
+			max-width: 400px;
+			width: 25%;
+			min-height: 150px;
+			max-height: 400px;
+			display: inline-block;
+			vertical-align: top;
+			text-align: left;
+
+			padding: 10px;
+
+			.event-block-desc, .event-block-date {
+				color: $text-color;
+			}
+
+			.event-block-name {
+				font-size: $h2-size;
+				margin: 0 0 10px 0;
+			}
+
+			.event-block-date {
+				margin: 0 0 5px 0;
+			}
+
+			&:hover {
+				border-color: rgba(96, 186, 64, 0.4);
+				background-color: #F6F6F6;
+
+				.event-block-name, .event-block-desc, .event-block-date { 
+					color: $base-green;
+				}
+
+
+			}
+
+			@media screen and (max-width: $break-med) {
+				margin: 15px;
+				width: 90%;
+				max-width: 500px;
+				min-height: 100px;
+
+			}
+
+			@media screen and (max-width: $break-sml) {
+				max-width: 600px;
+				width: 90%;
+				margin: 10px auto;
+				min-height: 100px;
+				padding: 15px;
+			}
+		}
+	}
+	
 
 	.heroname {
 		font-size: $h2-size;

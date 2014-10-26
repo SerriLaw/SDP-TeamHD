@@ -43,6 +43,46 @@ body {
     @media screen and (max-width: 640px) {
       #wrap #hero {
         width: 100%; } }
+  #wrap .event-block-stream {
+    text-align: center; }
+    #wrap .event-block-stream .event-block {
+      border: 2px solid;
+      border-radius: 10px;
+      border-color: rgba(96, 186, 64, 0.2);
+      margin: 30px;
+      max-width: 400px;
+      width: 25%;
+      min-height: 150px;
+      max-height: 400px;
+      display: inline-block;
+      vertical-align: top;
+      text-align: left;
+      padding: 10px; }
+      #wrap .event-block-stream .event-block .event-block-desc, #wrap .event-block-stream .event-block .event-block-date {
+        color: black; }
+      #wrap .event-block-stream .event-block .event-block-name {
+        font-size: 20px;
+        margin: 0 0 10px 0; }
+      #wrap .event-block-stream .event-block .event-block-date {
+        margin: 0 0 5px 0; }
+      #wrap .event-block-stream .event-block:hover {
+        border-color: rgba(96, 186, 64, 0.4);
+        background-color: #F6F6F6; }
+        #wrap .event-block-stream .event-block:hover .event-block-name, #wrap .event-block-stream .event-block:hover .event-block-desc, #wrap .event-block-stream .event-block:hover .event-block-date {
+          color: #60ba40; }
+      @media screen and (max-width: 1100px) {
+        #wrap .event-block-stream .event-block {
+          margin: 15px;
+          width: 90%;
+          max-width: 500px;
+          min-height: 100px; } }
+      @media screen and (max-width: 640px) {
+        #wrap .event-block-stream .event-block {
+          max-width: 600px;
+          width: 90%;
+          margin: 10px auto;
+          min-height: 100px;
+          padding: 15px; } }
   #wrap .heroname {
     font-size: 20px; }
   #wrap .person-data, #wrap .contact, #wrap .system-user-data {
