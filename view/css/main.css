@@ -43,27 +43,30 @@ body {
     @media screen and (max-width: 640px) {
       #wrap #hero {
         width: 100%; } }
-  #wrap .event-details, #wrap .act-details {
-    margin: 0 0 40px 0; }
-    #wrap .event-details #location, #wrap .act-details #location {
+  #wrap .event-details, #wrap .act-details, #wrap .role-details {
+    margin: 0 0 40px 0;
+    line-height: 20px; }
+    #wrap .event-details #location, #wrap .act-details #location, #wrap .role-details #location {
       margin: 10px 0 30px 0;
       font-style: italic; }
-    #wrap .event-details #name, #wrap .act-details #name {
+    #wrap .event-details #name, #wrap .act-details #name, #wrap .role-details #name {
       font-size: 20px;
       margin: 20px 0 20px 0; }
-    #wrap .event-details .date, #wrap .act-details .date {
+    #wrap .event-details .date, #wrap .act-details .date, #wrap .role-details .date {
       font-size: 20px;
       margin: 0 0 10px 0; }
-    #wrap .event-details .act-time, #wrap .act-details .act-time {
+    #wrap .event-details .act-time, #wrap .act-details .act-time, #wrap .role-details .act-time {
       margin: 0 0 0 25px; }
-    #wrap .event-details .event-edit, #wrap .event-details .act-edit, #wrap .act-details .event-edit, #wrap .act-details .act-edit {
+    #wrap .event-details #paid, #wrap .act-details #paid, #wrap .role-details #paid {
+      margin: 20px 0 0 0; }
+    #wrap .event-details .event-edit, #wrap .event-details .act-edit, #wrap .event-details .role-edit, #wrap .act-details .event-edit, #wrap .act-details .act-edit, #wrap .act-details .role-edit, #wrap .role-details .event-edit, #wrap .role-details .act-edit, #wrap .role-details .role-edit {
       margin: 20px 0 0 20px;
       line-height: 20px; }
-  #wrap .event-activity .event-activity-head {
+  #wrap .event-activity .event-activity-head, #wrap .event-activity .role-applicant-head, #wrap .role-applicant .event-activity-head, #wrap .role-applicant .role-applicant-head {
     font-size: 20px;
     text-decoration: underline;
     margin: 0 0 10px 0; }
-  #wrap .event-activity .event-activity-edit {
+  #wrap .event-activity .event-activity-edit, #wrap .role-applicant .event-activity-edit {
     margin: 5px 0 15px 0; }
   #wrap #error {
     margin: 12px 0 0 0; }
