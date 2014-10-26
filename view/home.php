@@ -20,7 +20,7 @@
 		        <div class="event-block">
     		        <a href="viewEvent.php?id=<?php echo($row['eventID']); ?>">
     		        <div class="event-block-name"><?php echo($row['name']); ?></div> 
-    		        <div class="event-block-date"><i class="fa fa-calendar"></i> Starts <span class="format-date"><?php echo($row['startDate']); ?></span> until <?php echo($row['endDate']); ?></div>
+    		        <div class="event-block-date"><i class="fa fa-calendar"></i> Starts <?php echo($row['startDate']); ?></span> until <?php echo($row['endDate']); ?></div>
     		        <div class="event-block-desc"><?php echo($row['description']); ?></div>
     		        </a>
         	    </div>

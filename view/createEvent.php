@@ -1,7 +1,13 @@
 
 <html>
 	<head>
-		<script src="/SDP/view/js/jquery-1.11.1.min.js"></script>
+		<title>BeanSprouts - Create Event</title>
+		<link href='http://fonts.googleapis.com/css?family=Patrick+Hand+SC' rel='stylesheet' type='text/css'>
+		<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+		<link rel="icon" type="image/png" href="view/img/icon.png">
+		<link rel="stylesheet" type="text/css" href="view/css/main.min.css">
+		<script src="view/js/jquery-1.11.1.min.js"></script>
+		<script src="view/js/script.js"></script>
 			<script type="text/javascript">
 			$(document).ready(function() 
 			{
@@ -58,15 +64,18 @@
 	<head>
 	<body>
         <?php include("menu.php"); ?>
-		<h1>Create an Event</h1>
-		<form action="" method="post">
-			Event Name: <input type="text" id="name"> <br>
-			Event Desc: <textarea id="description"></textarea> <br>
-			Start Date: <input type="date" id ="startDate"> <br>
-			End Date: <input type="date" id ="endDate"> <br>
-			Location: <input type="text" id="location"> <br>
-			<input type="submit" value="Create Event" id="createEvent"> <br>
-			<div id="error"></div>
-		</form>
+
+		<div id="wrap">
+		<div class="heroname">Add New Event</div>
+			<form action="" method="post">
+				<div class="input">Event Name <input type="text" id="name" class="textbox" placeholder="e.g. UTS Open Day"></div>
+				<div class="input">Event Description <textarea id="description" class="textbox" placeholder="e.g. This is a fun event!"></textarea></div>
+				<div class="input">Event Start Date <input type="date" id ="startDate"></div>
+				<div class="input">Event End Date <input type="date" id ="endDate"></div>
+				<div class="input">Event Location <input type="text" id="location" class="textbox" placeholder="e.g. UTS City Campus"></div>
+				<div class="input"><input type="submit" value="Create Event" id="createEvent" class="formButton"></div>
+				<div id="error"></div>
+			</form>
+		</div>
 	</body>
 </html>

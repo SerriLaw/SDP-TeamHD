@@ -1,7 +1,13 @@
 
 <html>
 	<head>
-		<script src="/SDP/view/js/jquery-1.11.1.min.js"></script>
+		<title>BeanSprouts - Edit Activity</title>
+		<link href='http://fonts.googleapis.com/css?family=Patrick+Hand+SC' rel='stylesheet' type='text/css'>
+		<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+		<link rel="icon" type="image/png" href="view/img/icon.png">
+		<link rel="stylesheet" type="text/css" href="view/css/main.min.css">
+		<script src="view/js/jquery-1.11.1.min.js"></script>
+		<script src="view/js/script.js"></script>
 			<script type="text/javascript">
 			$(document).ready(function() 
 			{
@@ -62,18 +68,20 @@
 	<head>
 	<body>
         <?php include("menu.php"); ?>
-		<h1>Update an Activity</h1>
-		<form action="" method="post">
-			Activity Name: <input type="text" id="name" value="<?php echo($row['name']); ?>"> <br>
-			Activity Desc: <textarea id="description"><?php echo($row['description']); ?></textarea> <br>
-			Location: <input type="text" id="location" value="<?php echo($row['location']); ?>"> <br>
-			Start Date: <input type="date" id ="startDate" value="<?php echo($row['startDate']); ?>"> <br>
-			End Date: <input type="date" id ="endDate" value="<?php echo($row['endDate']); ?>"> <br>
-			Start Time: <input type="text" id="startTime" value="<?php echo($row['startTime']); ?>"> (Format 0000) <br>
-			End Time: <input type="text" id="endTime" value="<?php echo($row['endTime']); ?>"> (Format 0000)<br>
-			
-			<input type="submit" value="Update Activity" id="updateActivity"> <br>
-			<div id="error"></div>
-		</form>
+        <div id="wrap">
+			<div class="heroname">Edit Activity</div>
+			<form action="" method="post">
+				Activity Name: <input type="text" id="name" value="<?php echo($row['name']); ?>"> <br>
+				Activity Desc: <textarea id="description"><?php echo($row['description']); ?></textarea> <br>
+				Location: <input type="text" id="location" value="<?php echo($row['location']); ?>"> <br>
+				Start Date: <input type="date" id ="startDate" value="<?php echo($row['startDate']); ?>"> <br>
+				End Date: <input type="date" id ="endDate" value="<?php echo($row['endDate']); ?>"> <br>
+				Start Time: <input type="text" id="startTime" value="<?php echo($row['startTime']); ?>"> (Format 0000) <br>
+				End Time: <input type="text" id="endTime" value="<?php echo($row['endTime']); ?>"> (Format 0000)<br>
+				
+				<div class="input"><input type="submit" value="Save Activity" id="updateActivity" class="formButton"></div> <br>
+				<div id="error"></div>
+			</form>
+		</div>
 	</body>
 </html>

@@ -1,7 +1,13 @@
 
 <html>
 	<head>
-		<script src="/SDP/view/js/jquery-1.11.1.min.js"></script>
+		<title>BeanSprouts - Register</title>
+		<link href='http://fonts.googleapis.com/css?family=Patrick+Hand+SC' rel='stylesheet' type='text/css'>
+		<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+		<link rel="icon" type="image/png" href="view/img/icon.png">
+		<link rel="stylesheet" type="text/css" href="view/css/main.min.css">
+		<script src="view/js/jquery-1.11.1.min.js"></script>
+		<script src="view/js/script.js"></script>
 		<script type="text/javascript">
 			$(document).ready(function() 
 			{
@@ -65,34 +71,36 @@
 	</head>
 	<body>
         <?php include("menu.php"); ?>
-		<h1>Register</h1>
-		<form action="" method="post">
-			Student ID: <input type="text" id="studentID"> <br>
-			First Name: <input type="text" id="firstName"> <br>
-			Last Name: <input type="text" id="lastName"> <br>
-			Email Address: <input type="text" id="email"> <br>
-			Phone Number: <input type="text" id="phone"> <br>
-			Password: <input type="password" id="password"> <br>
-			Date of Birth: <input type="date" id="dateOfBirth"> <br>
-			Gender: <br>
-			<input type="radio" name="gender" value="m"> Male: <br>
-			<input type="radio" name="gender" value="f"> Female: <br>
-			Course: <select id="courseID">
-						<?php 
-							include("model/db.php");
-							$sql = "SELECT * FROM course";
-							$result = mysqli_query($db, $sql);
-							while($row = mysqli_fetch_array($result))
-							{
-								echo "<option value=\"" . $row['courseID'] . "\">" . $row['name'] . "</option>";
-							}
+        <div id="wrap">
+			<div class="heroname">Register</div>
+			<form action="" method="post">
+				Student ID: <input type="text" id="studentID"> <br>
+				First Name: <input type="text" id="firstName"> <br>
+				Last Name: <input type="text" id="lastName"> <br>
+				Email Address: <input type="text" id="email"> <br>
+				Phone Number: <input type="text" id="phone"> <br>
+				Password: <input type="password" id="password"> <br>
+				Date of Birth: <input type="date" id="dateOfBirth"> <br>
+				Gender: <br>
+				<input type="radio" name="gender" value="m"> Male <br>
+				<input type="radio" name="gender" value="f"> Female <br>
+				Course: <select id="courseID">
+							<?php 
+								include("model/db.php");
+								$sql = "SELECT * FROM course";
+								$result = mysqli_query($db, $sql);
+								while($row = mysqli_fetch_array($result))
+								{
+									echo "<option value=\"" . $row['courseID'] . "\">" . $row['name'] . "</option>";
+								}
 
-						?>
-					</select> <br>
-			Skills: <textarea id="skills"></textarea> <br>
-			Experience: <textarea id="experience"></textarea> <br> <br>
-			<input type="submit" value="Register" id="register"> <br>
-			<div id="error"></div>
-		</form>
+							?>
+						</select> <br>
+				Skills: <textarea id="skills"></textarea> <br>
+				Experience: <textarea id="experience"></textarea> <br> <br>
+				<div class="input"><input type="submit" value="Register" id="register" class="formButton"></div>
+				<div id="error"></div>
+			</form>
+		</div>
 	</body>
 </html>

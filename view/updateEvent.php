@@ -1,7 +1,13 @@
 
 <html>
 	<head>
-		<script src="/SDP/view/js/jquery-1.11.1.min.js"></script>
+		<title>BeanSprouts - Edit Event</title>
+		<link href='http://fonts.googleapis.com/css?family=Patrick+Hand+SC' rel='stylesheet' type='text/css'>
+		<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+		<link rel="icon" type="image/png" href="view/img/icon.png">
+		<link rel="stylesheet" type="text/css" href="view/css/main.min.css">
+		<script src="view/js/jquery-1.11.1.min.js"></script>
+		<script src="view/js/script.js"></script>
 			<script type="text/javascript">
 			$(document).ready(function() 
 			{
@@ -58,15 +64,17 @@
 	<head>
 	<body>
         <?php include("menu.php"); ?>
-		<h1>Update an Event</h1>
-		<form action="" method="post">
-			Event Name: <input type="text" id="name" value="<?php echo($row['name']); ?>"> <br>
-			Event Desc: <textarea id="description"><?php echo($row['description']); ?></textarea> <br>
-			Start Date: <input type="date" id ="startDate" value="<?php echo($row['startDate']); ?>"> <br>
-			End Date: <input type="date" id ="endDate" value="<?php echo($row['endDate']); ?>"> <br>
-			Location: <input type="text" id="location" value="<?php echo($row['location']); ?>"> <br>
-			<input type="submit" value="Update Event" id="updateEvent"> <br>
-			<div id="error"></div>
-		</form>
+		<div id="wrap">
+			<div class="heroname">Edit Event</div>
+			<form action="" method="post">
+				Event Name: <input type="text" id="name" value="<?php echo($row['name']); ?>"> <br>
+				Event Desc: <textarea id="description"><?php echo($row['description']); ?></textarea> <br>
+				Start Date: <input type="date" id ="startDate" value="<?php echo($row['startDate']); ?>"> <br>
+				End Date: <input type="date" id ="endDate" value="<?php echo($row['endDate']); ?>"> <br>
+				Location: <input type="text" id="location" value="<?php echo($row['location']); ?>"> <br>
+				<div class="input"></div><input type="submit" value="Save Event" id="updateEvent"class="formButton"></div>
+				<div id="error"></div>
+			</form>
+		</div>
 	</body>
 </html>

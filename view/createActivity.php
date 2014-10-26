@@ -1,7 +1,13 @@
 
 <html>
 	<head>
-		<script src="/SDP/view/js/jquery-1.11.1.min.js"></script>
+		<title>BeanSprouts - Create Activity</title>
+		<link href='http://fonts.googleapis.com/css?family=Patrick+Hand+SC' rel='stylesheet' type='text/css'>
+		<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+		<link rel="icon" type="image/png" href="view/img/icon.png">
+		<link rel="stylesheet" type="text/css" href="view/css/main.min.css">
+		<script src="view/js/jquery-1.11.1.min.js"></script>
+		<script src="view/js/script.js"></script>
 			<script type="text/javascript">
 			$(document).ready(function() 
 			{
@@ -63,18 +69,25 @@
 	<head>
 	<body>
         <?php include("menu.php"); ?>
-		<h1>Create an Activity</h1>
-		<form action="" method="post">
-			Activity Name: <input type="text" id="name"> <br>
-			Activity Desc: <textarea id="description"></textarea> <br>
-			Location: <input type="text" id="location"> <br>
-			Start Date: <input type="date" id ="startDate"> <br>
-			End Date: <input type="date" id ="endDate"> <br>
-			Start Time: <input type="text" id="startTime"> (Format 0000) <br>
-			End Time: <input type="text" id="endTime"> (Format 0000)<br>
-			
-			<input type="submit" value="Create Activity" id="createActivity"> <br>
-			<div id="error"></div>
-		</form>
+
+        <div id="wrap">
+			<div class="heroname">Add New Activity</div>
+			<form action="" method="post">
+				<div class="input">Activity Name <input type="text" id="name" class="textbox" placeholder="e.g. FEIT Stall"></div>
+				<div class="input">Activity Description <textarea id="description" class="textbox" placeholder="e.g. This is a fun activity!"></textarea></div>
+				<div class="input">Activity Start Date <input type="date" id ="startDate"></div>
+				<div class="input">Activity End Date <input type="date" id ="endDate"></div>
+				
+				<div class="input">Activity Location <input type="text" id="location" class="textbox" placeholder="e.g. CB 11.4.400"></div>
+				<div class="input">Activity Start Time<input type="text" class="textbox" id="startTime"> (Format 0000)</div>
+				<div class="input">Activity End Time<input type="text" class="textbox" id="endTime"> (Format 0000)</div>
+
+				
+				
+				
+				<div class="input"><input type="submit" value="Create Activity" id="createActivity" class="formButton"></div>
+				<div id="error"></div>
+			</form>
+		</div>
 	</body>
 </html>

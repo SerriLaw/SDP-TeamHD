@@ -40,7 +40,31 @@ body {
 	margin: 20px auto 80px auto;
 	//border: 1px red solid; // remove
 
-	form {
+	.input {
+
+		line-height: 20px;
+		margin: 5px;
+		width: 400px;
+		
+		vertical-align: top;
+		position: relative;
+		display: block;
+
+		.textbox {
+			width: 250px;
+			margin: 0 0 0 20px;
+		}
+		
+		.formButton {
+			width: 120px;
+			margin: 20px 100px;
+		}
+
+
+	}
+	
+
+	#loginform {
 		width: 280px;
 		margin: 0 auto;
 	}
@@ -51,6 +75,8 @@ body {
 		margin-left: 40%;
 		width: 20%;
 	}
+
+
 
 	#hero {
 		//border: 1px blue solid; // remove
@@ -85,6 +111,8 @@ body {
 			width: 100%;
 		}
 	}
+
+
 	.event-block-stream {
 		
 		text-align: center;
@@ -151,6 +179,7 @@ body {
 
 	.heroname {
 		font-size: $h2-size;
+		margin: 20px 0;
 	}
 
 	.person-data, .contact, .system-user-data {
@@ -226,7 +255,7 @@ body {
 
 	}
 
-	#username, #password {
+	#username, .password {
 		width: 150px;
 		float: right;
 		margin: 2px 30px;

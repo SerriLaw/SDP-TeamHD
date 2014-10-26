@@ -73,9 +73,9 @@
 		<div id="wrap">
 			<div id="hero"><img src="view/img/icon.png" alt="BeanSprouts" id="bigbean"><span id="bigbeantext">BeanSprouts</span></div>
 
-			<form action="" method="post">
+			<form id="loginform" action="" method="post">
 			<span class="textfield">User ID: <input type="text" id="username"></span>
-			<span class="textfield">Password: <input type="password" id="password"></span>
+			<span class="textfield">Password: <input type="password" id="password" class="password"></span>
 			<input type="submit" value="Login" id="login" class="formButton">
 			<div id="error"></div>
 			</form>

@@ -1,7 +1,13 @@
 
 <html>
 	<head>
-		<script src="/SDP/view/js/jquery-1.11.1.min.js"></script>
+		<title>BeanSprouts - Create Role</title>
+		<link href='http://fonts.googleapis.com/css?family=Patrick+Hand+SC' rel='stylesheet' type='text/css'>
+		<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+		<link rel="icon" type="image/png" href="view/img/icon.png">
+		<link rel="stylesheet" type="text/css" href="view/css/main.min.css">
+		<script src="view/js/jquery-1.11.1.min.js"></script>
+		<script src="view/js/script.js"></script>
 			<script type="text/javascript">
 			$(document).ready(function() 
 			{
@@ -64,21 +70,23 @@
 	<head>
 	<body>
         <?php include("menu.php"); ?>
-		<h1>Create a Role</h1>
-		<form action="" method="post">
-			Role Name: <input type="text" id="name"> <br>
-			Paid: <br>
-			<input type="radio" name="isPaid" value="1"> Yes: <br>
-			<input type="radio" name="isPaid" value="0"> No: <br>
-			Rate/Hour: <input type="text" id ="rate"> (If "No" then leave blank) <br>
-			Role Desc: <textarea id="description"></textarea> <br>
-			Requirements: <textarea id="requirements"></textarea> <br>
-			Date: <input type="date" id ="date"> <br>
-			Start Time: <input type="text" id="startTime"> (Format 0000) <br>
-			End Time: <input type="text" id="endTime"> (Format 0000)<br>
-			
-			<input type="submit" value="Create Role" id="createRole"> <br>
-			<div id="error"></div>
-		</form>
+		<div id="wrap">
+		
+			<form action="" method="post">
+				Role Name: <input type="text" id="name"> <br>
+				Paid: <br>
+				<input type="radio" name="isPaid" value="1"> Yes <br>
+				<input type="radio" name="isPaid" value="0"> No <br>
+				Rate/Hour: <input type="text" id ="rate"> (If "No" then leave blank) <br>
+				Role Desc: <textarea id="description"></textarea> <br>
+				Requirements: <textarea id="requirements"></textarea> <br>
+				Date: <input type="date" id ="date"> <br>
+				Start Time: <input type="text" id="startTime"> (Format 0000) <br>
+				End Time: <input type="text" id="endTime"> (Format 0000)<br>
+				
+				<div class="input"><input type="submit" value="Create Role" id="createRole" class="formButton"></div>
+				<div id="error"></div>
+			</form>
+		</div>
 	</body>
 </html>

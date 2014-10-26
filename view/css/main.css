@@ -12,7 +12,20 @@ body {
 #wrap {
   width: 80%;
   margin: 20px auto 80px auto; }
-  #wrap form {
+  #wrap .input {
+    line-height: 20px;
+    margin: 5px;
+    width: 400px;
+    vertical-align: top;
+    position: relative;
+    display: block; }
+    #wrap .input .textbox {
+      width: 250px;
+      margin: 0 0 0 20px; }
+    #wrap .input .formButton {
+      width: 120px;
+      margin: 20px 100px; }
+  #wrap #loginform {
     width: 280px;
     margin: 0 auto; }
   #wrap #login {
@@ -84,7 +97,8 @@ body {
           min-height: 100px;
           padding: 15px; } }
   #wrap .heroname {
-    font-size: 20px; }
+    font-size: 20px;
+    margin: 20px 0; }
   #wrap .person-data, #wrap .contact, #wrap .system-user-data {
     margin: 15px 0;
     line-height: 20px; }
@@ -125,7 +139,7 @@ body {
     position: relative;
     font-size: 30px;
     font-family: "Patrick Hand SC", cursive; }
-  #wrap #username, #wrap #password {
+  #wrap #username, #wrap .password {
     width: 150px;
     float: right;
     margin: 2px 30px; }

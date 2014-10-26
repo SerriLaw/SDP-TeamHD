@@ -1,7 +1,13 @@
 
 <html>
 	<head>
-		<script src="/SDP/view/js/jquery-1.11.1.min.js"></script>
+		<title>BeanSprouts - Edit Role</title>
+		<link href='http://fonts.googleapis.com/css?family=Patrick+Hand+SC' rel='stylesheet' type='text/css'>
+		<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+		<link rel="icon" type="image/png" href="view/img/icon.png">
+		<link rel="stylesheet" type="text/css" href="view/css/main.min.css">
+		<script src="view/js/jquery-1.11.1.min.js"></script>
+		<script src="view/js/script.js"></script>
 			<script type="text/javascript">
 			$(document).ready(function() 
 			{
@@ -64,21 +70,23 @@
 	<head>
 	<body>
         <?php include("menu.php"); ?>
-		<h1>Update a Role</h1>
-		<form action="" method="post">
-			Role Name: <input type="text" id="name" value="<?php echo($row['name']); ?>"> <br>
-			Paid: <br>
-			<input type="radio" name="isPaid" value="1" <?php if($row['isPaid'] == 1){echo('checked="checked"');} ?> > Yes: <br>
-			<input type="radio" name="isPaid" value="0" <?php if($row['isPaid'] == 0){echo('checked="checked"');} ?>> No: <br>
-			Rate/Hour: <input type="text" id ="rate" value="<?php echo($row['rate']); ?>"><br>
-			Role Desc: <textarea id="description"><?php echo($row['description']); ?></textarea> <br>
-			Requirements: <textarea id="requirements"><?php echo($row['requirements']); ?></textarea> <br>
-			Date: <input type="date" id ="date" value="<?php echo($row1['date']); ?>"> <br>
-			Start Time: <input type="text" id="startTime" value="<?php echo($row1['startTime']); ?>"> (Format 0000) <br>
-			End Time: <input type="text" id="endTime" value="<?php echo($row1['endTime']); ?>"> (Format 0000)<br>
-			
-			<input type="submit" value="Update Role" id="updateRole"> <br>
-			<div id="error"></div>
-		</form>
+		<div id="wrap">
+		<div class="heroname">Edit Role</div>
+			<form action="" method="post">
+				Role Name: <input type="text" id="name" value="<?php echo($row['name']); ?>"> <br>
+				Paid: <br>
+				<input type="radio" name="isPaid" value="1" <?php if($row['isPaid'] == 1){echo('checked="checked"');} ?> > Yes: <br>
+				<input type="radio" name="isPaid" value="0" <?php if($row['isPaid'] == 0){echo('checked="checked"');} ?>> No: <br>
+				Rate/Hour: <input type="text" id ="rate" value="<?php echo($row['rate']); ?>"><br>
+				Role Desc: <textarea id="description"><?php echo($row['description']); ?></textarea> <br>
+				Requirements: <textarea id="requirements"><?php echo($row['requirements']); ?></textarea> <br>
+				Date: <input type="date" id ="date" value="<?php echo($row1['date']); ?>"> <br>
+				Start Time: <input type="text" id="startTime" value="<?php echo($row1['startTime']); ?>"> (Format 0000) <br>
+				End Time: <input type="text" id="endTime" value="<?php echo($row1['endTime']); ?>"> (Format 0000)<br>
+				
+				<div class="input"><input type="submit" value="Save Role" id="updateRole"class="formButton"></div>
+				<div id="error"></div>
+			</form>
+		</div>
 	</body>
 </html>
