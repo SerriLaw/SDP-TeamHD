@@ -11,16 +11,20 @@
 		</script>
 	</head>
 	<body>
-        <?php include('menu.php');
+        <?php include('menu.php');?>
+		<div id="wrap">
+        <?php while($row = $q->fetch()){ if($row['isActive'] > 0){ ?>
+		
+        
+	        <div class="event-block">
+		        Event: <a href="viewEvent.php?id=<?php echo($row['eventID']); ?>"><?php echo($row['name']); ?></a> 
+		        Start Date: <?php echo($row['startDate']); ?> - End Date: <?php echo($row['endDate']); ?>
+	    	</div>
+		
 
-        echo "<br><br>";
-        while($row = $q->fetch()){ if($row['isActive'] > 0){ ?>
-
-        <div id="wrap">
-	        <div>
-	        Event: <a href="viewEvent.php?id=<?php echo($row['eventID']); ?>"><?php echo($row['name']); ?></a> 
-	        Start Date: <?php echo($row['startDate']); ?> - End Date: <?php echo($row['endDate']); ?></div>
 	        <?php } }?>
-        </div>
+
+	    </div>
+        
 	</body>
 </html>

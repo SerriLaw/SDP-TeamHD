@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<title>BeanSprouts</title>
+		<title>BeanSprouts - View Event</title>
 		<link href='http://fonts.googleapis.com/css?family=Patrick+Hand+SC' rel='stylesheet' type='text/css'>
 		<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="view/css/main.min.css">
@@ -72,7 +72,7 @@
 			<div class="event-details">
 				<div id="startDate" class="date"><i class="fa fa-calendar"></i> Starts <span id="date1"><?php echo($row['startDate']); ?></span></div>
 				<div id="endDate" class="date"><i class="fa fa-calendar"></i> Ends <span id="date2"><?php echo($row['endDate']); ?></span></div>
-				<div id="location"><?php echo($row['location']); ?></div>
+				<div id="location"><i class="fa fa-map-marker"></i> <?php echo($row['location']); ?></div>
 
 				<div id="description"><?php echo($row['description']); ?></div>
 
