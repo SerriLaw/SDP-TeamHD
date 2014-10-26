@@ -3,9 +3,9 @@
 		<title>BeanSprouts</title>
 		<link href='http://fonts.googleapis.com/css?family=Patrick+Hand+SC' rel='stylesheet' type='text/css'>
 		<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-		<link rel="stylesheet" type="text/css" href="css/main.min.css">
-		<script src="/SDP/view/js/jquery-1.11.1.min.js"></script>
-		<script src="/SDP/view/js/script.js"></script>
+		<link rel="stylesheet" type="text/css" href="view/css/main.min.css">
+		<script src="view/js/jquery-1.11.1.min.js"></script>
+		<script src="view/js/script.js"></script>
 		<script type="text/javascript">
 			$(document).ready(function() 
 			{
@@ -50,6 +50,14 @@
 
 			});						
 		</script>
+
+
+		<script>
+			$(document).ready(function() {
+			    dateFormat("#date1");
+			    dateFormat("#date2");
+			});
+		</script>
 	</head>
 	<body>
         <?php include("menu.php"); ?>
@@ -57,14 +65,14 @@
         <div id="wrap">
 
 			<div id="hero">
-				<img src="img/BeanSprouts_large.png" alt="BeanSprouts Event" id="eventimg">
+				<img src="view/img/BeanSprouts_large.png" alt="BeanSprouts Event" id="eventimg">
 				<div id="name"><?php echo($row['name']); ?></div>
 			</div>
 
 			<div id="container">
 				
 				<div id="startDate" class="date"><i class="fa fa-calendar"></i> Event Starts: <span id="date1"><?php echo($row['startDate']); ?></span></div>
-				<div id="endDate" class="date"><i class="fa fa-calendar"></i> Event Ends: <?php echo($row['endDate']); ?></div>
+				<div id="endDate" class="date"><i class="fa fa-calendar"></i> Event Ends: <span id="date2"><?php echo($row['endDate']); ?></span></div>
 				<div id="location"><?php echo($row['location']); ?></div>
 
 				<div id="description"><?php echo($row['description']); ?></div>
