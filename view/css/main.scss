@@ -4,9 +4,9 @@ $lt-grey: #F0F0F0;
 $dark-grey: #121212;
 $nav-grey: #B3B3B3;
 
-$base-green: #60A040; //lightest green 
-$dark-green: #048A04;
-$med-green: #00AA55;
+$base-green: #60BA40; //lightest green 
+$dark-green: #024D02;
+$med-green: #00944A; // link colour
 
 
 $logo: "img/beansprouts-icon.png";
@@ -23,6 +23,15 @@ body {
 	font-family: "Helvetica Neue", Arial, sans-serif;
 	font-size: $body-size;
 	display: inline;
+
+	a {
+		text-decoration: none;
+		color: $med-green;
+
+		&:hover {
+			color: $base-green;
+		}
+	}
 }
 
 #wrap {
@@ -76,6 +85,42 @@ body {
 		}
 	}
 
+	.event-details {
+		margin: 0 0 40px 0;
+
+		#location {
+			margin: 0 0 30px 0;
+			font-style: italic;
+		}
+
+		.date {
+			font-size: $h2-size;
+			margin: 0 0 10px 0;
+		}
+
+		.time {
+			font-size: ($h2-size - 4);
+			margin: 0 0 10px 0;
+		}
+
+		.event-edit {
+			margin: 20px 0 0 20px;
+		}
+	}
+
+	.event-activity {
+
+		.event-activity-head {
+			font-size: $h2-size;
+			text-decoration: underline;
+			margin: 0 0 10px 0;
+		}
+
+		.event-activity-edit {
+			margin: 5px 0 15px 20px;
+		}
+	}
+
 	#error {
 		margin: 12px 0 0 0;
 	}
@@ -93,11 +138,6 @@ body {
 		float: right;
 		margin: 2px 30px;
 	}
-
-	#location {
-		font-style: italic;
-		margin: 0 0 30px 0;
-	}
 	
 	.textfield {
 		line-height: 30px;
@@ -107,18 +147,8 @@ body {
 		color: red;
 	}
 
-	.date {
-		font-size: $h2-size;
-		margin: 0 0 10px 0;
-	}
-
-	.time {
-		font-size: ($h2-size - 4);
-		margin: 0 0 10px 0;
-	}
-
 	.formButton {
-		background: $dark-green;
+		background: $med-green;
 		color: $lt-grey;
 		font-size: $body-size;
 		border: none;
