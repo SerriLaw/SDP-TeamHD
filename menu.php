@@ -1,16 +1,8 @@
-<link href='http://fonts.googleapis.com/css?family=Patrick+Hand+SC' rel='stylesheet' type='text/css'>
-<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="view/css/main.min.css">
-<script src="view/js/jquery-1.11.1.min.js"></script>
-<script src="view/js/script.js"></script>
-
-
-
 <div id="nav-bar">
         <span id="ham"><a href="#" onClick="$('.h').toggle()"><i class="fa fa-bars"></i></a></span>
         <ul>
                 <li><a href="/SDP/home.php"><img src="view/img/icon.png" alt="BeanSprouts"><span id="logo">BeanSprouts</span></a></li>
-                <li><a href="/SDP/home.php"><i class="fa fa-tasks"></i> View Events</a></li>
+                <li class="h"><a href="/SDP/home.php"><i class="fa fa-tasks"></i> View Events</a></li>
                 
                 
 
