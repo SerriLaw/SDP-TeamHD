@@ -43,6 +43,16 @@ body {
     @media screen and (max-width: 640px) {
       #wrap #hero {
         width: 100%; } }
+  #wrap .heroname {
+    font-size: 20px; }
+  #wrap .person-data, #wrap .contact, #wrap .system-user-data {
+    margin: 15px 0;
+    line-height: 20px; }
+    #wrap .person-data span, #wrap .contact span, #wrap .system-user-data span {
+      text-decoration: underline; }
+    #wrap .person-data i, #wrap .contact i, #wrap .system-user-data i {
+      margin: 0 5px 0 0;
+      font-size: 16px; }
   #wrap .event-details, #wrap .act-details, #wrap .role-details {
     margin: 0 0 40px 0;
     line-height: 20px; }

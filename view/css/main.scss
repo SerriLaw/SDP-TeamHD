@@ -85,6 +85,25 @@ body {
 		}
 	}
 
+	.heroname {
+		font-size: $h2-size;
+	}
+
+	.person-data, .contact, .system-user-data {
+		margin: 15px 0;
+		line-height: 20px;
+
+		span {
+			text-decoration: underline;
+		}
+
+		i {
+			margin: 0 5px 0 0;
+			font-size: ($body-size + 2);
+		}
+	}
+
+
 	.event-details, .act-details, .role-details {
 		margin: 0 0 40px 0;
 		line-height: 20px;
