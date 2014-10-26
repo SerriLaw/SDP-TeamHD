@@ -1,12 +1,22 @@
 <?php
-	//session_start();
-	include("db.php");
-	$eventID = $_GET['eventid'];
-	$sql = "SELECT * FROM event WHERE eventID = '$eventID'";
-	$result = mysqli_query($db, $sql);
-	$count = mysqli_num_rows($result);
-	$row = array('name' => 'FAILURE');
-	if ($count == 1) {
-		$row = mysqli_fetch_array($result,MYSQLI_ASSOC);
-	}
+
+    function getAct($act)
+    {
+        $actList = array();
+        $sql = "SELECT * FROM activity where eventID =".$act;
+        $q = $bdd->prepare($sql);
+        $q->execute();
+        while ($data = $q-> fetch(PDO::FETCH_ASSOC))
+        {
+            $actID = $data['activityID'];
+            $name = $data['name'];
+        }
+    }
+
+    $e = $_GET['id'];
+        $sql = "SELECT * FROM event where eventID = ".$e;
+        $q = $bdd->prepare($sql);
+        $q->execute(array($e));
+        $row = $q->fetch();
+        
 ?>

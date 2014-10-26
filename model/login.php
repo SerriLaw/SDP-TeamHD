@@ -1,5 +1,6 @@
 <?php
 	session_start(); // start a session between the website and our user
+	error_reporting(0);
 	include("db.php"); // grab the database
 	//if username and password accepted in the form
 	if(isset($_POST['username']) && isset($_POST['password']))
@@ -20,6 +21,7 @@
 			echo("SUCCESS");
 		}else{
 			echo("FAILURE");
+
 			session_destroy();
 		}
 	}
