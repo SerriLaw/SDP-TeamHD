@@ -8,7 +8,9 @@
     if(!mysqli_query($db, $sql))
     {
         echo($sql);
+        header('location: '. $_SERVER['HTTP_REFERER']);
         die();
     }
     echo("SUCCESS");
+    header('location: '. $_SERVER['HTTP_REFERER']);
  ?>

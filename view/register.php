@@ -46,7 +46,7 @@
 				else if (data == "FAILURE") {
 					$("#error").html("<span style='color:#cc0000'>Error:</span> Internal Sever Error");
 				}else{
-					window.location.href = "/SDP/view/login.php";
+					window.location.href = "/SDP/login.php";
 				}
 			
 			}

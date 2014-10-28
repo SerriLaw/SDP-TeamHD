@@ -25,10 +25,11 @@
 			$qry = mysqli_query($db,$sql2);
 			$result=mysqli_fetch_array($qry,MYSQLI_ASSOC);
 			$roleID = implode(" ", $result);
-			$sql1 = "INSERT INTO roleHours (roleID, date, startTime, endTime) VALUES ('$roleID','$date', '$startTime', '$endTime')";
+			$sql1 = "INSERT INTO rolehours (roleID, date, startTime, endTime) VALUES ('$roleID','$date', '$startTime', '$endTime')";
 			if (!mysqli_query($db,$sql1)) 
 			{
 				echo("SQLFAILURE1");
+				echo(mysqli_error($db));
 			}
 			else
 			{

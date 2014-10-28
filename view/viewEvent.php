@@ -87,10 +87,7 @@
 					<a id="deleteEvent" href="/SDP/model/deleteEventCheck.php?eventid=<?php echo($row['eventID']); ?>"><i class="fa fa-trash-o"></i> Delete Event</a><br>
 					<div id="deleteEventMessage"></div>
 					<?php } ?>
-					<?php if(!empty($_SESSION))if($_SESSION['userType'] == 0 || $_SESSION['userType'] == 1 ){ ?>
-					<a href="/SDP/createEvents.php">Register</a>
-					<?php } 
-					?>
+					
 				</div>
 			</div>
         
