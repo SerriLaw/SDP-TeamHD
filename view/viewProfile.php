@@ -2,7 +2,7 @@
 	<head>
 		<title>BeanSprouts - Profile</title>
 		<link href='http://fonts.googleapis.com/css?family=Patrick+Hand+SC' rel='stylesheet' type='text/css'>
-		<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+		<link href="view/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 		<link rel="stylesheet" type="text/css" href="view/css/main.min.css">
 		<link rel="icon" type="image/png" href="view/img/icon.png">
 		<script src="view/js/jquery-1.11.1.min.js"></script>
@@ -106,7 +106,13 @@
 				}
 			?>
 			</div>
+			<div class="footer">
+				<img src="view/img/image-green.png" alt="BeanSprouts Footer">
+				<br>
+				<i class="fa fa-copyright"></i> BeanSprouts 2014
+			</div>
 		</div>
+
 
 	</body>
 </html>

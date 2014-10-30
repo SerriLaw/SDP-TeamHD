@@ -1,4 +1,5 @@
 function dateFormat(param) {
+
 	var htmlDate = $(param).html().split("-");
     var month = (htmlDate[1] - 1);
     var date = new Date(htmlDate[0], month, htmlDate[2]);

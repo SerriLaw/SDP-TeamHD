@@ -2,7 +2,7 @@
 	<head>
 		<title>BeanSprouts - Login</title>
 		<link href='http://fonts.googleapis.com/css?family=Patrick+Hand+SC' rel='stylesheet' type='text/css'>
-		<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+		<link href="view/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 		<link rel="stylesheet" type="text/css" href="view/css/main.min.css">
 		<link rel="icon" type="image/png" href="view/img/icon.png">
 		<script src="view/js/jquery-1.11.1.min.js"></script>
@@ -38,7 +38,7 @@
 										$("#error").html("<span style='color:#cc0000'>Error:</span> Invalid username and password. ");
 									}else if (data.indexOf("SUCCESS") > -1)
 									{
-									
+										$("#error").html("<span style='color:#cc0000'>YAY. ");
 										$("#login").val('Please wait ...');
 										console.log("about to redirect");
 										window.location.href = "home.php"; //urled
@@ -79,6 +79,12 @@
 			<input type="submit" value="Login" id="login" class="formButton">
 			<div id="error"></div>
 			</form>
+			<div class="footer">
+				<img src="view/img/image-green.png" alt="BeanSprouts Footer">
+				<br>
+				<i class="fa fa-copyright"></i> BeanSprouts 2014
+			</div>
 		</div>
+
 	</body>
 </html>

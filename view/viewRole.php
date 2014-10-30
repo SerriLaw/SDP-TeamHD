@@ -2,7 +2,7 @@
 	<head>
 		<title>BeanSprouts - View Role</title>
 		<link href='http://fonts.googleapis.com/css?family=Patrick+Hand+SC' rel='stylesheet' type='text/css'>
-		<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+		<link href="view/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 		<link rel="stylesheet" type="text/css" href="view/css/main.min.css">
 		<link rel="icon" type="image/png" href="view/img/icon.png">
 		<script src="view/js/jquery-1.11.1.min.js"></script>
@@ -112,7 +112,7 @@
 							$sql4 = "SELECT firstName, lastName FROM user WHERE userID = " . $row3['userID'];
 							$result4 = mysqli_query($db, $sql4);
 							$row4 = mysqli_fetch_array($result4,MYSQLI_ASSOC);
-							echo $row3['userID'] . " " .$row4['firstName'] . " " . $row4['lastName'] . " Date Submitted " . $row3['dateSubmitted'] . " <a href = \"/SDP/model/approve.php?appid=".$row3['userID']."&roleid=".$row['roleID']."\">Approve</a>" ." - <a href = \"/SDP/model/ignore.php?appid=".$row3['userID']."&roleid=".$row['roleID']."\">Ignore</a><br>";
+							echo $row3['userID'] . " " .$row4['firstName'] . " " . $row4['lastName'] . " Date Submitted " . $row3['dateSubmitted'] . " <a href = \"/SDP/model/approve.php?appid=".$row3['userID']."&roleid=".$row1['roleID']."\">Approve</a>" ." - <a href = \"/SDP/model/ignore.php?appid=".$row3['userID']."&roleid=".$row1['roleID']."\">Ignore</a><br>";
 						}
 		                
 		                echo("<div class=\"role-applicant-head\">Approve List</div>");
@@ -124,31 +124,26 @@
 							$sql4 = "SELECT firstName, lastName FROM user WHERE userID = " . $row3['userID'];
 							$result4 = mysqli_query($db, $sql4);
 							$row4 = mysqli_fetch_array($result4,MYSQLI_ASSOC);
-							echo $row3['userID'] . " " .$row4['firstName'] . " " . $row4['lastName'] . " Date Submitted " . $row3['dateSubmitted'] . " <a href = \"/SDP/model/deAllocate.php?appid=".$row3['userID']."&roleid=".$row['roleID']."\">De-Allocate</a>";
+							echo $row3['userID'] . " " .$row4['firstName'] . " " . $row4['lastName'] . " Date Submitted " . $row3['dateSubmitted'] . " <a href = \"/SDP/model/deAllocate.php?appid=".$row3['userID']."&roleid=".$row1['roleID']."\">De-Allocate</a>";
 						}
 		                
 					}
-					if($_SESSION['userType'] < 2 && !empty($_SESSION))
+					elseif ($row['isPaid'] == 1 && $_SESSION['userType'] == 1) //the role is paid and the user is a sprout 
 					{
-					$sql5 = "select * from application where roleID =" . $row['roleID']. " AND userID = " . $_SESSION['userID'];
-					$result = mysqli_query($db, $sql5);
-					$count=mysqli_num_rows($result);
+						echo("<a href = \"/SDP/model/applyRole.php?roleid=" . $row['roleID'] . "\"> Apply </a> ");
 					}
-					if ($row['isPaid'] == 1 && $_SESSION['userType'] == 1 && $count == 0 && !empty($_SESSION)) //the role is paid and the user is a sprout 
+					elseif ($row['isPaid'] == 0 && $_SESSION['userType'] < 2) //the role is non-paid and the user is a sprout or volunteer 
 					{
-						echo("<a href = \"/SDP/model/applyRole.php?roleid=" . $row['roleID'] . "\"> Apply</a> ");
-					}
-					elseif ($row['isPaid'] == 0 && $_SESSION['userType'] < 2 && $count == 0 &&!empty($_SESSION)) //the role is non-paid and the user is a sprout or volunteer 
-					{
-						echo("<a href = \"/SDP/model/applyRole.php?roleid=" . $row['roleID'] . "\"> Apply</a> ");
-					}
-					elseif($_SESSION['userType'] < 2 && count == 1 && !empty($_SESSION))
-					{
-						echo("You have applied for this role");
+						echo("<a href = \"/SDP/model/applyRole.php?roleid=" . $row['roleID'] . "\"> Apply </a> ");
 					}
 				?>
 			</div>
-
+			<div class="footer">
+				<img src="view/img/image-green.png" alt="BeanSprouts Footer">
+				<br>
+				<i class="fa fa-copyright"></i> BeanSprouts 2014
+			</div>
 		</div>
+
 	</body>
 </html>

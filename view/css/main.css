@@ -11,7 +11,7 @@ body {
 
 #wrap {
   width: 80%;
-  margin: 20px auto 80px auto; }
+  margin: 20px auto 40px auto; }
   @media screen and (max-width: 1000px) {
     #wrap {
       width: 90%; } }
@@ -59,6 +59,14 @@ body {
     @media screen and (max-width: 650px) {
       #wrap #hero {
         width: 100%; } }
+  #wrap .footer {
+    text-align: center;
+    margin-top: 40px;
+    line-height: 30px; }
+    #wrap .footer img {
+      opacity: 0.3;
+      height: 34px;
+      width: 50%; }
   #wrap .event-block-stream {
     text-align: center; }
     #wrap .event-block-stream .event-block {

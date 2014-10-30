@@ -8,7 +8,7 @@
 	if ($count == 1) 
 	{
 		$row = mysqli_fetch_array($result,MYSQLI_ASSOC);
-		$sql1 = "SELECT * FROM rolehours WHERE roleID = '$roleID';";
+		$sql1 = "SELECT * FROM roleHours WHERE roleID = '$roleID';";
 		$result1 = mysqli_query($db, $sql1);
 		$count1 = mysqli_num_rows($result);
 		$row1 = array('name' => 'FAILURE');
