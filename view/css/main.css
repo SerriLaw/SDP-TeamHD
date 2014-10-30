@@ -12,6 +12,9 @@ body {
 #wrap {
   width: 80%;
   margin: 20px auto 80px auto; }
+  @media screen and (max-width: 1000px) {
+    #wrap {
+      width: 90%; } }
   #wrap .input {
     line-height: 20px;
     margin: 5px;
@@ -49,11 +52,11 @@ body {
       margin: 0 auto;
       background-color: rgba(240, 240, 240, 0.7);
       line-height: 50px; }
-      @media screen and (max-width: 640px) {
+      @media screen and (max-width: 650px) {
         #wrap #hero #name {
           font-size: 18px;
           line-height: none; } }
-    @media screen and (max-width: 640px) {
+    @media screen and (max-width: 650px) {
       #wrap #hero {
         width: 100%; } }
   #wrap .event-block-stream {
@@ -62,9 +65,9 @@ body {
       border: 2px solid;
       border-radius: 10px;
       border-color: rgba(96, 186, 64, 0.2);
-      margin: 30px;
+      margin: 20px;
       max-width: 400px;
-      width: 25%;
+      width: 24%;
       min-height: 150px;
       max-height: 400px;
       display: inline-block;
@@ -83,13 +86,19 @@ body {
         background-color: #F6F6F6; }
         #wrap .event-block-stream .event-block:hover .event-block-name, #wrap .event-block-stream .event-block:hover .event-block-desc, #wrap .event-block-stream .event-block:hover .event-block-date {
           color: #60ba40; }
-      @media screen and (max-width: 1100px) {
+      @media screen and (max-width: 1000px) {
+        #wrap .event-block-stream .event-block {
+          margin: 15px;
+          width: 90%;
+          max-width: 300px;
+          min-height: 100px; } }
+      @media screen and (max-width: 768px) {
         #wrap .event-block-stream .event-block {
           margin: 15px;
           width: 90%;
           max-width: 500px;
           min-height: 100px; } }
-      @media screen and (max-width: 640px) {
+      @media screen and (max-width: 650px) {
         #wrap .event-block-stream .event-block {
           max-width: 600px;
           width: 90%;
@@ -187,7 +196,7 @@ body {
     border-top-color: #60ba40; }
   #nav-bar #ham {
     display: none; }
-  @media screen and (max-width: 640px) {
+  @media screen and (max-width: 650px) {
     #nav-bar li {
       display: block;
       padding: 5px; }
