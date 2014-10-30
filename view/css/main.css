@@ -15,16 +15,19 @@ body {
   @media screen and (max-width: 1000px) {
     #wrap {
       width: 90%; } }
+  #wrap .label {
+    width: 120px;
+    font-size: 14px; }
   #wrap .input {
+    font-size: 14px;
     line-height: 20px;
-    margin: 5px;
     width: 400px;
     vertical-align: top;
     position: relative;
     display: block; }
     #wrap .input .textbox {
       width: 250px;
-      margin: 0 0 0 20px; }
+      font-size: 14px; }
     #wrap .input .formButton {
       width: 120px;
       margin: 20px 100px; }
@@ -116,8 +119,11 @@ body {
   #wrap .heroname {
     font-size: 20px;
     margin: 20px 0; }
+  #wrap .person-name {
+    font-size: 20px;
+    margin: 20px 15%; }
   #wrap .person-data, #wrap .contact, #wrap .system-user-data {
-    margin: 15px 0;
+    margin: 15px 15%;
     line-height: 20px; }
     #wrap .person-data span, #wrap .contact span, #wrap .system-user-data span {
       text-decoration: underline; }
@@ -150,7 +156,8 @@ body {
   #wrap .event-activity .event-activity-edit, #wrap .role-applicant .event-activity-edit {
     margin: 5px 0 15px 0; }
   #wrap #error {
-    margin: 12px 0 0 0; }
+    margin: 12px 0;
+    color: red; }
   #wrap #bigbean, #wrap #bigbeantext {
     height: 90px;
     position: relative;

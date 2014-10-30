@@ -67,14 +67,40 @@
 
 		<div id="wrap">
 		<div class="heroname">Add New Event</div>
+		<div id="error"></div>
 			<form action="" method="post">
-				<div class="input">Event Name <input type="text" id="name" class="textbox" placeholder="e.g. UTS Open Day"></div>
-				<div class="input">Event Description <textarea id="description" class="textbox" placeholder="e.g. This is a fun event!"></textarea></div>
-				<div class="input">Event Start Date <input type="date" id ="startDate"></div>
-				<div class="input">Event End Date <input type="date" id ="endDate"></div>
-				<div class="input">Event Location <input type="text" id="location" class="textbox" placeholder="e.g. UTS City Campus"></div>
-				<div class="input"><input type="submit" value="Create Event" id="createEvent" class="formButton"></div>
-				<div id="error"></div>
+				<table>
+					<tr class="input">
+						<td class="label">Event Name</td>
+						<td class="field"><input type="text" id="name" class="textbox" placeholder="e.g. UTS Open Day"></td>
+					</tr>
+					<tr class="input">
+						<td class="label">Description</td>
+						<td class="field"><textarea id="description" class="textbox" placeholder="e.g. This is a fun event!"></textarea></td>
+					</tr>
+					<tr class="input">
+						<td class="label">Start Date</td>
+						<td class="field"><input type="date" id ="startDate"></td>
+					</tr>
+					<tr class="input">
+						<td class="label">End Date</td>
+						<td class="field"><input type="date" id ="endDate"></td>
+					</tr>
+
+
+					<tr class="input">
+						<td class="label">Location</td>
+						<td class="field"><input type="text" id="location" class="textbox" placeholder="e.g. UTS City Campus"></td>
+					</tr>
+					
+					<tr class="input">
+						<td colspan="2"><input type="submit" value="Create Event" id="createEvent" class="formButton"></td>
+					</tr>
+					
+					
+				</table>
+
+
 			</form>
 			<div class="footer">
 				<img src="view/img/image-green.png" alt="BeanSprouts Footer">

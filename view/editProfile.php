@@ -86,38 +86,109 @@
         <?php include("menu.php"); ?>
         <div id="wrap">
 		<div class="heroname">Edit Profile</div>
+		<div id="error"></div>
 			<form action="" method="post">
-				User ID: <div id="userID"><?php echo($row['userID']); ?></div> <br>
-				First Name: <input type="text" id="firstName" value="<?php echo($row['firstName']) ?>"> <br>
-				Last Name: <input type="text" id="lastName" value="<?php echo($row['lastName']) ?>"> <br>
-				Email Address: <input type="text" id="email" value="<?php echo($row['email']) ?>"> <br>
-				Phone Number: <input type="text" id="phone" value="<?php echo($row['phone']) ?>"> <br>
-				Password: <input type="password" id="password" value="<?php echo($row['password']) ?>"> <br>
-				Date of Birth: <input type="date" id="dateOfBirth" value="<?php echo($row['DOB']) ?>"> <br>
-				Gender: <br>
-				<input type="radio" name="gender" value="m" <?php if($row['gender'] == "m"){echo('checked="checked"');} ?>> Male <br>
-				<input type="radio" name="gender" value="f" <?php if($row['gender'] == "f"){echo('checked="checked"');} ?>> Female <br>
-				<?php if($row['userType'] < 2){?>
-				Course: <select id="courseID">
-							<?php 
-								$sql5 = "SELECT * FROM course";
-								$result5 = mysqli_query($db, $sql5);
-								while($row5 = mysqli_fetch_array($result5))
-								{
-									echo "<option value=\"" . $row5['courseID'] . "\">" . $row5['name'] . "</option>";
-								}
+				<table>
+					<tr class="input">
+						<td class="label">User ID</td>
+						<td class="field"><div id="userID"><?php echo($row['userID']); ?></div></td>
+					</tr>
+					<tr class="input">
+						<td class="label">First Name</td>
+						<td class="field"><input type="text" id="firstName" class="textbox" value="<?php echo($row['firstName']) ?>"></td>
+					</tr>
+					<tr class="input">
+						<td class="label">Last Name</td>
+						<td class="field"><input type="text" id="lastName" class="textbox" value="<?php echo($row['lastName']) ?>"></td>
+					</tr>
+					<tr class="input">
+						<td class="label">Email</td>
+						<td class="field"><input type="text" id="email" class="textbox" value="<?php echo($row['email']) ?>"></td>
+					</tr>
 
-							?>
-						</select> <br>
-				Skills: <textarea id="skills"><?php echo($row['skills']); ?></textarea> <br>
-				Experience: <textarea id="experience"><?php echo($row['experience']) ;?></textarea> <br> <br>
-				<?php } ?>
-				<?php if($row['userType'] > 1){?>
-				Department: <input type="text" id="department" value="<?php echo($row['department']) ?>"> <br>
-				Role: <input type="text" id="role" value="<?php echo($row['role']) ?>"> <br>
-				<?php }?>
-				<div class="input"><input type="submit" value="Save Profile" id="editProfile" class="formButton"></div>
-				<div id="error"></div>
+
+					<tr class="input">
+						<td class="label">Phone Number</td>
+						<td class="field"><input type="text" id="phone" class="textbox" value="<?php echo($row['phone']) ?>"></td>
+					</tr>
+
+					<tr class="input">
+						<td class="label">Password</td>
+						<td class="field"><input type="password" id="password" class="textbox" value="<?php echo($row['password']) ?>"></td>
+					</tr>
+
+					<tr class="input">
+						<td class="label">Date of Birth</td>
+						<td class="field"><input type="date" id="dateOfBirth" value="<?php echo($row['DOB']) ?>"></td>
+					</tr>
+
+					<tr class="input">
+						<td class="label">Gender</td>
+						<td class="field">
+							<input type="radio" name="gender" value="m" <?php if($row['gender'] == "m"){echo('checked="checked"');} ?>> Male <br>
+							<input type="radio" name="gender" value="f" <?php if($row['gender'] == "f"){echo('checked="checked"');} ?>> Female 
+						</td>
+					</tr>
+					<?php if($row['userType'] < 2){?>
+					<tr class="input">
+						<td class="label">Course</td>
+						<td class="field">
+							<select id="courseID">
+								<?php 
+									$sql5 = "SELECT * FROM course";
+									$result5 = mysqli_query($db, $sql5);
+									while($row5 = mysqli_fetch_array($result5))
+									{
+										echo "<option value=\"" . $row5['courseID'] . "\">" . $row5['name'] . "</option>";
+									}
+
+								?>
+							</select>
+						</td>
+					</tr>
+
+					<tr class="input">
+						<td class="label">Skills</td>
+						<td class="field"><textarea id="skills"><?php echo($row['skills']); ?></textarea></td>
+					</tr>
+
+					<tr class="input">
+						<td class="label">Experience</td>
+						<td class="field"><textarea id="experience"><?php echo($row['experience']) ;?></textarea></td>
+					</tr>
+					<?php } ?>
+
+
+					<?php if($row['userType'] > 1){?>
+					<tr class="input">
+						<td class="label">Department</td>
+						<td class="field"><input type="text" id="department" class="textbox"  value="<?php echo($row['department']) ?>"></td>
+					</tr>
+
+					<tr class="input">
+						<td class="label">Role</td>
+						<td class="field"><input type="text" id="role" class="textbox"  value="<?php echo($row['role']) ?>"></td>
+					</tr>
+					<?php }?>
+					
+					<tr class="input">
+						<td colspan="2"><input type="submit" value="Save Profile" id="editProfile" class="formButton"></td>
+					</tr>
+					
+					
+				</table>
+
+
+
+
+
+
+
+
+				
+				
+				
+			
 			</form>
 			<div class="footer">
 				<img src="view/img/image-green.png" alt="BeanSprouts Footer">

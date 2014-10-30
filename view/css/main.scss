@@ -45,10 +45,14 @@ body {
 		width: 90%;
 	}
 
-	.input {
+	.label {
+		width: 120px;
+		font-size: $body-size;
+	}
 
+	.input {
+		font-size: $body-size;
 		line-height: 20px;
-		margin: 5px;
 		width: 400px;
 		
 		vertical-align: top;
@@ -57,7 +61,7 @@ body {
 
 		.textbox {
 			width: 250px;
-			margin: 0 0 0 20px;
+			font-size: $body-size;
 		}
 		
 		.formButton {
@@ -206,8 +210,13 @@ body {
 		margin: 20px 0;
 	}
 
+	.person-name {
+		font-size: $h2-size;
+		margin: 20px 15%;
+	}
+
 	.person-data, .contact, .system-user-data {
-		margin: 15px 0;
+		margin: 15px 15%;
 		line-height: 20px;
 
 		span {
@@ -268,7 +277,8 @@ body {
 	}
 
 	#error {
-		margin: 12px 0 0 0;
+		margin: 12px 0;
+		color: red;
 	}
 
 	#bigbean, #bigbeantext {

@@ -72,21 +72,49 @@
 
         <div id="wrap">
 			<div class="heroname">Add New Activity</div>
-			<form action="" method="post">
-				<div class="input">Activity Name <input type="text" id="name" class="textbox" placeholder="e.g. FEIT Stall"></div>
-				<div class="input">Activity Description <textarea id="description" class="textbox" placeholder="e.g. This is a fun activity!"></textarea></div>
-				<div class="input">Activity Start Date <input type="date" id ="startDate"></div>
-				<div class="input">Activity End Date <input type="date" id ="endDate"></div>
-				
-				<div class="input">Activity Location <input type="text" id="location" class="textbox" placeholder="e.g. CB 11.4.400"></div>
-				<div class="input">Activity Start Time<input type="text" class="textbox" id="startTime"> (Format 0000)</div>
-				<div class="input">Activity End Time<input type="text" class="textbox" id="endTime"> (Format 0000)</div>
+			<div id="error"></div>
 
+			<form action="" method="post">
+
+				<table>
+					<tr class="input">
+						<td class="label">Activity Name</td>
+						<td class="field"><input type="text" id="name" class="textbox" placeholder="e.g. FEIT Stall"></td>
+					</tr>
+					<tr class="input">
+						<td class="label">Description</td>
+						<td class="field"><textarea id="description" class="textbox" placeholder="e.g. This is a fun activity!"></textarea></td>
+					</tr>
+					<tr class="input">
+						<td class="label">Start Date</td>
+						<td class="field"><input type="date" id ="startDate"></td>
+					</tr>
+					<tr class="input">
+						<td class="label">End Date</td>
+						<td class="field"><input type="date" id ="endDate"></td>
+					</tr>
+
+
+					<tr class="input">
+						<td class="label">Location</td>
+						<td class="field"><input type="text" id="location" class="textbox" placeholder="e.g. CB 11.4.400"></td>
+					</tr>
+					<tr class="input">
+						<td class="label">Start Time</td>
+						<td class="field"><input type="text" class="textbox" id="startTime"> (Format 0000)</td>
+					</tr>
+					<tr class="input">
+						<td class="label">End Time</td>
+						<td class="field"><input type="text" class="textbox" id="endTime"> (Format 0000)</td>
+					</tr>
+					<tr class="input">
+						<td colspan="2"><input type="submit" value="Create Activity" id="createActivity" class="formButton"></td>
+					</tr>
+					
+					
+				</table>
+	
 				
-				
-				
-				<div class="input"><input type="submit" value="Create Activity" id="createActivity" class="formButton"></div>
-				<div id="error"></div>
 			</form>
 			<div class="footer">
 		    	<img src="view/img/image-green.png" alt="BeanSprouts Footer">

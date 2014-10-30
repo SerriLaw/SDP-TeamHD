@@ -61,7 +61,7 @@
 	<body>
         <?php include("menu.php"); ?>
         <div id="wrap">
-			<div class="heroname"><?php echo($row['firstName']); ?> <?php echo($row['lastName']); ?></div>
+			<div class="person-name"><?php echo($row['firstName']); ?> <?php echo($row['lastName']); ?></div>
 			<div class="person-data">
 				<span><?php echo($row['firstName']); ?>'s Details</span>
 				<div id="firstName">First Name: <?php echo($row['firstName']); ?></div>

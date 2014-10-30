@@ -71,21 +71,55 @@
 	<body>
         <?php include("menu.php"); ?>
 		<div id="wrap">
+			<div class="heroname">Add New Role</div>
+			<div id="error"></div>
 		
 			<form action="" method="post">
-				Role Name: <input type="text" id="name"> <br>
-				Paid: <br>
-				<input type="radio" name="isPaid" value="1"> Yes <br>
-				<input type="radio" name="isPaid" value="0"> No <br>
-				Rate/Hour: <input type="text" id ="rate"> (If "No" then leave blank) <br>
-				Role Desc: <textarea id="description"></textarea> <br>
-				Requirements: <textarea id="requirements"></textarea> <br>
-				Date: <input type="date" id ="date"> <br>
-				Start Time: <input type="text" id="startTime"> (Format 0000) <br>
-				End Time: <input type="text" id="endTime"> (Format 0000)<br>
+
+				<table>
+					<tr class="input">
+						<td class="label">Role Name</td>
+						<td class="field"><input type="text" id="name" class="textbox" placeholder="e.g. Tour Guide"></td>
+					</tr>
+					<tr class="input">
+						<td class="label">Description</td>
+						<td class="field"><textarea id="description" class="textbox" placeholder="e.g. This is a fun role!"></textarea></td>
+					</tr>
+					<tr class="input">
+						<td class="label">Requirements</td>
+						<td class="field"><textarea id="requirements" class="textbox" placeholder="e.g. Good speaking skills"></textarea></td>
+					</tr>
+					<tr class="input">
+						<td class="label">Date</td>
+						<td class="field"><input type="date" id ="endDate"></td>
+					</tr>
+
+
+					<tr class="input">
+						<td class="label">Paid</td>
+						<td class="field">
+							<input type="radio" name="isPaid" value="1"> Yes <br>
+							<input type="radio" name="isPaid" value="0"> No
+						</td>
+					</tr>
+					<tr class="input">
+						<td class="label">Start Time</td>
+						<td class="field"><input type="text" class="textbox" id="startTime"> (Format 0000)</td>
+					</tr>
+					<tr class="input">
+						<td class="label">End Time</td>
+						<td class="field"><input type="text" class="textbox" id="endTime"> (Format 0000)</td>
+					</tr>
+					<tr class="input">
+						<td colspan="2"><input type="submit" value="Create Role" id="createRole" class="formButton"></td>
+					</tr>
+					
+					
+				</table>
+
+				<!-- Rate/Hour: <input type="text" id ="rate"> (If "No" then leave blank) <br> -->
+			
 				
-				<div class="input"><input type="submit" value="Create Role" id="createRole" class="formButton"></div>
-				<div id="error"></div>
 			</form>
 			<div class="footer">
 				<img src="view/img/image-green.png" alt="BeanSprouts Footer">
