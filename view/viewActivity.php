@@ -82,7 +82,7 @@
 					<?php 
 			        //MODIFY THE LINK FOR DELETE,UPDATE, & REGISTER USING AJAX
 			        if(!empty($_SESSION))
-			        if($_SESSION['userType'] == 2){ ?>
+			        if($_SESSION['userType'] > 1){ ?>
 
 			    	<a href="/SDP/updateActivity.php?activityid=<?php echo($row['activityID']); ?>"><i class="fa fa-pencil-square-o"></i> Edit Activity</a><br>
 			        <a id="deleteActivity" href="/SDP/model/deleteActivityCheck.php?activityid=<?php echo($row['activityID']); ?>"><i class="fa fa-trash-o"></i> Delete Activity</a>

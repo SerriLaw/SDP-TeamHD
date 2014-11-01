@@ -14,8 +14,8 @@
 			$('#deleteProfile').click(function(event)
 			{
 			event.preventDefault();
-			var userID=$("#userID").text();
-			var userType=<?php echo $_SESSION['userID'] ?>;
+			var userID= <?php echo($row['userID']); ?>;
+			var userType=<?php echo $row['userType'] ?>;
 
 			var dataString = 'userID='+userID+'&userType='+userType;
 			console.log(dataString);
@@ -31,15 +31,15 @@
 			success: function(data){
 			if(data)
 			{
-				if(data == "SQLFAILURE"){
+				if(data.indexOf("SQLFAILURE") > -1){
 					$("#error").html("<span style='color:#cc0000'>Error:</span> Internal Error. ");
 				}
-				else if (data == "FAILURE") {
+				else if (data.indexOf("FAILURE") > -1) {
 					$("#error").html("<span style='color:#cc0000'>Error:</span> Internal Error.");
-				}else if (data == "CURRENT") {
+				}else if (data.indexOf("CURRENT") > -1) {
 					$("#error").html("<span style='color:#cc0000'>Error:</span> The user is involved with a current event.");
-				}else if (data == "SUCCESS") {
-					$("#deleteActivityMessage").html("<span style='color:#cc0000'>Warning:</span> Are you sure you want to procede? <a href='/SDP/model/deleteProfile.php?userid="+userID+ "&userType=" +userType "'>DELETE</a>");
+				}else if (data.indexOf("SUCCESS") > -1) {
+					$("#error").html("<span style='color:#cc0000'>Warning:</span> Are you sure you want to procede? <a href='/SDP/model/deleteProfile.php?userid="+userID+ "&usertype=" +userType+ "'>DELETE</a>");
 				}
 			
 			}
@@ -102,9 +102,10 @@
 				if($row['userID'] == $_SESSION['userID'] || $_SESSION['userID'] > 2)
 				{
 					echo('<a href="/SDP/editProfile.php?userid=' . $row['userID'] . '&usertype=' . $row['userType'] .'"><i class="fa fa-pencil-square-o"></i> Edit Profile</a><br>');
-					echo('<a href="/SDP/model/deleteProfile.php"><i class="fa fa-trash-o"></i> Delete Profile</a><br>');
+					echo('<a id="deleteProfile" href="/SDP/model/deleteProfile.php"><i class="fa fa-trash-o"></i> Delete Profile</a><br>');
 				}
 			?>
+			<div id="error"></div>
 			</div>
 			<div class="footer">
 				<img src="view/img/image-green.png" alt="BeanSprouts Footer">

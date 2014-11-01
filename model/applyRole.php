@@ -11,4 +11,5 @@
         die();
     }
     echo("SUCCESS");
+    header('location: '. $_SERVER['HTTP_REFERER']);
  ?>

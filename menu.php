@@ -9,9 +9,8 @@
 
 
                 <?php if(isset($_SESSION['userType'])){ ?>
-                        <li class="h"><a href="/SDP/viewProfile.php"><i class="fa fa-user"></i> View Profile</a></li>
-
-                        <?php if(isset($_SESSION['userType']) && ($_SESSION['userType'] == 2)){ ?>
+                        <li class="h"><?php echo("<a href=\"/SDP/viewProfile.php?userid=".$_SESSION['userID'])."\">" ; ?><i class="fa fa-user"></i> View Profile</a></li>
+                        <?php if(isset($_SESSION['userType']) && ($_SESSION['userType'] > 1)){ ?>
                                 <li class="h"><a href="/SDP/createEvent.php"><i class="fa fa-plus"></i> Add Events</a></li>
 
                         <?php } ?>

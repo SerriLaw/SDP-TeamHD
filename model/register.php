@@ -27,7 +27,7 @@
 		{
 			echo("EXISTS");			
 		}
-		elseif (!mysqli_query($db,$sql) || !mysqli_query($db,$sql))
+		elseif (!mysqli_query($db,$sql) || !mysqli_query($db,$sql1))
 		{
 			echo("FAILURE");
 			echo mysqli_errno($db) . ": " . mysqli_error($db) . "\n";
@@ -35,6 +35,8 @@
 		else
 		{
 			echo("SUCCESS");
+			echo($sql);
+			echo($sql1);
 		}
 	}
 ?>

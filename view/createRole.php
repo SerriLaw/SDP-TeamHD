@@ -19,19 +19,20 @@
 			var isPaid=$('input:radio[name=isPaid]:checked').val();
 			var description=$("#description").val();
 			var requirements=$("#requirements").val();
-			var rate=$("#rate").val();
 			var activityID=<?php echo($_GET['activityid'])?>;
-			var date=$("#date").val();
+			var startDate=$("#startDate").val();
+			var endDate=$("#endDate").val();
 			var startTime=$("#startTime").val();
 			var endTime=$("#endTime").val();
 
 			var managerid=<?php echo($_SESSION['userID']); ?>;
 
-			var dataString = 'name='+name+'&isPaid='+isPaid+'&description='+description+"&requirements="+requirements+"&rate="+rate+"&activityID="+activityID+"&date="+date+"&startTime="+startTime+"&endTime="+endTime;
+			var dataString = 'name='+name+'&isPaid='+isPaid+'&description='+description+"&requirements="+requirements+"&activityID="+activityID+"&startDate="+startDate+"&endDate="+endDate+"&startTime="+startTime+"&endTime="+endTime;
 			console.log(dataString);
-			if($.trim(name).length>0 && $.trim(isPaid).length>0 && $.trim(description).length>0 && $.trim(requirements).length>0 && $.trim(activityID).length>0 && $.trim(date).length>0 && $.trim(startTime).length>0 && $.trim(endTime).length>0)
+			if($.trim(name).length>0 && $.trim(isPaid).length>0 && $.trim(description).length>0 && $.trim(requirements).length>0 && $.trim(activityID).length>0 && $.trim(startDate).length>0 && $.trim(endDate).length>0 && $.trim(startTime).length>0 && $.trim(endTime).length>0)
 			{
 			console.log("fire");
+			console.log($.trim(name).length>0 && $.trim(isPaid).length>0 && $.trim(description).length>0 && $.trim(requirements).length>0 && $.trim(activityID).length>0 && $.trim(startDate).length>0 && $.trim(endDate).length>0 && $.trim(startTime).length>0 && $.trim(endTime).length>0);
 			$.ajax({
 			type: "POST",
 			url: "/SDP/model/createRole.php",
@@ -59,6 +60,7 @@
 			}
 			else
 			{
+			console.log($.trim(name).length>0 && $.trim(isPaid).length>0 && $.trim(description).length>0 && $.trim(requirements).length>0);
 			$("#createRole").val('Create Role');
 			$("#error").html("<span style='color:#cc0000'>Error:</span> Please fill in the above form.");
 			}
@@ -90,7 +92,11 @@
 						<td class="field"><textarea id="requirements" class="textbox" placeholder="e.g. Good speaking skills"></textarea></td>
 					</tr>
 					<tr class="input">
-						<td class="label">Date</td>
+						<td class="label">Start Date</td>
+						<td class="field"><input type="date" id ="startDate"></td>
+					</tr>
+					<tr class="input">
+						<td class="label">End Date</td>
 						<td class="field"><input type="date" id ="endDate"></td>
 					</tr>
 

@@ -38,7 +38,6 @@
 										$("#error").html("<span style='color:#cc0000'>Error:</span> Invalid username and password. ");
 									}else if (data.indexOf("SUCCESS") > -1)
 									{
-										$("#error").html("<span style='color:#cc0000'>YAY. ");
 										$("#login").val('Please wait ...');
 										console.log("about to redirect");
 										window.location.href = "home.php"; //urled

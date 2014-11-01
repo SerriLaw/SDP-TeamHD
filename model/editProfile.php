@@ -36,6 +36,7 @@
 		else
 		{
 			echo("SUCCESS");
+			echo($sql);
 		}
 
 	}

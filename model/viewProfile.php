@@ -1,25 +1,38 @@
 <?php
 	include("db.php");
-	//edit fix
-	if(!empty($_GET['userid']) && $_GET['userid'] == $_SESSION['userID'])
+	if(empty($_SESSION))
 	{
-		$_GET['userid'] = null;
+		header( 'Location: /SDP/home.php' );
 	}
-	//end edit fix
-	if(!empty($_GET['userid']) && $_SESSION['userType'] > 1) // user is an event manager and is viewing the profile of an applicant
+	elseif($_GET['userid'] == $_SESSION['userID']) // user is viewing their own profile
 	{
 		$userID = $_GET['userid'];
-		$sql = 'SELECT * FROM user JOIN student ON user.userID=student.userID WHERE user.userID = ' . $userID;
+		if($_SESSION['userType'] < 2) // the user is a student
+		{	
+			$sql = 'SELECT * FROM user JOIN student ON user.userID=student.userID WHERE user.userID = ' . $userID;
+		}
+		elseif($_SESSION['userType'] > 1) // the user is staff
+		{
+			$sql = 'SELECT * FROM user JOIN staff ON user.userID=staff.userID WHERE user.userID = ' . $userID;
+		}
 	}
-	elseif(empty($_GET['userid']) && $_SESSION['userType'] < 2) // the user wants to view their own profile and is a student
+	elseif($_SESSION['userType'] > 1) // the user is not viewing their own profile and is a manager or system admin
 	{
-		$userID = $_SESSION['userID'];
-		$sql = 'SELECT * FROM user JOIN student ON user.userID=student.userID WHERE user.userID = ' . $userID;
+		$userID = $_GET['userid'];
+		$sql1 = "SELECT userType FROM user WHERE userID = " . $userID;
+		$result1 = mysqli_query($db, $sql1);
+		if($result1 < 2) // the user is a student
+		{
+			$sql = 'SELECT * FROM user JOIN student ON user.userID=student.userID WHERE user.userID = ' . $userID;
+		}
+		elseif($result1 > 1) // the user is staff
+		{
+			$sql = 'SELECT * FROM user JOIN staff ON user.userID=staff.userID WHERE user.userID = ' . $userID;
+		}
 	}
-	elseif(empty($_GET['userid']) && $_SESSION['userType'] > 1) // the user wants to view their own profile and is a staff member;
+	else
 	{
-		$userID = $_SESSION['userID'];
-		$sql = 'SELECT * FROM user JOIN staff ON user.userID=staff.userID WHERE user.userID = ' . $userID;
+		echo("FAILUURE");
 	}
 	$result = mysqli_query($db, $sql);
 	$count = mysqli_num_rows($result);
@@ -61,6 +74,6 @@
 	}
 	else
 	{
-		echo("FAILURE");
+		echo($sql);
 	} 
 ?>

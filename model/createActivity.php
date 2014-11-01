@@ -9,7 +9,7 @@
 		$startDate = mysqli_real_escape_string($db,$_POST['startDate']);
 		$endDate = mysqli_real_escape_string($db,$_POST['endDate']);
 		$startTime = mysqli_real_escape_string($db,$_POST['startTime']);
-		$endTime = mysqli_real_escape_string($db,$_POST['startTime']);
+		$endTime = mysqli_real_escape_string($db,$_POST['endTime']);
 		$eventID = mysqli_real_escape_string($db,$_POST['eventID']);
 
 		$sql = "INSERT INTO activity (name, description, location, startDate, endDate, startTime, endTime, eventID) VALUES ('$name', '$description', '$location', '$startDate', '$endDate', '$startTime', '$endTime', '$eventID');";

@@ -11,31 +11,24 @@
 	}
 	else //The role is current
 	{
-		$sql1 = "SELECT userID FROM role WHERE roleID = " . $roleID;
+		$sql1 = "SELECT * FROM application WHERE roleID = " . $roleID;
 		$result1 = mysqli_query($db, $sql1);
-		$row = mysqli_fetch_array($result1,MYSQLI_ASSOC);
-		if($row['userID'] !== null) // The role has a volunteer attached
+		$count1 = mysqli_num_rows($result1);
+		$row1 = mysqli_fetch_array($result1,MYSQLI_ASSOC);
+		if($count1 > 0 && $row1['status'] != 2) // The role has a volunteer attached that isn't ignored
 		{
 			echo("ATTACHED");
 			die();
 		}
-		else
+		else //delete the role
 		{
-			$sql2 ="SELECT userID FROM application WHERE roleID = " . $roleID;
-			$result2 = mysqli_query($db, $sql2);
-			$row1 = mysqli_fetch_array($result2,MYSQLI_ASSOC);
-			if($row1['userID'] !== null) // the role has applicant(s) attached
+			$sql3 = "UPDATE role SET isActive = 0 WHERE roleID = " . $roleID;
+			if(!mysqli_query($db,$sql3))
 			{
-				echo("ATTACHED");
+				echo("ERROR");
 				die();
 			}
+			echo("DELETED");
 		}
-		$sql3 = "UPDATE role SET isActive = 0 WHERE roleID = " . $roleID;
-		if(!mysqli_query($db,$sql3))
-		{
-			echo("ERROR");
-			die();
-		}
-		echo("DELETED");
 	}
 ?>

@@ -57,10 +57,10 @@
 			if(data)
 			{
 				console.log(data);
-				if(data == "ERROR"){
+				if(data.indexOf("ERROR") > -1){
 					$("#error").html("<span style='color:#cc0000'>Error:</span> Internal Server Error");
 				}
-				else if (data == "SUCCESS") {
+				else if (data.indexOf("SUCCESS") > -1) {
 					window.location.href = "/SDP/viewProfile.php?userid=" + userID;
 				}
 				else{

@@ -19,17 +19,17 @@
 			var isPaid=$('input:radio[name=isPaid]:checked').val();
 			var description=$("#description").val();
 			var requirements=$("#requirements").val();
-			var rate=$("#rate").val();
 			var activityID=<?php echo($row['activityID'])?>;
-			var date=$("#date").val();
+			var startDate=$("#startDate").val();
+			var endDate=$("#endDate").val();
 			var startTime=$("#startTime").val();
 			var endTime=$("#endTime").val();
 
 			var managerid=<?php echo($_SESSION['userID']); ?>;
 
-			var dataString = 'name='+name+'&isPaid='+isPaid+'&description='+description+"&requirements="+requirements+"&rate="+rate+"&activityID="+activityID+"&date="+date+"&startTime="+startTime+"&endTime="+endTime;
+			var dataString = 'name='+name+'&isPaid='+isPaid+'&description='+description+"&requirements="+requirements+"&activityID="+activityID+"&startDate="+startDate+"&endDate="+endDate+"&startTime="+startTime+"&endTime="+endTime;
 			console.log(dataString);
-			if($.trim(name).length>0 && $.trim(isPaid).length>0 && $.trim(description).length>0 && $.trim(requirements).length>0 && $.trim(activityID).length>0 && $.trim(date).length>0 && $.trim(startTime).length>0 && $.trim(endTime).length>0)
+			if($.trim(name).length>0 && $.trim(isPaid).length>0 && $.trim(description).length>0 && $.trim(requirements).length>0 && $.trim(activityID).length>0 && $.trim(startDate).length>0 && $.trim(endDate).length>0 && $.trim(startTime).length>0 && $.trim(endTime).length>0)
 			{
 			console.log("fire");
 			$.ajax({
@@ -77,12 +77,12 @@
 				Paid: <br>
 				<input type="radio" name="isPaid" value="1" <?php if($row['isPaid'] == 1){echo('checked="checked"');} ?> > Yes: <br>
 				<input type="radio" name="isPaid" value="0" <?php if($row['isPaid'] == 0){echo('checked="checked"');} ?>> No: <br>
-				Rate/Hour: <input type="text" id ="rate" value="<?php echo($row['rate']); ?>"><br>
 				Role Desc: <textarea id="description"><?php echo($row['description']); ?></textarea> <br>
 				Requirements: <textarea id="requirements"><?php echo($row['requirements']); ?></textarea> <br>
-				Date: <input type="date" id ="date" value="<?php echo($row1['date']); ?>"> <br>
-				Start Time: <input type="text" id="startTime" value="<?php echo($row1['startTime']); ?>"> (Format 0000) <br>
-				End Time: <input type="text" id="endTime" value="<?php echo($row1['endTime']); ?>"> (Format 0000)<br>
+				Start Date: <input type="date" id ="startDate" value="<?php echo($row['startDate']); ?>"> <br>
+				End Date: <input type="date" id ="endDate" value="<?php echo($row['endDate']); ?>"> <br>
+				Start Time: <input type="text" id="startTime" value="<?php echo($row['startTime']); ?>"> (Format 0000) <br>
+				End Time: <input type="text" id="endTime" value="<?php echo($row['endTime']); ?>"> (Format 0000)<br>
 				
 				<div class="input"><input type="submit" value="Save Role" id="updateRole"class="formButton"></div>
 				<div id="error"></div>

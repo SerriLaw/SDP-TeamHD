@@ -40,13 +40,13 @@
 			success: function(data){
 			if(data)
 			{
-				if(data == "EXISTS"){
+				if(data.indexOf("EXISTS") > -1){
 					$("#error").html("<span style='color:#cc0000'>Error:</span> The userID and/or email already exists. ");
 				}
-				else if (data == "FAILURE") {
+				else if (data.indexOf("FAILURE") > -1)  {
 					$("#error").html("<span style='color:#cc0000'>Error:</span> Internal Sever Error");
-				}else{
-					window.location.href = "/SDP/view/login.php";
+				}else if (data.indexOf("SUCCESS") > -1){
+					window.location.href = "/SDP/login.php";
 				}
 			
 			}
