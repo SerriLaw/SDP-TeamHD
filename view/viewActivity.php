@@ -51,12 +51,6 @@
 
 			});						
 		</script>
-		<script>
-			$(document).ready(function() {
-			    dateFormat("#date1");
-			    dateFormat("#date2");
-			});
-		</script>
 	</head>
 	<body>
 		<?php include("menu.php"); ?>
@@ -64,12 +58,12 @@
 		<div id="wrap">
 	        <div class="act-details">
 				<div id="name"><?php echo($row['name']); ?></div>
-				<div id="startDate"><i class="fa fa-calendar"></i> Starts <span id="date1"><?php echo($row['startDate']); ?></span>
-					<span class="act-time"><i class="fa fa-clock-o"></i> Time: <?php echo($row['startTime']); ?></span>
+				<div id="startDate"><i class="fa fa-calendar"></i> Starts <span class="dateToForm"><?php echo($row['startDate']); ?></span>
+					<span class="act-time"><i class="fa fa-clock-o"></i> Time: <span class="timeToForm"><?php echo($row['startTime']); ?></span></span>
 				</div>
 				
-				<div id="endDate"><i class="fa fa-calendar"></i> Ends <span id="date2"><?php echo($row['endDate']); ?></span>
-					<span class="act-time"><i class="fa fa-clock-o"></i> Time: <?php echo($row['endTime']); ?></span>
+				<div id="endDate"><i class="fa fa-calendar"></i> Ends <span class="dateToForm"><?php echo($row['endDate']); ?></span>
+					<span class="act-time"><i class="fa fa-clock-o"></i> Time: <span class="timeToForm"><?php echo($row['endTime']); ?></span></span>
 				</div>
 				
 				

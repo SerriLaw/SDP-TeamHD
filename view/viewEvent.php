@@ -52,14 +52,6 @@
 			});						
 		</script>
 
-
-		<script>
-			$(document).ready(function() {
-			    dateFormat("#date1");
-			    dateFormat("#date2");
-			});
-		</script>
-
 	</head>
 	<body>
         <?php include("menu.php"); ?>
@@ -72,8 +64,8 @@
 			</div>
 
 			<div class="event-details">
-				<div id="startDate" class="date"><i class="fa fa-calendar"></i> Starts <span id="date1"><?php echo($row['startDate']); ?></span></div>
-				<div id="endDate" class="date"><i class="fa fa-calendar"></i> Ends <span id="date2"><?php echo($row['endDate']); ?></span></div>
+				<div id="startDate" class="date"><i class="fa fa-calendar"></i> Starts <span class="dateToForm"><?php echo($row['startDate']); ?></span></div>
+				<div id="endDate" class="date"><i class="fa fa-calendar"></i> Ends <span class="dateToForm"><?php echo($row['endDate']); ?></span></div>
 				<div id="location"><i class="fa fa-map-marker"></i> <?php echo($row['location']); ?></div>
 
 				<div id="description"><?php echo($row['description']); ?></div>

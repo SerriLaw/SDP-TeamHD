@@ -50,11 +50,6 @@
 
 			});						
 		</script>
-		<script>
-			$(document).ready(function() {
-			    dateFormat("#date1")
-			});
-		</script>
 	</head>
 
 
@@ -68,10 +63,9 @@
         	<div class="role-details">
 				<div id="name"><?php echo($row['name']); ?></div>
 
-				<div id="startDate"><i class="fa fa-calendar"></i> <span id="date1"> Start Date <?php echo($row['startDate']); ?></span></div>
-				<div id="endDate"><i class="fa fa-calendar"></i> <span id="date1"> End Date <?php echo($row['endDate']); ?></span></div>
-				<div id="startTime"><span class="role-time"><i class="fa fa-clock-o"></i> Starts <?php echo($row['startTime']); ?></span></div>
-				<div id="endTime"><span class="role-time"><i class="fa fa-clock-o"></i> Ends <?php echo($row['endTime']); ?></span></div>
+				<div id="startDate"><i class="fa fa-calendar"></i>  Starts <span class="dateToForm"><?php echo($row['startDate']); ?></span></div>
+				<div id="endDate"><i class="fa fa-calendar"></i>  Ends <span class="dateToForm"><?php echo($row['endDate']); ?></span></div>
+				<div id="startTime"><span class="role-time"><i class="fa fa-clock-o"></i> Runs <span class="timeToForm"><?php echo($row['startTime']); ?></span> to <span class="timeToForm"><?php echo($row['endTime']); ?></span></div>
 
 				<div id="paid">Paid: <?php if($row['isPaid'] == 1){echo("Yes");}else{echo("No");} ?></div>
 				<div id="requirements">Requirements: <?php echo($row['requirements']); ?></div>
