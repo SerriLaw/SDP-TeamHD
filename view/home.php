@@ -17,14 +17,15 @@
 
 			<div class="event-block-stream">
 			<?php while($row = $q->fetch()){ if($row['isActive'] > 0){ ?>
-		        <div class="event-block">
-    		        <a href="viewEvent.php?id=<?php echo($row['eventID']); ?>">
-    		        <div class="event-block-name"><?php echo($row['name']); ?></div> 
-    		        <div class="event-block-date"><i class="fa fa-calendar"></i> Starts <span class="dateToForm"><?php echo($row['startDate']); ?></span> until <span class="dateToForm"><?php echo($row['endDate']); ?></span> </div>
-    		        <div class="event-block-desc"><?php echo($row['description']); ?></div>
-    		        
-    		        </a>
-        	    </div>
+		        <a href="viewEvent.php?id=<?php echo($row['eventID']); ?>">
+			        <div class="event-block">
+	   
+	    		        <div class="event-block-name"><?php echo($row['name']); ?></div> 
+	    		        <div class="event-block-date"><i class="fa fa-calendar"></i> Starts <span class="dateToForm"><?php echo($row['startDate']); ?></span> until <span class="dateToForm"><?php echo($row['endDate']); ?></span> </div>
+	    		        <div class="event-block-desc"><?php echo($row['description']); ?></div>
+
+	        	    </div>
+        	    </a>
         	<?php } }?>
 
 		    </div>
