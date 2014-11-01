@@ -1,4 +1,4 @@
-<div id="nav-bar">
+<nav id="nav-bar">
 
         <span id="ham"><a href="#" onClick="$('.h').toggle()"><i class="fa fa-bars"></i></a></span>
         <ul>
@@ -24,7 +24,7 @@
 
                 <?php }?>
         </ul>                   
-</div>
+</nav>
 
 
 
