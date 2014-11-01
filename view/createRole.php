@@ -122,8 +122,6 @@
 					
 					
 				</table>
-
-				<!-- Rate/Hour: <input type="text" id ="rate"> (If "No" then leave blank) <br> -->
 			
 				
 			</form>

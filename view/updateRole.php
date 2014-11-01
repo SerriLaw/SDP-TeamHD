@@ -70,22 +70,59 @@
 	<head>
 	<body>
         <?php include("menu.php"); ?>
+
+
 		<div id="wrap">
-		<div class="heroname">Edit Role</div>
+			<div class="heroname">Edit Role</div>
+			<div id="error"></div>
+		
 			<form action="" method="post">
-				Role Name: <input type="text" id="name" value="<?php echo($row['name']); ?>"> <br>
-				Paid: <br>
-				<input type="radio" name="isPaid" value="1" <?php if($row['isPaid'] == 1){echo('checked="checked"');} ?> > Yes: <br>
-				<input type="radio" name="isPaid" value="0" <?php if($row['isPaid'] == 0){echo('checked="checked"');} ?>> No: <br>
-				Role Desc: <textarea id="description"><?php echo($row['description']); ?></textarea> <br>
-				Requirements: <textarea id="requirements"><?php echo($row['requirements']); ?></textarea> <br>
-				Start Date: <input type="date" id ="startDate" value="<?php echo($row['startDate']); ?>"> <br>
-				End Date: <input type="date" id ="endDate" value="<?php echo($row['endDate']); ?>"> <br>
-				Start Time: <input type="text" id="startTime" value="<?php echo($row['startTime']); ?>"> (Format 0000) <br>
-				End Time: <input type="text" id="endTime" value="<?php echo($row['endTime']); ?>"> (Format 0000)<br>
+
+				<table>
+					<tr class="input">
+						<td class="label">Role Name</td>
+						<td class="field"><input type="text" id="name" class="textbox" value="<?php echo($row['name']); ?>"></td>
+					</tr>
+					<tr class="input">
+						<td class="label">Description</td>
+						<td class="field"><textarea id="description" class="textbox" ><?php echo($row['description']); ?></textarea></td>
+					</tr>
+					<tr class="input">
+						<td class="label">Requirements</td>
+						<td class="field"><textarea id="requirements" class="textbox"><?php echo($row['requirements']); ?></textarea></td>
+					</tr>
+					<tr class="input">
+						<td class="label">Start Date</td>
+						<td class="field"><input type="date" id ="startDate" value="<?php echo($row['startDate']); ?>"></td>
+					</tr>
+					<tr class="input">
+						<td class="label">End Date</td>
+						<td class="field"><input type="date" id ="endDate" value="<?php echo($row['endDate']); ?>"></td>
+					</tr>
+
+
+					<tr class="input">
+						<td class="label">Paid</td>
+						<td class="field">
+							<input type="radio" name="isPaid" value="1" <?php if($row['isPaid'] == 1){echo('checked="checked"');} ?>> Yes <br>
+							<input type="radio" name="isPaid" value="0" <?php if($row['isPaid'] == 0){echo('checked="checked"');} ?>> No
+					</tr>
+					<tr class="input">
+						<td class="label">Start Time</td>
+						<td class="field"><input type="text" class="textbox" id="startTime" value="<?php echo($row['startTime']); ?>"> (Format 0000)</td>
+					</tr>
+					<tr class="input">
+						<td class="label">End Time</td>
+						<td class="field"><input type="text" class="textbox" id="endTime" value="<?php echo($row['endTime']); ?>"> (Format 0000)</td>
+					</tr>
+					<tr class="input">
+						<td colspan="2"><input type="submit" value="Save Role" id="updateRole"class="formButton"></td>
+					</tr>
+					
+					
+				</table>
+			
 				
-				<div class="input"><input type="submit" value="Save Role" id="updateRole"class="formButton"></div>
-				<div id="error"></div>
 			</form>
 			<div class="footer">
 				<img src="view/img/image-green.png" alt="BeanSprouts Footer">
@@ -93,6 +130,7 @@
 				<i class="fa fa-copyright"></i> BeanSprouts 2014
 			</div>
 		</div>
+
 
 	</body>
 </html>
