@@ -71,35 +71,87 @@
 	</head>
 	<body>
         <?php include("menu.php"); ?>
-        <div id="wrap">
-			<div class="heroname">Register</div>
-			<form action="" method="post">
-				Student ID: <input type="text" id="studentID"> <br>
-				First Name: <input type="text" id="firstName"> <br>
-				Last Name: <input type="text" id="lastName"> <br>
-				Email Address: <input type="text" id="email"> <br>
-				Phone Number: <input type="text" id="phone"> <br>
-				Password: <input type="password" id="password"> <br>
-				Date of Birth: <input type="date" id="dateOfBirth"> <br>
-				Gender: <br>
-				<input type="radio" name="gender" value="m"> Male <br>
-				<input type="radio" name="gender" value="f"> Female <br>
-				Course: <select id="courseID">
-							<?php 
-								include("model/db.php");
-								$sql = "SELECT * FROM course";
-								$result = mysqli_query($db, $sql);
-								while($row = mysqli_fetch_array($result))
-								{
-									echo "<option value=\"" . $row['courseID'] . "\">" . $row['name'] . "</option>";
-								}
 
-							?>
-						</select> <br>
-				Skills: <textarea id="skills"></textarea> <br>
-				Experience: <textarea id="experience"></textarea> <br> <br>
+
+        <div id="wrap">
+        	<div id="hero"><img src="view/img/icon.png" alt="BeanSprouts" id="bigbean"><span id="bigbeantext">BeanSprouts</span></div>
+			<div class="heroname">Register</div>
+			<div id="error"></div>
+
+			<form action="" method="post">
+
+				<table>
+					<tr class="input">
+						<td class="label">UTS Student ID</td>
+						<td class="field"><input type="text" class="textbox" id="studentID" placeholder="e.g. 12345678"></td>
+					</tr>
+					<tr class="input">
+						<td class="label">First Name</td>
+						<td class="field"><input type="text" class="textbox" id="firstName" placeholder="e.g. Josh"></td>
+					</tr>
+					<tr class="input">
+						<td class="label">Last Name</td>
+						<td class="field"><input type="text" class="textbox" id="lastName" placeholder="e.g. Lo"></td>
+					</tr>
+					<tr class="input">
+						<td class="label">Email</td>
+						<td class="field"><input type="text" class="textbox" id="email" placeholder="e.g. joshlo@email.com"></td>
+					</tr>
+
+					<tr class="input">
+						<td class="label">Phone Number</td>
+						<td class="field"><input type="text" class="textbox" id="phone" placeholder="e.g. 0412345678"></td>
+					</tr>
+					<tr class="input">
+						<td class="label">Password</td>
+						<td class="field"><input input type="password" id="password" class="textbox"></td>
+					</tr>
+					<tr class="input">
+						<td class="label">Date of Birth</td>
+						<td class="field"><input type="date" id="dateOfBirth"></td>
+					</tr>
+					<tr class="input">
+						<td class="label">Gender</td>
+						<td class="field">
+							<input type="radio" name="gender" value="m"> Male <br>
+							<input type="radio" name="gender" value="f"> Female <br>
+						</td>
+					</tr>
+					<tr class="input">
+						<td class="label">Course of Study</td>
+						<td class="field">
+							<select id="courseID">
+								<?php 
+									include("model/db.php");
+									$sql = "SELECT * FROM course";
+									$result = mysqli_query($db, $sql);
+									while($row = mysqli_fetch_array($result))
+									{
+										echo "<option value=\"" . $row['courseID'] . "\">" . $row['name'] . "</option>";
+									}
+
+								?>
+							</select>
+						</td>
+					</tr>
+					<tr class="input">
+						<td class="label">Skills</td>
+						<td class="field">
+							<textarea id="skills" class="textbox"></textarea>
+						</td>
+					</tr>
+					<tr class="input">
+						<td class="label">Experience</td>
+						<td class="field">
+							<textarea id="experience" class="textbox"></textarea>
+						</td>
+					</tr>
+					
+					
+				</table>
+				
 				<div class="input"><input type="submit" value="Register" id="register" class="formButton"></div>
-				<div id="error"></div>
+				
 			</form>
 			<div class="footer">
 		    	<img src="view/img/image-green.png" alt="BeanSprouts Footer">
