@@ -1,5 +1,6 @@
 <?php
 	include("db.php");
+	error_reporting(0);
 	if(empty($_SESSION))
 	{
 		header( 'Location: /SDP/home.php' );
@@ -19,7 +20,7 @@
 	elseif($_SESSION['userType'] > 1) // the user is not viewing their own profile and is a manager or system admin
 	{
 		$userID = $_GET['userid'];
-		$sql1 = "SELECT userType FROM user WHERE userID = " . $userID;
+		$sql1 = "SELECT * FROM user WHERE userID = " . $userID;
 		$result1 = mysqli_query($db, $sql1);
 		if($result1 < 2) // the user is a student
 		{

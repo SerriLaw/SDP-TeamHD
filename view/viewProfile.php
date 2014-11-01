@@ -104,6 +104,15 @@
 					echo('<a href="/SDP/editProfile.php?userid=' . $row['userID'] . '&usertype=' . $row['userType'] .'"><i class="fa fa-pencil-square-o"></i> Edit Profile</a><br>');
 					echo('<a id="deleteProfile" href="/SDP/model/deleteProfile.php"><i class="fa fa-trash-o"></i> Delete Profile</a><br>');
 				}
+				if(($row['userID'] == $_SESSION['userID'] || $_SESSION['userID'] > 2) && $row['userType'] < 2)
+				{
+					echo('<a href="/SDP/futureEvents.php?userid=' .$row['userID'] . '"><i class="fa fa-tasks"></i> Upcoming Events</a><br>');
+					echo('<a href="/SDP/pastEvents.php?userid=' .$row['userID'] .'"><i class="fa fa-tasks"></i> Past Events</a><br>');
+				}
+				if($row['userType'] > 1 && $_SESSION['userType'] > 1)
+				{
+					echo('<a href="/SDP/myEvents.php?userid=' .$row['userID'] .'"><i class="fa fa-tasks"></i> My Events</a><br>');
+				}
 			?>
 			<div id="error"></div>
 			</div>
