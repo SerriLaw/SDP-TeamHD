@@ -45,6 +45,16 @@ body {
 		width: 90%;
 	}
 
+	@media screen and (max-width: $break-sml) {
+		.field {
+			max-width: 220px;
+		}
+	}
+
+	textarea {
+		min-height: 100px;
+	}
+
 	.label {
 		width: 120px;
 		font-size: $body-size;
@@ -62,6 +72,10 @@ body {
 		.textbox {
 			width: 250px;
 			font-size: $body-size;
+
+			@media screen and (max-width: $break-sml) {
+				width: 200px;
+			}
 		}
 		
 		.formButton {
@@ -166,7 +180,7 @@ body {
 			}
 
 			.event-block-date {
-				margin: 0 0 5px 0;
+				margin: 0 0 10px 0;
 			}
 
 			&:hover {

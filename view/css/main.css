@@ -15,6 +15,11 @@ body {
   @media screen and (max-width: 1000px) {
     #wrap {
       width: 90%; } }
+  @media screen and (max-width: 650px) {
+    #wrap .field {
+      max-width: 220px; } }
+  #wrap textarea {
+    min-height: 100px; }
   #wrap .label {
     width: 120px;
     font-size: 14px; }
@@ -28,6 +33,9 @@ body {
     #wrap .input .textbox {
       width: 250px;
       font-size: 14px; }
+      @media screen and (max-width: 650px) {
+        #wrap .input .textbox {
+          width: 200px; } }
     #wrap .input .formButton {
       min-width: 120px;
       margin: 20px 100px;
@@ -93,7 +101,7 @@ body {
         font-size: 20px;
         margin: 0 0 10px 0; }
       #wrap .event-block-stream .event-block .event-block-date {
-        margin: 0 0 5px 0; }
+        margin: 0 0 10px 0; }
       #wrap .event-block-stream .event-block:hover {
         border-color: rgba(96, 186, 64, 0.4);
         background-color: #F6F6F6; }

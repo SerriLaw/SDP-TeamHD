@@ -1,4 +1,4 @@
-<div id="nav-bar">
+<nav id="nav-bar">
 
         <span id="ham"><a href="#" onClick="$('.h').toggle()"><i class="fa fa-bars"></i></a></span>
         <ul>
@@ -12,8 +12,8 @@
                         <li class="h"><?php echo("<a href=\"/SDP/viewProfile.php?userid=".$_SESSION['userID'])."\">" ; ?><i class="fa fa-user"></i> View Profile</a></li>
                         <?php if(isset($_SESSION['userType']) && ($_SESSION['userType'] > 1)){ ?>
                                 <li class="h"><a href="/SDP/createEvent.php"><i class="fa fa-plus"></i> Add Events</a></li>
-                                <li class="h"><a href="/SDP/volunteerList.php"><i class="fa fa-user"></i> View Volunteers</a></li>
-                                <li class="h"><a href="/SDP/managerList.php"><i class="fa fa-user"></i> View Event Managers and Admins</a></li>
+                                <li class="h"><a href="/SDP/volunteerList.php"><i class="fa fa-users"></i> View Volunteers</a></li>
+                                <li class="h"><a href="/SDP/managerList.php"><i class="fa fa-users"></i> View Event Managers and Admins</a></li>
 
                         <?php } ?>
 
@@ -26,7 +26,7 @@
 
                 <?php }?>
         </ul>                   
-</div>
+</nav>
 
 
 
