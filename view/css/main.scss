@@ -290,6 +290,29 @@ body {
 		.event-activity-edit {
 			margin: 5px 0 15px 0;
 		}
+
+		.role-applicant-block {
+
+			margin: 30px 5px;
+
+			.listStudentID, .dateSub {
+				padding: 0 0 0 0;
+			}
+
+
+			.callToAction {
+				padding: 5px 0 0 20px;
+			}
+
+
+			.listStudentName {
+				min-width: 120px;
+				padding: 0 15px 0 0;
+			}
+		}
+
+
+
 	}
 
 	#error {

@@ -99,28 +99,40 @@
 					{
 						if($_SESSION['userType'] > 1) //If you are an event manager or system admin
 						{
-							echo("<div class=\"role-applicant-head\">Applicant List</div>");
+							echo("<div class=\"role-applicant-head\"> Applicant List </div>");
 							$sql3 = "SELECT * FROM application WHERE roleID = " . $row['roleID']." AND status = 0"; //Only display the status 0
 							$result3 = mysqli_query($db, $sql3);
 
+							
+
 							while($row3 = mysqli_fetch_array($result3)) 
 							{
+								echo "<div class=\"role-applicant-block\">";
 								$sql4 = "SELECT firstName, lastName FROM user WHERE userID = " . $row3['userID'];
 								$result4 = mysqli_query($db, $sql4);
 								$row4 = mysqli_fetch_array($result4,MYSQLI_ASSOC);
-								echo $row3['userID'] . " " .$row4['firstName'] . " " . $row4['lastName'] . " Date Submitted " . $row3['dateSubmitted'] . " <a href = \"/SDP/model/approve.php?appid=".$row3['userID']."&roleid=".$row['roleID']."\">Approve</a>" ." - <a href = \"/SDP/model/ignore.php?appid=".$row3['userID']."&roleid=".$row['roleID']."\">Ignore</a><br>";
+								echo " <table><tr><td class=\"listStudentName\">" .$row4['firstName'] . " " . $row4['lastName'] . "</td><td class=\"listStudentID\">Student ID: " .$row3['userID'] . "</td></tr><tr><td colspan=\"2\" class=\"dateSub\">Date Submitted: <span class=\"dateToForm\">" . $row3['dateSubmitted'] . "</span></td></tr><tr><td colspan=\"2\" class=\"callToAction\"><a href = \"/SDP/model/approve.php?appid=".$row3['userID']."&roleid=".$row['roleID']."\"><i class=\"fa fa-check\"></i> Approve</a> - <a href = \"/SDP/model/ignore.php?appid=".$row3['userID']."&roleid=".$row['roleID']."\"><i class=\"fa fa-ban\"></i> Ignore</a> - <a href=\"/SDP/viewProfile.php?userid=".$row3['userID'] ."\"><i class=\"fa fa-user\"></i> View Profile</a></td></tr></table> ";
+
+								echo "</div>";
+								
 							}
+
+							
 			                
 			                echo("<div class=\"role-applicant-head\">Approve List</div>");
 							$lqs3 = "SELECT * FROM application WHERE roleID = " . $row['roleID']." AND status = 1"; //Only display the status 0
 							$result3 = mysqli_query($db, $lqs3);
 
+							
 							while($row3 = mysqli_fetch_array($result3)) 
 							{
+								echo "<div class=\"role-applicant-block\">";
 								$sql4 = "SELECT firstName, lastName FROM user WHERE userID = " . $row3['userID'];
 								$result4 = mysqli_query($db, $sql4);
 								$row4 = mysqli_fetch_array($result4,MYSQLI_ASSOC);
-								echo $row3['userID'] . " " .$row4['firstName'] . " " . $row4['lastName'] . " Date Submitted " . $row3['dateSubmitted'] . " <a href = \"/SDP/model/deAllocate.php?appid=".$row3['userID']."&roleid=".$row['roleID']."\">De-Allocate</a>";
+								echo " <table><tr><td class=\"listStudentName\">" .$row4['firstName'] . " " . $row4['lastName'] . "</td><td class=\"listStudentID\">Student ID: " .$row3['userID'] . "</td></tr><tr><td colspan=\"2\" class=\"dateSub\">Date Submitted: <span class=\"dateToForm\">" . $row3['dateSubmitted'] . "</span></td></tr><tr><td colspan=\"2\" class=\"callToAction\"><a href = \"/SDP/model/deAllocate.php?appid=".$row3['userID']."&roleid=".$row['roleID']."\"><i class=\"fa fa-ban\"></i> Remove</a> - <a href=\"/SDP/viewProfile.php?userid=".$row3['userID'] ."\"><i class=\"fa fa-user\"></i> View Profile</a></td></tr></table> ";
+								
+								echo "</div>";
 							}
 			                
 						}
@@ -166,6 +178,7 @@
 				<br>
 				<i class="fa fa-copyright"></i> BeanSprouts 2014
 			</div>
+
 		</div>
 
 	</body>

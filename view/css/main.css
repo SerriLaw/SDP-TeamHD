@@ -165,6 +165,15 @@ body {
     margin: 0 0 10px 0; }
   #wrap .event-activity .event-activity-edit, #wrap .role-applicant .event-activity-edit {
     margin: 5px 0 15px 0; }
+  #wrap .event-activity .role-applicant-block, #wrap .role-applicant .role-applicant-block {
+    margin: 30px 5px; }
+    #wrap .event-activity .role-applicant-block .listStudentID, #wrap .event-activity .role-applicant-block .dateSub, #wrap .role-applicant .role-applicant-block .listStudentID, #wrap .role-applicant .role-applicant-block .dateSub {
+      padding: 0 0 0 0; }
+    #wrap .event-activity .role-applicant-block .callToAction, #wrap .role-applicant .role-applicant-block .callToAction {
+      padding: 5px 0 0 20px; }
+    #wrap .event-activity .role-applicant-block .listStudentName, #wrap .role-applicant .role-applicant-block .listStudentName {
+      min-width: 120px;
+      padding: 0 15px 0 0; }
   #wrap #error {
     margin: 12px 0;
     color: red; }
