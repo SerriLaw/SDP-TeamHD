@@ -12,7 +12,7 @@
 		$result=mysqli_query($db, "SELECT * FROM user WHERE userID='$username' and password='$password'");
 		$count=mysqli_num_rows($result);
 		$row=mysqli_fetch_array($result,MYSQLI_ASSOC);
-		if($count==1) //if there is a single matching record
+		if($count==1 && $row['isActive'] == 1)  //if there is a single matching record
 		{
 			foreach ($row as $key => $value) {
 				$_SESSION[$key] = $value;
