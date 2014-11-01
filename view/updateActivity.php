@@ -68,26 +68,60 @@
 	<head>
 	<body>
         <?php include("menu.php"); ?>
+		
         <div id="wrap">
 			<div class="heroname">Edit Activity</div>
+			<div id="error"></div>
+
 			<form action="" method="post">
-				Activity Name: <input type="text" id="name" value="<?php echo($row['name']); ?>"> <br>
-				Activity Desc: <textarea id="description"><?php echo($row['description']); ?></textarea> <br>
-				Location: <input type="text" id="location" value="<?php echo($row['location']); ?>"> <br>
-				Start Date: <input type="date" id ="startDate" value="<?php echo($row['startDate']); ?>"> <br>
-				End Date: <input type="date" id ="endDate" value="<?php echo($row['endDate']); ?>"> <br>
-				Start Time: <input type="text" id="startTime" value="<?php echo($row['startTime']); ?>"> (Format 0000) <br>
-				End Time: <input type="text" id="endTime" value="<?php echo($row['endTime']); ?>"> (Format 0000)<br>
+
+				<table>
+					<tr class="input">
+						<td class="label">Activity Name</td>
+						<td class="field"><input type="text" id="name" class="textbox" value="<?php echo($row['name']); ?>"></td>
+					</tr>
+					<tr class="input">
+						<td class="label">Description</td>
+						<td class="field"><textarea id="description" class="textbox"><?php echo($row['description']); ?></textarea></td>
+					</tr>
+					<tr class="input">
+						<td class="label">Start Date</td>
+						<td class="field"><input type="date" id ="startDate" value="<?php echo($row['startDate']); ?>"></td>
+					</tr>
+					<tr class="input">
+						<td class="label">End Date</td>
+						<td class="field"><input type="date" id ="endDate" value="<?php echo($row['endDate']); ?>"></td>
+					</tr>
+
+
+					<tr class="input">
+						<td class="label">Location</td>
+						<td class="field"><input type="text" id="location" class="textbox" value="<?php echo($row['location']); ?>"></td>
+					</tr>
+					<tr class="input">
+						<td class="label">Start Time</td>
+						<td class="field"><input type="text" class="textbox" id="startTime" value="<?php echo($row['startTime']); ?>"> (Format 0000)</td>
+					</tr>
+					<tr class="input">
+						<td class="label">End Time</td>
+						<td class="field"><input type="text" class="textbox" id="endTime" value="<?php echo($row['endTime']); ?>"> (Format 0000)</td>
+					</tr>
+					<tr class="input">
+						<td colspan="2"><div class="input"><input type="submit" value="Save Activity" id="updateActivity" class="formButton"></div> </td>
+					</tr>
+					
+					
+				</table>
+	
 				
-				<div class="input"><input type="submit" value="Save Activity" id="updateActivity" class="formButton"></div> <br>
-				<div id="error"></div>
 			</form>
 			<div class="footer">
-				<img src="view/img/image-green.png" alt="BeanSprouts Footer">
-				<br>
-				<i class="fa fa-copyright"></i> BeanSprouts 2014
-			</div>
+		    	<img src="view/img/image-green.png" alt="BeanSprouts Footer">
+		    	<br>
+		    	<i class="fa fa-copyright"></i> BeanSprouts 2014
+		    </div>
 		</div>
+
 
 	</body>
 </html>
