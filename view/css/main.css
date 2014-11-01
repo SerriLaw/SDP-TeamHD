@@ -29,8 +29,10 @@ body {
       width: 250px;
       font-size: 14px; }
     #wrap .input .formButton {
-      width: 120px;
-      margin: 20px 100px; }
+      min-width: 120px;
+      margin: 20px 100px;
+      color: #fff;
+      padding: 4px 20px; }
   #wrap #loginform {
     width: 280px;
     margin: 0 auto; }

@@ -64,23 +64,58 @@
 	<head>
 	<body>
         <?php include("menu.php"); ?>
+
+
 		<div id="wrap">
-			<div class="heroname">Edit Event</div>
+		<div class="heroname">Add New Event</div>
+		<div id="error"></div>
 			<form action="" method="post">
-				Event Name: <input type="text" id="name" value="<?php echo($row['name']); ?>"> <br>
-				Event Desc: <textarea id="description"><?php echo($row['description']); ?></textarea> <br>
-				Start Date: <input type="date" id ="startDate" value="<?php echo($row['startDate']); ?>"> <br>
-				End Date: <input type="date" id ="endDate" value="<?php echo($row['endDate']); ?>"> <br>
-				Location: <input type="text" id="location" value="<?php echo($row['location']); ?>"> <br>
-				<div class="input"></div><input type="submit" value="Save Event" id="updateEvent"class="formButton"></div>
-				<div id="error"></div>
+				<table>
+					<tr class="input">
+						<td class="label">Event Name</td>
+						<td class="field"><input type="text" id="name" class="textbox" value="<?php echo($row['name']); ?>"></td>
+					</tr>
+					<tr class="input">
+						<td class="label">Description</td>
+						<td class="field"><textarea id="description" class="textbox"><?php echo($row['description']); ?></textarea></td>
+					</tr>
+					<tr class="input">
+						<td class="label">Start Date</td>
+						<td class="field"><input type="date" id ="startDate" value="<?php echo($row['startDate']); ?>"></td>
+					</tr>
+					<tr class="input">
+						<td class="label">End Date</td>
+						<td class="field"><input type="date" id ="endDate" value="<?php echo($row['endDate']); ?>"></td>
+					</tr>
+
+
+					<tr class="input">
+						<td class="label">Location</td>
+						<td class="field"><input type="text" id="location" class="textbox" value="<?php echo($row['location']); ?>"></td>
+					</tr>
+					
+					<tr class="input">
+						<td colspan="2"><input type="submit" value="Save Event" id="updateEvent"class="formButton"></td>
+					</tr>
+					
+					
+				</table>
+
+
 			</form>
 			<div class="footer">
-		    	<img src="view/img/image-green.png" alt="BeanSprouts Footer">
-		    	<br>
-		    	<i class="fa fa-copyright"></i> BeanSprouts 2014
-		    </div>
+				<img src="view/img/image-green.png" alt="BeanSprouts Footer">
+				<br>
+				<i class="fa fa-copyright"></i> BeanSprouts 2014
+			</div>
 		</div>
+
+
+
+
+
+
+		
 
 	</body>
 </html>

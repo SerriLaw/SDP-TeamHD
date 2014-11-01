@@ -65,8 +65,10 @@ body {
 		}
 		
 		.formButton {
-			width: 120px;
+			min-width: 120px;
 			margin: 20px 100px;
+			color: #fff;
+			padding: 4px 20px;
 		}
 
 
