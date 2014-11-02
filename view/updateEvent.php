@@ -70,7 +70,7 @@
 
 
 		<div id="wrap">
-		<div class="heroname">Update Event</div>
+		<div class="heroname">Edit Event</div>
 		<div id="error"></div>
 			<form action="" method="post">
 				<table>
@@ -92,11 +92,11 @@
 					</tr>
 					<tr class="input">
 						<td class="label">Event Name</td>
-						<td class="field"><input type="text" id="name" class="textbox" value="<?php echo($row['name']); ?>"></td>
+						<td class="field"><input type="text" id="name" class="textbox hasMax" friendly="Event Name" max-val="20" value="<?php echo($row['name']); ?>"></td>
 					</tr>
 					<tr class="input">
 						<td class="label">Description</td>
-						<td class="field"><textarea id="description" class="textbox"><?php echo($row['description']); ?></textarea></td>
+						<td class="field"><textarea id="description" class="textbox hasMax" friendly="Description" max-val="300"><?php echo($row['description']); ?></textarea></td>
 					</tr>
 					<tr class="input">
 						<td class="label">Start Date</td>
@@ -108,21 +108,21 @@
 					</tr>
 					<tr class="input">
 						<td class="label">Start Time</td>
-						<td class="field"><input type="text" id ="startTime" value="<?php echo($row['startTime']); ?>"></td>
+						<td class="field"><input type="text" id ="startTime" value="<?php echo($row['startTime']); ?>" class="hasMax fourDigit" friendly="Start time" max-val="4"></td>
 					</tr>
 					<tr class="input">
 						<td class="label">End Time</td>
-						<td class="field"><input type="text" id ="endTime" value="<?php echo($row['endTime']); ?>"></td>
+						<td class="field"><input type="text" id ="endTime" value="<?php echo($row['endTime']); ?>" class="hasMax fourDigit" friendly="End time" max-val="4"></td>
 					</tr>
 
 
 					<tr class="input">
 						<td class="label">Location</td>
-						<td class="field"><input type="text" id="location" class="textbox" value="<?php echo($row['location']); ?>"></td>
+						<td class="field"><input type="text" id="location" class="textbox hasMax" value="<?php echo($row['location']); ?>" friendly="Location" max-val="50"></td>
 					</tr>
 					
 					<tr class="input">
-						<td colspan="2"><input type="submit" value="Save Event" id="updateEvent"class="formButton"></td>
+						<td colspan="2"><input type="submit" value="Save Event" id="updateEvent"class="formButton subBtn"></td>
 					</tr>
 					
 					

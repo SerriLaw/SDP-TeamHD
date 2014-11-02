@@ -1,4 +1,4 @@
-
+<?php include('../SDP/model/eventDate.php');?>
 <html>
 	<head>
 		<title>BeanSprouts - Edit Activity</title>
