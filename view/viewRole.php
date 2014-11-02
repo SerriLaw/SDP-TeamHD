@@ -159,11 +159,11 @@
 							{
 								if($row5['status'] == 0)
 								{
-									echo("You have applied for this role.");
+									echo("You have applied for this role. " . "<a href = \"/SDP/model/leaveRole.php?roleid=" . $row['roleID'] .  "\"> Leave </a> ");
 								}
 								elseif($row5['status'] == 1)
 								{
-									echo ("You have been allocated for this role.");
+									echo ("You have been allocated for this role." . "<a href = \"/SDP/model/leaveRole.php?roleid=" . $row['roleID'] .  "\"> Leave </a> ");
 								}
 								elseif($row5['status'] == 2)
 								{

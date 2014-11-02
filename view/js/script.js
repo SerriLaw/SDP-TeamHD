@@ -442,5 +442,4 @@ function samePageStartBeforeEnd (array) {
 		}
 
 	});
-
 }

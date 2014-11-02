@@ -11,6 +11,6 @@
 	else
 	{
 		echo("SUCCESS");
-		header('location: /SDP/home.php']);
+		header('location: /SDP/home.php');
 	}
 ?>

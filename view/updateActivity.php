@@ -70,6 +70,10 @@
         <?php include("menu.php"); ?>
 		
         <div id="wrap">
+        	<!-- <?php echo(dates['startTime']);?>
+        	<?php echo(dates['endTime']);?>
+        	<?php echo(dates['startDate']);?>
+        	<?php echo(dates['endDate']);?> !-->
 			<div class="heroname">Edit Activity</div>
 			<div id="error"></div>
 
