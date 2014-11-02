@@ -16,7 +16,7 @@
 			<div id="hero"><img src="view/img/icon.png" alt="BeanSprouts" id="bigbean"><span id="bigbeantext">BeanSprouts</span></div>
 
 			<div class="event-block-stream">
-			<?php while($row = $q->fetch()){ if($row['isActive'] > 0){ ?>
+			<?php while($row = $q->fetch()){ if($row['isActive'] > 0 && $row['endDate'] > date('Y-m-d')){ ?>
 		        <a href="viewEvent.php?id=<?php echo($row['eventID']); ?>">
 			        <div class="event-block">
 	   
