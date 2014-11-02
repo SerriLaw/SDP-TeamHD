@@ -78,11 +78,11 @@
 				<table>
 					<tr class="input">
 						<td class="label">Activity Name</td>
-						<td class="field"><input type="text" id="name" class="textbox" value="<?php echo($row['name']); ?>"></td>
+						<td class="field"><input type="text" id="name" class="textbox hasMax" value="<?php echo($row['name']); ?>" friendly="Activity Name" max-val="20"></td>
 					</tr>
 					<tr class="input">
 						<td class="label">Description</td>
-						<td class="field"><textarea id="description" class="textbox"><?php echo($row['description']); ?></textarea></td>
+						<td class="field"><textarea id="description" class="textbox hasMax" friendly="Description" max-val="300"><?php echo($row['description']); ?></textarea></td>
 					</tr>
 					<tr class="input">
 						<td class="label">Start Date</td>
@@ -96,18 +96,18 @@
 
 					<tr class="input">
 						<td class="label">Location</td>
-						<td class="field"><input type="text" id="location" class="textbox" value="<?php echo($row['location']); ?>"></td>
+						<td class="field"><input type="text" id="location" class="textbox hasMax" value="<?php echo($row['location']); ?>" friendly="Location" max-val="50"></td>
 					</tr>
 					<tr class="input">
 						<td class="label">Start Time</td>
-						<td class="field"><input type="text" class="textbox" id="startTime" value="<?php echo($row['startTime']); ?>"> (Format 0000)</td>
+						<td class="field"><input type="text" class="textbox hasMax" id="startTime" value="<?php echo($row['startTime']); ?>" friendly="Start Time" max-val="4"> (Format 0000)</td>
 					</tr>
 					<tr class="input">
 						<td class="label">End Time</td>
-						<td class="field"><input type="text" class="textbox" id="endTime" value="<?php echo($row['endTime']); ?>"> (Format 0000)</td>
+						<td class="field"><input type="text" class="textbox hasMax" id="endTime" value="<?php echo($row['endTime']); ?>" friendly="End Time" max-val="4"> (Format 0000)</td>
 					</tr>
 					<tr class="input">
-						<td colspan="2"><div class="input"><input type="submit" value="Save Activity" id="updateActivity" class="formButton"></div> </td>
+						<td colspan="2"><div class="input"><input type="submit" value="Save Activity" id="updateActivity" class="formButton subBtn"></div> </td>
 					</tr>
 					
 					

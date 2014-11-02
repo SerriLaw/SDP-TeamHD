@@ -72,11 +72,11 @@
 				<table>
 					<tr class="input">
 						<td class="label">Event Name</td>
-						<td class="field"><input type="text" id="name" class="textbox" placeholder="e.g. UTS Open Day"></td>
+						<td class="field"><input type="text" id="name" class="textbox hasMax" placeholder="e.g. UTS Open Day" friendly="Event Name" max-val="20"></td>
 					</tr>
 					<tr class="input">
 						<td class="label">Description</td>
-						<td class="field"><textarea id="description" class="textbox" placeholder="e.g. This is a fun event!"></textarea></td>
+						<td class="field"><textarea id="description" class="textbox hasMax" placeholder="e.g. This is a fun event!" friendly="Description" max-val="300"></textarea></td>
 					</tr>
 					<tr class="input">
 						<td class="label">Start Date</td>
@@ -90,11 +90,11 @@
 
 					<tr class="input">
 						<td class="label">Location</td>
-						<td class="field"><input type="text" id="location" class="textbox" placeholder="e.g. UTS City Campus"></td>
+						<td class="field"><input type="text" id="location" class="textbox hasMax" placeholder="e.g. UTS City Campus" friendly="Location" max-val="50"></td>
 					</tr>
 					
 					<tr class="input">
-						<td colspan="2"><input type="submit" value="Create Event" id="createEvent" class="formButton"></td>
+						<td colspan="2"><input type="submit" value="Create Event" id="createEvent" class="formButton subBtn"></td>
 					</tr>
 					
 					

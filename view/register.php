@@ -87,28 +87,28 @@
 				<table>
 					<tr class="input">
 						<td class="label">UTS Student ID</td>
-						<td class="field"><input type="text" class="textbox" id="studentID" placeholder="e.g. 12345678"></td>
+						<td class="field"><input type="text" class="textbox hasMax" id="studentID" placeholder="e.g. 12345678" friendly="Student ID" max-val="10"></td>
 					</tr>
 					<tr class="input">
 						<td class="label">First Name</td>
-						<td class="field"><input type="text" class="textbox hasMax" id="firstName" placeholder="e.g. Josh" friendly="First Name" max-val="2"></td>
+						<td class="field"><input type="text" class="textbox hasMax" id="firstName" placeholder="e.g. Josh" friendly="First Name" max-val="20"></td>
 					</tr>
 					<tr class="input">
 						<td class="label">Last Name</td>
-						<td class="field"><input type="text" class="textbox hasMax" id="lastName" placeholder="e.g. Lo" friendly="Last Name" max-val="5"></td>
+						<td class="field"><input type="text" class="textbox hasMax" id="lastName" placeholder="e.g. Lo" friendly="Last Name" max-val="20"></td>
 					</tr>
 					<tr class="input">
 						<td class="label">Email</td>
-						<td class="field"><input type="text" class="textbox" id="email" placeholder="e.g. joshlo@email.com"></td>
+						<td class="field"><input type="text" class="textbox hasMax" id="email" placeholder="e.g. joshlo@email.com" friendly="Email" max-val="30"></td>
 					</tr>
 
 					<tr class="input">
 						<td class="label">Phone Number</td>
-						<td class="field"><input type="text" class="textbox" id="phone" placeholder="e.g. 0412345678"></td>
+						<td class="field"><input type="text" class="textbox hasMax" id="phone" placeholder="e.g. 0412345678" friendly="Phone Number" max-val="10"></td>
 					</tr>
 					<tr class="input">
 						<td class="label">Password</td>
-						<td class="field"><input input type="password" id="password" class="textbox"></td>
+						<td class="field"><input input type="password" id="password" class="textbox hasMax" friendly="Password" max-val="20"></td>
 					</tr>
 					<tr class="input">
 						<td class="label">Date of Birth</td>
@@ -141,20 +141,20 @@
 					<tr class="input">
 						<td class="label">Skills</td>
 						<td class="field">
-							<textarea id="skills" class="textbox"></textarea>
+							<textarea id="skills" class="textbox hasMax" friendly="Skills" max-val="300"></textarea>
 						</td>
 					</tr>
 					<tr class="input">
 						<td class="label">Experience</td>
 						<td class="field">
-							<textarea id="experience" class="textbox"></textarea>
+							<textarea id="experience" class="textbox hasMax" friendly="Experience" max-val="300"></textarea>
 						</td>
 					</tr>
 					
 					
 				</table>
 				
-				<div class="input"><input type="submit" value="Register" id="register" class="formButton"></div>
+				<div class="input"><input type="submit" value="Register" id="register" class="formButton subBtn"></div>
 				
 			</form>
 			<div class="footer">

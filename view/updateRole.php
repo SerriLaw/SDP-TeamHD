@@ -81,15 +81,15 @@
 				<table>
 					<tr class="input">
 						<td class="label">Role Name</td>
-						<td class="field"><input type="text" id="name" class="textbox" value="<?php echo($row['name']); ?>"></td>
+						<td class="field"><input type="text" id="name" class="textbox hasMax" value="<?php echo($row['name']); ?>" friendly="Role Name" max-val="20"></td>
 					</tr>
 					<tr class="input">
 						<td class="label">Description</td>
-						<td class="field"><textarea id="description" class="textbox" ><?php echo($row['description']); ?></textarea></td>
+						<td class="field"><textarea id="description" class="textbox hasMax" friendly="Description" max-val="300"><?php echo($row['description']); ?></textarea></td>
 					</tr>
 					<tr class="input">
 						<td class="label">Requirements</td>
-						<td class="field"><textarea id="requirements" class="textbox"><?php echo($row['requirements']); ?></textarea></td>
+						<td class="field"><textarea id="requirements" class="textbox hasMax" friendly="Requirements" max-val="300"><?php echo($row['requirements']); ?></textarea></td>
 					</tr>
 					<tr class="input">
 						<td class="label">Start Date</td>
@@ -109,14 +109,14 @@
 					</tr>
 					<tr class="input">
 						<td class="label">Start Time</td>
-						<td class="field"><input type="text" class="textbox" id="startTime" value="<?php echo($row['startTime']); ?>"> (Format 0000)</td>
+						<td class="field"><input type="text" class="textbox hasMax" id="startTime" friendly="Start Time" max-val="4" value="<?php echo($row['startTime']); ?>"> (Format 0000)</td>
 					</tr>
 					<tr class="input">
 						<td class="label">End Time</td>
-						<td class="field"><input type="text" class="textbox" id="endTime" value="<?php echo($row['endTime']); ?>"> (Format 0000)</td>
+						<td class="field"><input type="text" class="textbox hasMax" id="endTime" friendly="End Time" max-val="4" value="<?php echo($row['endTime']); ?>"> (Format 0000)</td>
 					</tr>
 					<tr class="input">
-						<td colspan="2"><input type="submit" value="Save Role" id="updateRole"class="formButton"></td>
+						<td colspan="2"><input type="submit" value="Save Role" id="updateRole" class="formButton subBtn"></td>
 					</tr>
 					
 					

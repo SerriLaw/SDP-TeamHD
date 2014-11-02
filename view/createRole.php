@@ -81,15 +81,15 @@
 				<table>
 					<tr class="input">
 						<td class="label">Role Name</td>
-						<td class="field"><input type="text" id="name" class="textbox" placeholder="e.g. Tour Guide"></td>
+						<td class="field"><input type="text" id="name" class="textbox hasMax" placeholder="e.g. Tour Guide" friendly="Role Name" max-val="20"></td>
 					</tr>
 					<tr class="input">
 						<td class="label">Description</td>
-						<td class="field"><textarea id="description" class="textbox" placeholder="e.g. This is a fun role!"></textarea></td>
+						<td class="field"><textarea id="description" class="textbox hasMax" placeholder="e.g. This is a fun role!" friendly="Description" max-val="300"></textarea></td>
 					</tr>
 					<tr class="input">
 						<td class="label">Requirements</td>
-						<td class="field"><textarea id="requirements" class="textbox" placeholder="e.g. Good speaking skills"></textarea></td>
+						<td class="field"><textarea id="requirements" class="textbox hasMax" placeholder="e.g. Good speaking skills" friendly="Requirements" max-val="300"></textarea></td>
 					</tr>
 					<tr class="input">
 						<td class="label">Start Date</td>
@@ -110,14 +110,14 @@
 					</tr>
 					<tr class="input">
 						<td class="label">Start Time</td>
-						<td class="field"><input type="text" class="textbox" id="startTime"> (Format 0000)</td>
+						<td class="field"><input type="text" class="textbox hasMax" id="startTime" friendly="Start Time" max-val="4"> (Format 0000)</td>
 					</tr>
 					<tr class="input">
 						<td class="label">End Time</td>
-						<td class="field"><input type="text" class="textbox" id="endTime"> (Format 0000)</td>
+						<td class="field"><input type="text" class="textbox hasMax" id="endTime" friendly="End Time" max-val="4"> (Format 0000)</td>
 					</tr>
 					<tr class="input">
-						<td colspan="2"><input type="submit" value="Create Role" id="createRole" class="formButton"></td>
+						<td colspan="2"><input type="submit" value="Create Role" id="createRole" class="formButton subBtn"></td>
 					</tr>
 					
 					

@@ -73,11 +73,11 @@
 				<table>
 					<tr class="input">
 						<td class="label">Event Name</td>
-						<td class="field"><input type="text" id="name" class="textbox" value="<?php echo($row['name']); ?>"></td>
+						<td class="field"><input type="text" id="name" class="textbox hasMax" value="<?php echo($row['name']); ?>" friendly="Event Name" max-val="20"></td>
 					</tr>
 					<tr class="input">
 						<td class="label">Description</td>
-						<td class="field"><textarea id="description" class="textbox"><?php echo($row['description']); ?></textarea></td>
+						<td class="field"><textarea id="description" class="textbox hasMax" friendly="Description" max-val="20"><?php echo($row['description']); ?></textarea></td>
 					</tr>
 					<tr class="input">
 						<td class="label">Start Date</td>
@@ -91,11 +91,11 @@
 
 					<tr class="input">
 						<td class="label">Location</td>
-						<td class="field"><input type="text" id="location" class="textbox" value="<?php echo($row['location']); ?>"></td>
+						<td class="field"><input type="text" id="location" class="textbox hasMax" value="<?php echo($row['location']); ?>" friendly="Location" max-val="50"></td>
 					</tr>
 					
 					<tr class="input">
-						<td colspan="2"><input type="submit" value="Save Event" id="updateEvent"class="formButton"></td>
+						<td colspan="2"><input type="submit" value="Save Event" id="updateEvent"class="formButton subBtn"></td>
 					</tr>
 					
 					

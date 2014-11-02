@@ -58,7 +58,7 @@ function prettyTimes() {
 
 function biggerThanMax(array) {
 	
-	$(array).focusout(function (){
+	$(array).keyup(function (){
 		var err = 0;
 		
 		for (var i = 0; i < array.length; i++) {
@@ -70,10 +70,12 @@ function biggerThanMax(array) {
 				$("#error").html("Error: " + $(item).attr("friendly") + " is too long. Max " + max + " characters.");
 				$(item).css("box-shadow","0 0 5px red");
 				err = 1;
+				$(".subBtn").prop("disabled", true);
 
 			} else {
 
 				$(item).css("box-shadow","none");
+				$(".subBtn").prop("disabled", false);
 
 				if (err === 0) {
 					$("#error").html("");

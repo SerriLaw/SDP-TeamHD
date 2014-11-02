@@ -95,26 +95,26 @@
 					</tr>
 					<tr class="input">
 						<td class="label">First Name</td>
-						<td class="field"><input type="text" id="firstName" class="textbox" value="<?php echo($row['firstName']) ?>"></td>
+						<td class="field"><input type="text" id="firstName" class="textbox hasMax" value="<?php echo($row['firstName']) ?>" friendly="First Name" max-val="20"></td>
 					</tr>
 					<tr class="input">
 						<td class="label">Last Name</td>
-						<td class="field"><input type="text" id="lastName" class="textbox" value="<?php echo($row['lastName']) ?>"></td>
+						<td class="field"><input type="text" id="lastName" class="textbox hasMax" value="<?php echo($row['lastName']) ?>" friendly="Last Name" max-val="20"></td>
 					</tr>
 					<tr class="input">
 						<td class="label">Email</td>
-						<td class="field"><input type="text" id="email" class="textbox" value="<?php echo($row['email']) ?>"></td>
+						<td class="field"><input type="text" id="email" class="textbox hasMax" value="<?php echo($row['email']) ?>" friendly="Email" max-val="30"></td>
 					</tr>
 
 
 					<tr class="input">
 						<td class="label">Phone Number</td>
-						<td class="field"><input type="text" id="phone" class="textbox" value="<?php echo($row['phone']) ?>"></td>
+						<td class="field"><input type="text" id="phone" class="textbox hasMax" value="<?php echo($row['phone']) ?>" friendly="Phone Number" max-val="10"></td>
 					</tr>
 
 					<tr class="input">
 						<td class="label">Password</td>
-						<td class="field"><input type="password" id="password" class="textbox" value="<?php echo($row['password']) ?>"></td>
+						<td class="field"><input type="password" id="password" class="textbox hasMax" value="<?php echo($row['password']) ?>" friendly="Password" max-val="20"></td>
 					</tr>
 
 					<tr class="input">
@@ -149,12 +149,12 @@
 
 					<tr class="input">
 						<td class="label">Skills</td>
-						<td class="field"><textarea id="skills"><?php echo($row['skills']); ?></textarea></td>
+						<td class="field"><textarea id="skills" class="hasMax" friendly="Skills" max-val="300"><?php echo($row['skills']); ?></textarea></td>
 					</tr>
 
 					<tr class="input">
 						<td class="label">Experience</td>
-						<td class="field"><textarea id="experience"><?php echo($row['experience']) ;?></textarea></td>
+						<td class="field"><textarea id="experience" class="hasMax" friendly="Experience" max-val="300"><?php echo($row['experience']) ;?></textarea></td>
 					</tr>
 					<?php } ?>
 
@@ -162,17 +162,17 @@
 					<?php if($row['userType'] > 1){?>
 					<tr class="input">
 						<td class="label">Department</td>
-						<td class="field"><input type="text" id="department" class="textbox"  value="<?php echo($row['department']) ?>"></td>
+						<td class="field"><input type="text" id="department" class="textbox hasMax" value="<?php echo($row['department']) ?>" friendly="Department" max-val="10"></td>
 					</tr>
 
 					<tr class="input">
 						<td class="label">Role</td>
-						<td class="field"><input type="text" id="role" class="textbox"  value="<?php echo($row['role']) ?>"></td>
+						<td class="field"><input type="text" id="role" class="textbox hasMax"  value="<?php echo($row['role']) ?>" friendly="Role" max-val="20"></td>
 					</tr>
 					<?php }?>
 					
 					<tr class="input">
-						<td colspan="2"><input type="submit" value="Save Profile" id="editProfile" class="formButton"></td>
+						<td colspan="2"><input type="submit" value="Save Profile" id="editProfile" class="formButton subBtn"></td>
 					</tr>
 					
 					
