@@ -310,9 +310,26 @@ body {
 				padding: 0 15px 0 0;
 			}
 		}
+	}
+
+	.user-list-block {
+		margin: 30px 20px;
+		font-size: $body-size;
+
+			.listStudentID {
+				padding: 0 0 0 0;
+			}
 
 
+			.callToAction {
+				padding: 0 0 0 20px;
+			}
 
+
+			.listStudentName {
+				min-width: 120px;
+				padding: 0 15px 0 0;
+			}
 	}
 
 	#error {

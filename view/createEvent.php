@@ -37,10 +37,10 @@
 			if(data)
 			{
 				if(data == "SQLFAILURE"){
-					$("#error").html("<span style='color:#cc0000'>Error:</span> Internal Error. ");
+					$("#error").html("Error: Internal Error. ");
 				}
 				else if (data == "FAILURE") {
-					$("#error").html("<span style='color:#cc0000'>Error:</span> LOLOLOLOL.");
+					$("#error").html("Error: Error.");
 				}else{
 					console.log(data);
 					window.location.href = "/SDP/viewEvent.php?id="+data;
@@ -50,7 +50,7 @@
 			else
 			{
 			$("#createEvent").val('Create Event');
-			$("#error").html("<span style='color:#cc0000'>Error:</span> Please fill in the above form.");
+			$("#error").html("Error: Please fill in the form.");
 			}
 			}
 			});

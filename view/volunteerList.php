@@ -11,20 +11,28 @@
 	<body>
 		<?php include('../SDP/menu.php');?>
 		<div id="wrap">
-		<h1>Active Volunteers</h1>
-		<?php
-		while($row = mysqli_fetch_array($result))
-		{
-			echo("Student ID: " . $row['userID'] . " " . $row['firstName'] . " " . $row['lastName'] . ' <a href ="viewProfile.php?userid=' . $row['userID'] . '">View Profile</a>' . "<br>");
-		}
-		?>
-		<h1>Inactive Volunteers</h1>
-		<?php
-		while($row1 = mysqli_fetch_array($result1))
-		{
-			echo("Student ID: " . $row1['userID'] . " " . $row1['firstName'] . " " . $row1['lastName'] . ' <a href ="viewProfile.php?userid=' . $row1['userID'] . '">View Profile</a>' . "<br>");
-		}
-		?>
-	</div>
+			<div class="heroname">Active Volunteers</div>
+			<?php
+			while($row = mysqli_fetch_array($result))
+			{
+				echo "<div class=\"user-list-block\">";
+				
+				echo " <table><tr><td class=\"listStudentName\">" .$row['firstName'] . " " . $row['lastName'] . "</td></tr><tr><td class=\"listStudentID\">Student ID: " .$row['userID'] . "</td><td class=\"callToAction\"><a href=\"/SDP/viewProfile.php?userid=".$row['userID']."\"><i class=\"fa fa-user\"></i> View Profile</a></td></tr></table> ";
+			
+				echo "</div>";
+			}
+			?>
+			<div class="heroname">Inactive Volunteers</div>
+			<?php
+			while($row1 = mysqli_fetch_array($result1))
+			{
+				echo "<div class=\"user-list-block\">";
+				
+				echo " <table><tr><td class=\"listStudentName\">" .$row1['firstName'] . " " . $row1['lastName'] . "</td></tr><tr><td class=\"listStudentID\">Student ID: " .$row1['userID'] . "</td><td class=\"callToAction\"><a href=\"/SDP/viewProfile.php?userid=".$row1['userID'] ."\"><i class=\"fa fa-user\"></i> View Profile</a></td></tr></table> ";
+				
+				echo "</div>";
+			}
+			?>
+		</div>
 	</body>
 </html>
