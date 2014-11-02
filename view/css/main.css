@@ -98,7 +98,7 @@ body {
       #wrap .event-block-stream .event-block .event-block-desc, #wrap .event-block-stream .event-block .event-block-date {
         color: black; }
       #wrap .event-block-stream .event-block .event-block-name {
-        font-size: 20px;
+        font-size: 24px;
         margin: 0 0 10px 0; }
       #wrap .event-block-stream .event-block .event-block-date {
         margin: 0 0 10px 0; }
@@ -127,10 +127,17 @@ body {
           min-height: 100px;
           padding: 15px; } }
   #wrap .heroname {
+    font-size: 24px;
+    margin: 20px 0; }
+  #wrap .heroname-2 {
     font-size: 20px;
     margin: 20px 0; }
+  #wrap .heroname-3 {
+    font-size: 16px;
+    margin: 20px 0;
+    text-decoration: underline; }
   #wrap .person-name {
-    font-size: 20px;
+    font-size: 24px;
     margin: 20px 15%; }
   #wrap .person-data, #wrap .contact, #wrap .system-user-data {
     margin: 15px 15%;
@@ -147,10 +154,10 @@ body {
       margin: 10px 0 30px 0;
       font-style: italic; }
     #wrap .event-details #name, #wrap .act-details #name, #wrap .role-details #name {
-      font-size: 20px;
+      font-size: 24px;
       margin: 20px 0 20px 0; }
     #wrap .event-details .date, #wrap .act-details .date, #wrap .role-details .date {
-      font-size: 20px;
+      font-size: 24px;
       margin: 0 0 10px 0; }
     #wrap .event-details .act-time, #wrap .act-details .act-time, #wrap .role-details .act-time {
       margin: 0 0 0 25px; }
@@ -160,7 +167,7 @@ body {
       margin: 20px 0 0 20px;
       line-height: 20px; }
   #wrap .event-activity .event-activity-head, #wrap .event-activity .role-applicant-head, #wrap .role-applicant .event-activity-head, #wrap .role-applicant .role-applicant-head {
-    font-size: 20px;
+    font-size: 24px;
     text-decoration: underline;
     margin: 0 0 10px 0; }
   #wrap .event-activity .event-activity-edit, #wrap .role-applicant .event-activity-edit {
@@ -187,6 +194,20 @@ body {
     #wrap .user-list-block .userType {
       font-style: italic;
       padding: 0 0 0 20px; }
+  #wrap .event-table {
+    border-collapse: collapse;
+    border: 1px black solid; }
+    #wrap .event-table td, #wrap .event-table th {
+      border: 1px black solid; }
+    #wrap .event-table th {
+      padding: 2px 5px;
+      min-width: 60px; }
+    #wrap .event-table td {
+      padding: 2px 5px; }
+  #wrap .report {
+    margin: 0 0 0 20px; }
+    #wrap .report td {
+      text-align: top; }
   #wrap #error {
     margin: 12px 0;
     color: red; }

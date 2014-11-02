@@ -14,7 +14,9 @@ $logo-font: "Patrick Hand SC", cursive;
 
 $nav-size: 14px;
 $body-size: 14px;
-$h2-size: 20px;
+$h2-size: 24px;
+$h3-size: 20px;
+$h4-size: 16px;
 
 $break-sml: 650px;
 $break-med: 768px;
@@ -226,6 +228,19 @@ body {
 		margin: 20px 0;
 	}
 
+	.heroname-2 {
+		font-size: $h3-size;
+		margin: 20px 0;
+	}
+
+	.heroname-3 {
+		font-size: $h4-size;
+		margin: 20px 0;
+		text-decoration: underline;
+	}
+
+
+
 	.person-name {
 		font-size: $h2-size;
 		margin: 20px 15%;
@@ -335,6 +350,32 @@ body {
 				font-style: italic;
 				padding: 0 0 0 20px;
 			}
+	}
+
+	.event-table {
+		border-collapse: collapse;
+		border: 1px $text-color solid;
+		
+		td, th {
+			border: 1px $text-color solid;
+		}
+
+		th {
+			padding: 2px 5px;
+			min-width: 60px;
+		}
+
+		td {
+			padding: 2px 5px;
+		}
+	}
+
+	.report {
+		margin: 0 0 0 20px;
+
+		td {
+			text-align: top;
+		}
 	}
 
 	#error {

@@ -11,34 +11,34 @@
 	<body>
 		<?php include('../SDP/menu.php');?>
 		<div id="wrap">
-		<h1>Future Events</h1>
-		<table border="1px">
-			<tr>
-				<td>Event Name</td>
-				<td>Activity Name</td>
-				<td>Role Name</td>
-				<td>Role Description</td>
-				<td>Start Date</td>
-				<td>End Date</td>
-				<td>View</td>
-			</tr>
-			<?php
-				
-				while($row = mysqli_fetch_array($result))
-				{
-					echo('
-						<tr>
-							<td>'.$row[0].'</td>
-							<td>'.$row[1].'</td>
-							<td>'.$row[2].'</td>
-							<td>'.$row[3].'</td>
-							<td>'.$row[4].'</td>
-							<td>'.$row[5].'</td>
-							<td><a href="/SDP/viewRole.php?roleid='.$row[6].'">View</a></td>
-						</tr>
-						');
-				}
-			?>
+			<div class="heroname">Past Events</div>
+			<table class="event-table">
+				<tr>
+					<th>Event Name</th>
+					<th>Activity Name</th>
+					<th>Role Name</th>
+					<th>Role Description</th>
+					<th>Start Date</th>
+					<th>End Date</th>
+					<th>View</th>
+				</tr>
+				<?php
+					
+					while($row = mysqli_fetch_array($result))
+					{
+						echo('
+							<tr>
+								<td>'.$row[0].'</td>
+								<td>'.$row[1].'</td>
+								<td>'.$row[2].'</td>
+								<td>'.$row[3].'</td>
+								<td class="dateToForm">'.$row[4].'</td>
+								<td class="dateToForm">'.$row[5].'</td>
+								<td><a href="/SDP/viewRole.php?roleid='.$row[6].'">View</a></td>
+							</tr>
+							');
+					}
+				?>
 		</table>
 		</div>
 	</body>

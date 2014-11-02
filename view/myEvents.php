@@ -11,56 +11,56 @@
 	<body>
 		<?php include('../SDP/menu.php');?>
 		<div id="wrap">
-		<h1><?php echo($row2['firstName'] ." " . $row2['lastName'] . "'s Events"); ?></h1>
-		<h2>Upcoming Events</h2>
-		<table border="1px">
-			<tr>
-				<td>Event Name</td>
-				<td>Event Description</td>
-				<td>Event Start Date</td>
-				<td>Event End Date</td>
-				<td>View Report</td>
-			</tr>
-			<?php
-				while($row = mysqli_fetch_array($result))
-				{
-					echo('
-						<tr>
-							<td>'.$row['name'].'</td>
-							<td>'.$row['description'].'</td>
-							<td>'.$row['startDate'].'</td>
-							<td>'.$row['endDate'].'</td>
-							<td><a href="/SDP/eventReport.php?eventid='.$row['eventID'].'">View</a></td>
-						</tr>
-						');
-				}
-			?>
-		</table>
-		<br>
+			<div class="heroname"><?php echo($row2['firstName'] ." " . $row2['lastName'] . "'s Events"); ?></div>
+			<div class="heroname">Upcoming Events</div>
+			<table class="event-table">
+				<tr>
+					<th>Event Name</th>
+					<th>Description</th>
+					<th>Start Date</th>
+					<th>End Date</th>
+					<th>Report</th>
+				</tr>
+				<?php
+					while($row = mysqli_fetch_array($result))
+					{
+						echo('
+							<tr>
+								<td>'.$row['name'].'</td>
+								<td>'.$row['description'].'</td>
+								<td class="dateToForm">'.$row['startDate'].'</td>
+								<td class="dateToForm">'.$row['endDate'].'</td>
+								<td><a href="/SDP/eventReport.php?eventid='.$row['eventID'].'">View</a></td>
+							</tr>
+							');
+					}
+				?>
+			</table>
+			<br>
 
-		<h2>Past Events</h2>
-		<table border="1px">
-			<tr>
-				<td>Event Name</td>
-				<td>Event Description</td>
-				<td>Event Start Date</td>
-				<td>Event End Date</td>
-				<td>View Report</td>
-			</tr>
-			<?php
-				while($row1 = mysqli_fetch_array($result1))
-				{
-					echo('
-						<tr>
-							<td>'.$row1['name'].'</td>
-							<td>'.$row1['description'].'</td>
-							<td>'.$row1['startDate'].'</td>
-							<td>'.$row1['endDate'].'</td>
-							<td><a href="/SDP/eventReport.php?eventid='.$row1['eventID'].'">View</a></td>
-						</tr>
-						');
-				}
-			?>
+			<div class="heroname">Past Events</div>
+			<table class="event-table">
+				<tr>
+					<th>Event Name</th>
+					<th>Description</th>
+					<th>Start Date</th>
+					<th>End Date</th>
+					<th>View Report</th>
+				</tr>
+				<?php
+					while($row1 = mysqli_fetch_array($result1))
+					{
+						echo('
+							<tr>
+								<td>'.$row1['name'].'</td>
+								<td>'.$row1['description'].'</td>
+								<td class="dateToForm">'.$row1['startDate'].'</td>
+								<td class="dateToForm">'.$row1['endDate'].'</td>
+								<td><a href="/SDP/eventReport.php?eventid='.$row1['eventID'].'">View</a></td>
+							</tr>
+							');
+					}
+				?>
 		</div>
 	</body>
 </html>

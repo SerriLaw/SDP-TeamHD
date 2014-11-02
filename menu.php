@@ -11,6 +11,7 @@
                 <?php if(isset($_SESSION['userType'])){ ?>
                         <li class="h"><?php echo("<a href=\"/SDP/viewProfile.php?userid=".$_SESSION['userID'])."\">" ; ?><i class="fa fa-user"></i> View Profile</a></li>
                         <?php if(isset($_SESSION['userType']) && ($_SESSION['userType'] > 1)){ ?>
+                                <?php echo "<li class=\"h\"><a href=\"/SDP/myEvents.php?userid=" .$_SESSION['userID'] . "\"><i class=\"fa fa-tasks\"></i> My Events</a></li>"?>
                                 <li class="h"><a href="/SDP/createEvent.php"><i class="fa fa-plus"></i> Add Events</a></li>
                                 <li class="h"><a href="/SDP/volunteerList.php"><i class="fa fa-users"></i> View Volunteers</a></li>
                                 <li class="h"><a href="/SDP/managerList.php"><i class="fa fa-users"></i> View Event Managers and Admins</a></li>

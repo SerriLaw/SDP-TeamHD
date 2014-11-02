@@ -11,15 +11,15 @@
 	<body>
 		<?php include('../SDP/menu.php');?>
 		<div id="wrap">
-		<h1>Future Events</h1>
-		<table border="1px">
+		<div class="heroname">Future Events</div>
+		<table class="event-table">
 			<tr>
-				<td>Event Name</td>
-				<td>Activity Name</td>
-				<td>Role Name</td>
-				<td>Status</td>
-				<td>Date/Time Submitted</td>
-				<td>View</td>
+				<th>Event Name</th>
+				<th>Activity Name</th>
+				<th>Role Name</th>
+				<th>Status</th>
+				<th>Date/Time Submitted</th>
+				<th>View</th>
 			</tr>
 			<?php
 				while($row = mysqli_fetch_array($result))

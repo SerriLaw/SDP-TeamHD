@@ -25,14 +25,24 @@
 			echo "</td></tr><tr><td class=\"listStudentID\">User ID: " .$row['userID']. "</td><td class=\"callToAction\"><a href=\"/SDP/viewProfile.php?userid=".$row['userID']."\"><i class=\"fa fa-user\"></i> View Profile</a></td></tr></table> ";
 			
 			echo "</div>";
-			//echo($row['userID'] . " " . $row['firstName'] . " " . $row['lastName'] . ' <a href ="viewProfile.php?userid=' . $row['userID'] . '">View Profile</a>' . "<br>");
+			
 		}
 		?>
 		<div class="heroname">Inactive Event Managers and Admins</div>
 		<?php
 		while($row1 = mysqli_fetch_array($result1))
-		{
-			if($row1['userType'] ==2){echo("Event Manager ");}else{echo("System Administrator ");} echo($row1['userID'] . " " . $row1['firstName'] . " " . $row1['lastName'] . ' <a href ="viewProfile.php?userid=' . $row1['userID'] . '">View Profile</a>' . "<br>");
+		{	
+			echo "<div class=\"user-list-block\">";
+			
+			echo " <table><tr><td class=\"listStudentName\">" . $row1['firstName'] . " " . $row1['lastName'] . "</td><td class=\"userType\">";
+			
+			if($row['userType'] ==2){echo("Event Manager");} else { echo ("System Administrator");}
+
+			echo "</td></tr><tr><td class=\"listStudentID\">User ID: " . $row1['userID'] . "</td><td class=\"callToAction\"><a href=\"/SDP/viewProfile.php?userid=". $row1['userID']."\"><i class=\"fa fa-user\"></i> View Profile</a></td></tr></table> ";
+			
+			echo "</div>";
+
+			
 		}
 		?>
 	</div>
