@@ -1,7 +1,10 @@
 $(document).ready(function() {
     prettyDates();
     prettyTimes();
+
     kickerBiggerThanMax();
+    kickerNumOnly();
+    kickerFourDigit();
 });
 
 
@@ -75,11 +78,12 @@ function biggerThanMax(array) {
 			} else {
 
 				$(item).css("box-shadow","none");
-				$(".subBtn").prop("disabled", false);
-
+				
 				if (err === 0) {
 					$("#error").html("");
 					$(item).css("box-shadow","none");
+					$(".subBtn").prop("disabled", false);
+
 
 				}
 			}
@@ -93,3 +97,82 @@ function kickerBiggerThanMax() {
 	var className = $(".hasMax");
 	biggerThanMax(className);
 }
+
+function numbersOnly(array) {
+	
+	$(array).keyup(function (){
+		var err = 0;
+		
+		for (var i = 0; i < array.length; i++) {
+			var item = array[i];
+			var pattern = new RegExp("[0-9]+");
+
+			if (pattern.test($(item).val()) || $(item).val() === "") {
+				
+				$(item).css("box-shadow","none");
+				
+				if (err === 0) {
+					$("#error").html("");
+					$(item).css("box-shadow","none");
+					$(".subBtn").prop("disabled", false);
+
+				}
+
+			} else {
+
+				$("#error").html("Error: " + $(item).attr("friendly") + " can only contain numbers between 0 - 9.");
+				$(item).css("box-shadow","0 0 5px red");
+				err = 1;
+				$(".subBtn").prop("disabled", true);
+
+				
+			}
+		}
+
+	});
+}
+
+function kickerNumOnly() {
+	var className = $(".numOnly");
+	numbersOnly(className);
+}
+
+function fourDigit(array) {
+	
+	$(array).keyup(function (){
+		var err = 0;
+		
+		for (var i = 0; i < array.length; i++) {
+			var item = array[i];
+			var pattern = new RegExp("[0-9][0-9][0-9][0-9]");
+
+			if (pattern.test($(item).val()) || $(item).val() === "") {
+				
+				$(item).css("box-shadow","none");
+				
+				if (err === 0) {
+					$("#error").html("");
+					$(item).css("box-shadow","none");
+					$(".subBtn").prop("disabled", false);
+
+				}
+
+			} else {
+
+				$("#error").html("Error: " + $(item).attr("friendly") + " can only contain numbers between 0 - 9 in the format 0000, 24 hour time.");
+				$(item).css("box-shadow","0 0 5px red");
+				err = 1;
+				$(".subBtn").prop("disabled", true);
+
+				
+			}
+		}
+
+	});
+}
+
+function kickerFourDigit() {
+	var className = $(".fourDigit");
+	fourDigit(className);
+}
+

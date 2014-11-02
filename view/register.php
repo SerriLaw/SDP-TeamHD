@@ -104,7 +104,7 @@
 
 					<tr class="input">
 						<td class="label">Phone Number</td>
-						<td class="field"><input type="text" class="textbox hasMax" id="phone" placeholder="e.g. 0412345678" friendly="Phone Number" max-val="10"></td>
+						<td class="field"><input type="text" class="textbox hasMax numOnly" id="phone" placeholder="e.g. 0412345678" friendly="Phone Number" max-val="10"></td>
 					</tr>
 					<tr class="input">
 						<td class="label">Password</td>

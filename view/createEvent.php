@@ -112,11 +112,11 @@
 					</tr>
 					<tr class="input">
 						<td class="label">Start Time</td>
-						<td class="field"><input type="text" id ="startTime"></td>
+						<td class="field"><input type="text" id ="startTime" class="hasMax fourDigit" friendly="Start Time" max-val="4"></td>
 					</tr>
 					<tr class="input">
 						<td class="label">End Time</td>
-						<td class="field"><input type="text" id ="endTime"></td>
+						<td class="field"><input type="text" id ="endTime" class="hasMax fourDigit" friendly="End Time" max-val="4"></td>
 					</tr>
 
 					<tr class="input">

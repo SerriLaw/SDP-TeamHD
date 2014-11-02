@@ -102,11 +102,11 @@
 					</tr>
 					<tr class="input">
 						<td class="label">Start Time</td>
-						<td class="field"><input type="text" class="textbox hasMax" id="startTime" friendly="Start Time" max-val="4"> (Format 0000)</td>
+						<td class="field"><input type="text" class="textbox hasMax fourDigit" id="startTime" friendly="Start Time" max-val="4"> (Format 0000)</td>
 					</tr>
 					<tr class="input">
 						<td class="label">End Time</td>
-						<td class="field"><input type="text" class="textbox hasMax" id="endTime" friendly="End Time" max-val="4"> (Format 0000)</td>
+						<td class="field"><input type="text" class="textbox hasMax fourDigit" id="endTime" friendly="End Time" max-val="4"> (Format 0000)</td>
 					</tr>
 					<tr class="input">
 						<td colspan="2"><input type="submit" value="Create Activity" id="createActivity" class="formButton subBtn"></td>

@@ -73,7 +73,6 @@
 
 
         <div id="wrap">
-        	<div id="hero"><img src="view/img/icon.png" alt="BeanSprouts" id="bigbean"><span id="bigbeantext">BeanSprouts</span></div>
 			<div class="heroname">Add Event Manager</div>
 			<div id="error"></div>
 
@@ -82,28 +81,28 @@
 				<table>
 					<tr class="input">
 						<td class="label">UTS Staff ID</td>
-						<td class="field"><input type="text" class="textbox" id="userID" placeholder="e.g. 12345678"></td>
+						<td class="field"><input type="text" class="textbox hasMax" id="userID" placeholder="e.g. 12345678" friendly="Staff ID" max-val="10"></td>
 					</tr>
 					<tr class="input">
 						<td class="label">First Name</td>
-						<td class="field"><input type="text" class="textbox" id="firstName" placeholder="e.g. Josh"></td>
+						<td class="field"><input type="text" class="textbox hasMax" id="firstName" placeholder="e.g. Josh" friendly="First Name" max-val="20"></td>
 					</tr>
 					<tr class="input">
 						<td class="label">Last Name</td>
-						<td class="field"><input type="text" class="textbox" id="lastName" placeholder="e.g. Lo"></td>
+						<td class="field"><input type="text" class="textbox hasMax" id="lastName" placeholder="e.g. Lo" friendly="Last Name" max-val="20"></td>
 					</tr>
 					<tr class="input">
 						<td class="label">Email</td>
-						<td class="field"><input type="text" class="textbox" id="email" placeholder="e.g. joshlo@email.com"></td>
+						<td class="field"><input type="text" class="textbox hasMax" id="email" placeholder="e.g. joshlo@email.com" friendly="Email" max-val="30"></td>
 					</tr>
 
 					<tr class="input">
 						<td class="label">Phone Number</td>
-						<td class="field"><input type="text" class="textbox" id="phone" placeholder="e.g. 0412345678"></td>
+						<td class="field"><input type="text" class="textbox hasMax numOnly" id="phone" placeholder="e.g. 0412345678" friendly="Phone number" max-val="10"></td>
 					</tr>
 					<tr class="input">
 						<td class="label">Password</td>
-						<td class="field"><input input type="password" id="password" class="textbox"></td>
+						<td class="field"><input input type="password" id="password" class="textbox hasMax" friendly="Password" max-val="20"></td>
 					</tr>
 					<tr class="input">
 						<td class="label">Date of Birth</td>
@@ -118,17 +117,17 @@
 					</tr>
 					<tr class="input">
 						<td class="label">Department</td>
-						<td class="field"><input type="text" class="textbox" id="department" placeholder="e.g. FEIT"></td>
+						<td class="field"><input type="text" class="textbox hasMax" id="department" placeholder="e.g. FEIT" friendly="Department" max-val="10"></td>
 					</tr>
 					<tr class="input">
 						<td class="label">Role</td>
-						<td class="field"><input type="text" class="textbox" id="role" placeholder="e.g. Marketing"></td>
+						<td class="field"><input type="text" class="textbox hasMax" id="role" placeholder="e.g. Marketing Officer" friendly="Role" max-val="20"></td>
 					</tr>
 					
 					
 				</table>
 				
-				<div class="input"><input type="submit" value="Create" id="register" class="formButton"></div>
+				<div class="input"><input type="submit" value="Create" id="register" class="formButton subBtn"></div>
 				
 			</form>
 			<div class="footer">
