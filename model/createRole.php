@@ -19,7 +19,7 @@
 			echo("SQLFAILURE");
 			die('Error: ' . mysqli_error($db));
 		}
-			$sql1 = "SELECT MAX(eventID) FROM event;";
+			$sql1 = "SELECT MAX(roleID) FROM role;";
 			$qry = mysqli_query($db,$sql1);
 			$result=mysqli_fetch_array($qry,MYSQLI_ASSOC);
 			echo(implode(" ", $result));

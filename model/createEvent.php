@@ -7,10 +7,12 @@
 		$description = mysqli_real_escape_string($db,$_POST['description']);
 		$startDate = mysqli_real_escape_string($db,$_POST['startDate']);
 		$endDate = mysqli_real_escape_string($db,$_POST['endDate']);
+		$startTime = mysqli_real_escape_string($db,$_POST['startTime']);
+		$endTime = mysqli_real_escape_string($db,$_POST['endTime']);
 		$location = mysqli_real_escape_string($db,$_POST['location']);
 		$managerID = mysqli_real_escape_string($db,$_POST['managerID']);
 
-		$sql = "INSERT INTO event (name, description, startDate, endDate ,location, managerID) VALUES ('$name', '$description', '$startDate', '$endDate', '$location', '$managerID')";
+		$sql = "INSERT INTO event (name, description, startDate, endDate, startTime, endTime ,location, managerID) VALUES ('$name', '$description', '$startDate', '$endDate', '$startTime', '$endTime', '$location', '$managerID')";
 		if (!mysqli_query($db,$sql)) {
 			echo("SQLFAILURE");
 			die('Error: ' . msqli_error($db));

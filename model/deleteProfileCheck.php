@@ -81,9 +81,10 @@
 		}
 		elseif($userType > 1) // the profile is an event manager or system admin
 		{
-			$sql = "SELECT * FROM event WHERE managerID = " . $_SESSION['userID'];
+			$sql = "SELECT * FROM event WHERE managerID = " . $userID;
 			$result = mysqli_query($db, $sql);
 			$count = mysqli_num_rows($result);
+			echo($count);
 			if($count > 0) // the event manager is managing any events past or future
 			{
 				while($row = mysqli_fetch_array($result,MYSQLI_ASSOC))
@@ -97,6 +98,8 @@
 				echo("SUCCESS");
 				die();
 			}
+			echo("SUCCESS");
+			die();
 		}
 		else
 		{

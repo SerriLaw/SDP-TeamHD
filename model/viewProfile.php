@@ -22,11 +22,12 @@
 		$userID = $_GET['userid'];
 		$sql1 = "SELECT * FROM user WHERE userID = " . $userID;
 		$result1 = mysqli_query($db, $sql1);
-		if($result1 < 2) // the user is a student
+		$row2 = mysqli_fetch_array($result1,MYSQLI_ASSOC);
+		if($row2['userType'] < 2) // the user is a student
 		{
 			$sql = 'SELECT * FROM user JOIN student ON user.userID=student.userID WHERE user.userID = ' . $userID;
 		}
-		elseif($result1 > 1) // the user is staff
+		elseif($row2['userType'] > 1) // the user is staff
 		{
 			$sql = 'SELECT * FROM user JOIN staff ON user.userID=staff.userID WHERE user.userID = ' . $userID;
 		}

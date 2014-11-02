@@ -24,6 +24,7 @@
 			die();
 		}
 		echo("SUCCESS");
+		header('location: /SDP/home.php']);
 	}
 	else
 	{

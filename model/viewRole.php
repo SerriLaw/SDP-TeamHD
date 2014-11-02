@@ -1,5 +1,5 @@
 <?php
-	include("db.php");
+	// include("db.php");
 	$roleID = $_GET['roleid'];
 	$sql = "SELECT * FROM role WHERE roleID =" . $roleID;
 	$result = mysqli_query($db, $sql);

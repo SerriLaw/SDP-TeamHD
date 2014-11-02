@@ -1,4 +1,4 @@
-
+<?php include('../SDP/model/eventDate.php');?>
 <html>
 	<head>
 		<title>BeanSprouts - Create Activity</title>
@@ -69,6 +69,7 @@
 	<head>
 	<body>
         <?php include("menu.php"); ?>
+
 
         <div id="wrap">
 			<div class="heroname">Add New Activity</div>

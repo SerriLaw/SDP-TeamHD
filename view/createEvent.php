@@ -19,12 +19,14 @@
 			var description=$("#description").val();
 			var startDate=$("#startDate").val();
 			var endDate=$("#endDate").val();
+			var startTime=$("#startTime").val();
+			var endTime=$("#endTime").val();
 			var location=$("#location").val();
-			var managerID= <?php echo $_SESSION['userID'] ?>;
+			var managerID= $("#managerID").val();
 
-			var dataString = 'name='+name+'&description='+description+"&startDate="+startDate+"&endDate="+endDate+"&location="+location+"&managerID="+managerID;
+			var dataString = 'name='+name+'&description='+description+"&startDate="+startDate+"&endDate="+endDate+"&startTime="+startTime+"&endTime="+endTime+"&location="+location+"&managerID="+managerID;
 			console.log(dataString);
-			if($.trim(name).length>0 && $.trim(description).length>0 && $.trim(startDate).length>0 && $.trim(endDate).length>0 && $.trim(location).length>0)
+			if($.trim(name).length>0 && $.trim(description).length>0 && $.trim(startDate).length>0 && $.trim(endDate).length>0 && $.trim(location).length>0 && $.trim(startTime).length>0 && $.trim(endTime).length>0)
 			{
 			console.log("fire");
 			$.ajax({
@@ -36,11 +38,11 @@
 			success: function(data){
 			if(data)
 			{
-				if(data == "SQLFAILURE"){
-					$("#error").html("Error: Internal Error. ");
+				if(data.indexOf("SQLFAILURE") > -1){
+					$("#error").html("<span style='color:#cc0000'>Error:</span> Internal Error. ");
 				}
-				else if (data == "FAILURE") {
-					$("#error").html("Error: Error.");
+				else if (data.indexOf("FAILURE") > -1) {
+					$("#error").html("<span style='color:#cc0000'>Error:</span> LOLOLOLOL.");
 				}else{
 					console.log(data);
 					window.location.href = "/SDP/viewEvent.php?id="+data;
@@ -50,11 +52,16 @@
 			else
 			{
 			$("#createEvent").val('Create Event');
-			$("#error").html("Error: Please fill in the form.");
+			$("#error").html("<span style='color:#cc0000'>Error:</span> Server did not respond.");
 			}
 			}
 			});
 
+			}
+			else
+			{
+			$("#createEvent").val('Create Event');
+			$("#error").html("<span style='color:#cc0000'>Error:</span> Please fill in the above form.");		
 			}
 			return false;
 			});
@@ -71,12 +78,29 @@
 			<form action="" method="post">
 				<table>
 					<tr class="input">
+						<td class="label">Event Manager</td>
+						<td class="field">
+							<select id="managerID">
+								<?php 
+									include("model/db.php");
+									$sql = "SELECT * FROM user WHERE userType > 1 AND isActive = 1";
+									$result = mysqli_query($db, $sql);
+									while($row = mysqli_fetch_array($result))
+									{
+										echo "<option value=\"" . $row['userID'] . "\">" .  $row['userID']. " " . $row['firstName'] . " " . $row['lastName'] . "</option>";
+									}
+
+								?>
+							</select>
+						</td>
+					</tr>
+					<tr class="input">
 						<td class="label">Event Name</td>
-						<td class="field"><input type="text" id="name" class="textbox hasMax" placeholder="e.g. UTS Open Day" friendly="Event Name" max-val="20"></td>
+						<td class="field"><input type="text" id="name" class="textbox" placeholder="e.g. UTS Open Day"></td>
 					</tr>
 					<tr class="input">
 						<td class="label">Description</td>
-						<td class="field"><textarea id="description" class="textbox hasMax" placeholder="e.g. This is a fun event!" friendly="Description" max-val="300"></textarea></td>
+						<td class="field"><textarea id="description" class="textbox" placeholder="e.g. This is a fun event!"></textarea></td>
 					</tr>
 					<tr class="input">
 						<td class="label">Start Date</td>
@@ -86,15 +110,22 @@
 						<td class="label">End Date</td>
 						<td class="field"><input type="date" id ="endDate"></td>
 					</tr>
-
+					<tr class="input">
+						<td class="label">Start Time</td>
+						<td class="field"><input type="text" id ="startTime"></td>
+					</tr>
+					<tr class="input">
+						<td class="label">End Time</td>
+						<td class="field"><input type="text" id ="endTime"></td>
+					</tr>
 
 					<tr class="input">
 						<td class="label">Location</td>
-						<td class="field"><input type="text" id="location" class="textbox hasMax" placeholder="e.g. UTS City Campus" friendly="Location" max-val="50"></td>
+						<td class="field"><input type="text" id="location" class="textbox" placeholder="e.g. UTS City Campus"></td>
 					</tr>
 					
 					<tr class="input">
-						<td colspan="2"><input type="submit" value="Create Event" id="createEvent" class="formButton subBtn"></td>
+						<td colspan="2"><input type="submit" value="Create Event" id="createEvent" class="formButton"></td>
 					</tr>
 					
 					

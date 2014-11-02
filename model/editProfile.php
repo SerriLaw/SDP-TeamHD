@@ -14,7 +14,7 @@
 		$courseID = mysqli_real_escape_string($db,$_POST['courseID']);
 		$skills = mysqli_real_escape_string($db,$_POST['skills']);
 		$experience = mysqli_real_escape_string($db,$_POST['experience']);
-		$sql = "UPDATE user JOIN student ON(user.userID = student.userID) SET firstName='" . $firstName . "', lastName='" . $lastName . "', email='" . $email . "', phone='" . $phone . "', password='" . $password . "', DOB='" . $dateOfBirth . "', gender='" . $gender . "', courseID='" . $courseID . "', skills='" . $skills . "', experience='" . $experience . "'";
+		$sql = "UPDATE user JOIN student ON(user.userID = student.userID) SET firstName='" . $firstName . "', lastName='" . $lastName . "', email='" . $email . "', phone='" . $phone . "', password='" . $password . "', DOB='" . $dateOfBirth . "', gender='" . $gender . "', courseID='" . $courseID . "', skills='" . $skills . "', experience='" . $experience . "' WHERE user.userID = " . $userID;
 		if(!mysqli_query($db,$sql))	
 		{
 			echo("ERROR1");
@@ -28,7 +28,7 @@
 	{
 		$department = mysqli_real_escape_string($db,$_POST['department']);
 		$role = mysqli_real_escape_string($db,$_POST['role']);
-		$sql = "UPDATE user JOIN staff ON(user.userID = staff.userID) SET firstName='" . $firstName . "', lastName='" . $lastName . "', email='" . $email . "', phone='" . $phone . "', password='" . $password . "', DOB='" . $dateOfBirth . "', gender='" . $gender . "', department='" . $department . "', role='" . $role . "'";
+		$sql = "UPDATE user JOIN staff ON(user.userID = staff.userID) SET firstName='" . $firstName . "', lastName='" . $lastName . "', email='" . $email . "', phone='" . $phone . "', password='" . $password . "', DOB='" . $dateOfBirth . "', gender='" . $gender . "', department='" . $department . "', role='" . $role . "' WHERE user.userID = " . $userID;
 		if(!mysqli_query($db,$sql))
 		{
 			echo("ERROR2");
