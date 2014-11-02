@@ -76,7 +76,11 @@
         <div id="wrap">
         	<div id="hero"><img src="view/img/icon.png" alt="BeanSprouts" id="bigbean"><span id="bigbeantext">BeanSprouts</span></div>
 			<div class="heroname">Register</div>
+			<div>Got an account? <a href="/SDP/login.php">Click  here  to log in.</a></div>
+
 			<div id="error"></div>
+			
+			
 
 			<form action="" method="post">
 
@@ -87,11 +91,11 @@
 					</tr>
 					<tr class="input">
 						<td class="label">First Name</td>
-						<td class="field"><input type="text" class="textbox" id="firstName" placeholder="e.g. Josh"></td>
+						<td class="field"><input type="text" class="textbox hasMax" id="firstName" placeholder="e.g. Josh" friendly="First Name" max-val="2"></td>
 					</tr>
 					<tr class="input">
 						<td class="label">Last Name</td>
-						<td class="field"><input type="text" class="textbox" id="lastName" placeholder="e.g. Lo"></td>
+						<td class="field"><input type="text" class="textbox hasMax" id="lastName" placeholder="e.g. Lo" friendly="Last Name" max-val="5"></td>
 					</tr>
 					<tr class="input">
 						<td class="label">Email</td>

@@ -1,6 +1,7 @@
 $(document).ready(function() {
     prettyDates();
     prettyTimes();
+    kickerBiggerThanMax();
 });
 
 
@@ -53,36 +54,40 @@ function prettyTimes() {
 }
 
 
-function validateChar() {
-	$('#descErr').hide();
-	$('#nameErr').hide();
-	$('#locErr').hide();
+// VALIDATION
 
+function biggerThanMax(array) {
+	
+	$(array).focusout(function (){
+		var err = 0;
+		
+		for (var i = 0; i < array.length; i++) {
+			var item = array[i];
+			var max = $(item).attr("max-val");
 
-	$('#description').keyup(function() {
-	    var count = $(this).val().length;
-		if (count > 300) {
-			$('#descErr').show();
-		} else {
-			$('#descErr').hide();
+			if ($(item).val().length > max) {
+				
+				$("#error").html("Error: " + $(item).attr("friendly") + " is too long. Max " + max + " characters.");
+				$(item).css("box-shadow","0 0 5px red");
+				err = 1;
+
+			} else {
+
+				$(item).css("box-shadow","none");
+
+				if (err === 0) {
+					$("#error").html("");
+					$(item).css("box-shadow","none");
+
+				}
+			}
 		}
-	});
 
-	$('#name').keyup(function() {
-	    var count = $(this).val().length;
-		if (count > 20) {
-			$('#nameErr').show();
-		} else {
-			$('#nameErr').hide();
-		}
 	});
+}
 
-	$('#location').keyup(function() {
-	    var count = $(this).val().length;
-		if (count > 50) {
-			$('#locErr').show();
-		} else {
-			$('#locErr').hide();
-		}
-	});
+
+function kickerBiggerThanMax() {
+	var className = $(".hasMax");
+	biggerThanMax(className);
 }
