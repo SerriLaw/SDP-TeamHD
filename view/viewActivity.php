@@ -108,7 +108,7 @@
 		        
 				<?php 
 					if(!empty($_SESSION))
-					if ($_SESSION['userID'] == $_GET['managerid']) 
+					if ($_SESSION['userID']  > 1) 
 					{
 						
 						$link1 = "<div class=\"event-activity-edit\"><a href=createRole.php?activityid="; 

@@ -19,11 +19,14 @@
 			var description=$("#description").val();
 			var startDate=$("#startDate").val();
 			var endDate=$("#endDate").val();
+			var startTime=$("#startTime").val();
+			var endTime=$("#endTime").val();
 			var location=$("#location").val();
+			var managerID= $("#managerID").val();
 
-			var dataString = 'name='+name+'&description='+description+"&startDate="+startDate+"&endDate="+endDate+"&location="+location;
+			var dataString = 'name='+name+'&description='+description+"&startDate="+startDate+"&endDate="+endDate+"&startTime="+startTime+"&endTime="+endTime+"&location="+location+"&managerID="+managerID;
 			console.log(dataString);
-			if($.trim(name).length>0 && $.trim(description).length>0 && $.trim(startDate).length>0 && $.trim(endDate).length>0 && $.trim(location).length>0)
+			if($.trim(name).length>0 && $.trim(description).length>0 && $.trim(startDate).length>0 && $.trim(endDate).length>0 && $.trim(startTime).length>0 && $.trim(endTime).length>0 && $.trim(location).length>0 && $.trim(managerID).length>0)
 			{
 			console.log("fire");
 			$.ajax({
@@ -67,17 +70,33 @@
 
 
 		<div id="wrap">
-		<div class="heroname">Add New Event</div>
+		<div class="heroname">Update Event</div>
 		<div id="error"></div>
 			<form action="" method="post">
 				<table>
 					<tr class="input">
+						<td class="label">Event Manager</td>
+						<td class="field">
+							<select id="managerID">
+								<?php 
+									$sql12 = "SELECT * FROM user WHERE userType > 1 AND isActive = 1";
+									$result12 = mysqli_query($db, $sql12);
+									while($row12 = mysqli_fetch_array($result12))
+									{
+										echo "<option value=\"" . $row12['userID'] . "\">" .  $row12['userID']. " " . $row12['firstName'] . " " . $row12['lastName'] . "</option>";
+									}
+
+								?>
+							</select>
+						</td>
+					</tr>
+					<tr class="input">
 						<td class="label">Event Name</td>
-						<td class="field"><input type="text" id="name" class="textbox hasMax" value="<?php echo($row['name']); ?>" friendly="Event Name" max-val="20"></td>
+						<td class="field"><input type="text" id="name" class="textbox" value="<?php echo($row['name']); ?>"></td>
 					</tr>
 					<tr class="input">
 						<td class="label">Description</td>
-						<td class="field"><textarea id="description" class="textbox hasMax" friendly="Description" max-val="20"><?php echo($row['description']); ?></textarea></td>
+						<td class="field"><textarea id="description" class="textbox"><?php echo($row['description']); ?></textarea></td>
 					</tr>
 					<tr class="input">
 						<td class="label">Start Date</td>
@@ -87,15 +106,23 @@
 						<td class="label">End Date</td>
 						<td class="field"><input type="date" id ="endDate" value="<?php echo($row['endDate']); ?>"></td>
 					</tr>
+					<tr class="input">
+						<td class="label">Start Time</td>
+						<td class="field"><input type="text" id ="startTime" value="<?php echo($row['startTime']); ?>"></td>
+					</tr>
+					<tr class="input">
+						<td class="label">End Time</td>
+						<td class="field"><input type="text" id ="endTime" value="<?php echo($row['endTime']); ?>"></td>
+					</tr>
 
 
 					<tr class="input">
 						<td class="label">Location</td>
-						<td class="field"><input type="text" id="location" class="textbox hasMax" value="<?php echo($row['location']); ?>" friendly="Location" max-val="50"></td>
+						<td class="field"><input type="text" id="location" class="textbox" value="<?php echo($row['location']); ?>"></td>
 					</tr>
 					
 					<tr class="input">
-						<td colspan="2"><input type="submit" value="Save Event" id="updateEvent"class="formButton subBtn"></td>
+						<td colspan="2"><input type="submit" value="Save Event" id="updateEvent"class="formButton"></td>
 					</tr>
 					
 					

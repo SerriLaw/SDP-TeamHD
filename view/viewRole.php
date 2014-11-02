@@ -111,7 +111,19 @@
 								$sql4 = "SELECT firstName, lastName FROM user WHERE userID = " . $row3['userID'];
 								$result4 = mysqli_query($db, $sql4);
 								$row4 = mysqli_fetch_array($result4,MYSQLI_ASSOC);
-								echo " <table><tr><td class=\"listStudentName\">" .$row4['firstName'] . " " . $row4['lastName'] . "</td><td class=\"listStudentID\">Student ID: " .$row3['userID'] . "</td></tr><tr><td colspan=\"2\" class=\"dateSub\">Date Submitted: <span class=\"dateToForm\">" . $row3['dateSubmitted'] . "</span></td></tr><tr><td colspan=\"2\" class=\"callToAction\"><a href = \"/SDP/model/approve.php?appid=".$row3['userID']."&roleid=".$row['roleID']."\"><i class=\"fa fa-check\"></i> Approve</a> - <a href = \"/SDP/model/ignore.php?appid=".$row3['userID']."&roleid=".$row['roleID']."\"><i class=\"fa fa-ban\"></i> Ignore</a> - <a href=\"/SDP/viewProfile.php?userid=".$row3['userID'] ."\"><i class=\"fa fa-user\"></i> View Profile</a></td></tr></table> ";
+
+								$sql6 = "SELECT status FROM application WHERE roleID = ". $row['roleID'] . " AND status = 1 LIMIT 1";
+								$result6 = mysqli_query($db, $sql6);
+								$row6 = mysqli_fetch_array($result6,MYSQLI_ASSOC);
+								if($row6['status'] == 1)
+								{
+									echo " <table><tr><td class=\"listStudentName\">" .$row4['firstName'] . " " . $row4['lastName'] . "</td><td class=\"listStudentID\">Student ID: " .$row3['userID'] . "</td></tr><tr><td colspan=\"2\" class=\"dateSub\">Date Submitted: <span class=\"dateToForm\">" . $row3['dateSubmitted'] . "</span></td></tr><tr><td colspan=\"2\" class=\"callToAction\"><a href = \"/SDP/model/ignore.php?appid=".$row3['userID']."&roleid=".$row['roleID']."\"><i class=\"fa fa-ban\"></i> Ignore</a> - <a href=\"/SDP/viewProfile.php?userid=".$row3['userID'] ."\"><i class=\"fa fa-user\"></i> View Profile</a></td></tr></table> ";
+								}
+								else
+								{
+									echo " <table><tr><td class=\"listStudentName\">" .$row4['firstName'] . " " . $row4['lastName'] . "</td><td class=\"listStudentID\">Student ID: " .$row3['userID'] . "</td></tr><tr><td colspan=\"2\" class=\"dateSub\">Date Submitted: <span class=\"dateToForm\">" . $row3['dateSubmitted'] . "</span></td></tr><tr><td colspan=\"2\" class=\"callToAction\"><a href = \"/SDP/model/approve.php?appid=".$row3['userID']."&roleid=".$row['roleID']."\"><i class=\"fa fa-check\"></i> Approve</a> - <a href = \"/SDP/model/ignore.php?appid=".$row3['userID']."&roleid=".$row['roleID']."\"><i class=\"fa fa-ban\"></i> Ignore</a> - <a href=\"/SDP/viewProfile.php?userid=".$row3['userID'] ."\"><i class=\"fa fa-user\"></i> View Profile</a></td></tr></table> ";
+								}
+								//echo " <table><tr><td class=\"listStudentName\">" .$row4['firstName'] . " " . $row4['lastName'] . "</td><td class=\"listStudentID\">Student ID: " .$row3['userID'] . "</td></tr><tr><td colspan=\"2\" class=\"dateSub\">Date Submitted: <span class=\"dateToForm\">" . $row3['dateSubmitted'] . "</span></td></tr><tr><td colspan=\"2\" class=\"callToAction\"><a href = \"/SDP/model/approve.php?appid=".$row3['userID']."&roleid=".$row['roleID']."\"><i class=\"fa fa-check\"></i> Approve</a> - <a href = \"/SDP/model/ignore.php?appid=".$row3['userID']."&roleid=".$row['roleID']."\"><i class=\"fa fa-ban\"></i> Ignore</a> - <a href=\"/SDP/viewProfile.php?userid=".$row3['userID'] ."\"><i class=\"fa fa-user\"></i> View Profile</a></td></tr></table> ";
 
 								echo "</div>";
 								
@@ -142,6 +154,7 @@
 							$result5 = mysqli_query($db, $sql5);
 							$count5 = mysqli_num_rows($result5);
 							$row5 = mysqli_fetch_array($result5,MYSQLI_ASSOC);
+							
 							if($count5 == 1) //the user is related to the application
 							{
 								if($row5['status'] == 0)
@@ -157,18 +170,45 @@
 									echo("You have been ignored from this role.");
 								}
 							}
-							elseif ($row['isPaid'] == 1 && $_SESSION['userType'] == 1) //the role is paid and the user is a sprout 
+							elseif(true)
 							{
-								echo("<a href = \"/SDP/model/applyRole.php?roleid=" . $row['roleID'] . "\"> Apply </a> ");
+							$sql6 = "SELECT status FROM application WHERE roleID = ". $row['roleID'] . " AND status = 1 LIMIT 1";
+							$result6 = mysqli_query($db, $sql6);
+							$row6 = mysqli_fetch_array($result6,MYSQLI_ASSOC);
+								if($row6['status'] == 1)
+								{
+									echo("Someone has been allocated to this event. You can still apply though!<br><br>");
+								}
+								//added here
+								if ($row['isPaid'] == 1 && $_SESSION['userType'] == 1) //the role is paid and the user is a sprout 
+								{
+									echo("<a href = \"/SDP/model/applyRole.php?roleid=" . $row['roleID'] . "\"> Apply </a> ");
+								}
+								elseif ($row['isPaid'] == 0 && $_SESSION['userType'] < 2) //the role is non-paid and the user is a sprout or volunteer 
+								{
+									echo("<a href = \"/SDP/model/applyRole.php?roleid=" . $row['roleID'] . "\"> Apply </a> ");
+								}	
+								//ends here
 							}
-							elseif ($row['isPaid'] == 0 && $_SESSION['userType'] < 2) //the role is non-paid and the user is a sprout or volunteer 
-							{
-								echo("<a href = \"/SDP/model/applyRole.php?roleid=" . $row['roleID'] . "\"> Apply </a> ");
-							}	
+							// elseif ($row['isPaid'] == 1 && $_SESSION['userType'] == 1) //the role is paid and the user is a sprout 
+							// {
+							// 	echo("<a href = \"/SDP/model/applyRole.php?roleid=" . $row['roleID'] . "\"> Apply </a> ");
+							// }
+							// elseif ($row['isPaid'] == 0 && $_SESSION['userType'] < 2) //the role is non-paid and the user is a sprout or volunteer 
+							// {
+							// 	echo("<a href = \"/SDP/model/applyRole.php?roleid=" . $row['roleID'] . "\"> Apply </a> ");
+							// }	
 						}
 					}
 					elseif(empty($_SESSION)) 
 					{
+						$sql6 = "SELECT status FROM application WHERE roleID = ". $row['roleID'] . " AND status = 1 LIMIT 1";
+						$result6 = mysqli_query($db, $sql6);
+						$row6 = mysqli_fetch_array($result6,MYSQLI_ASSOC);
+						if($row6['status'] == 1)
+						{
+							echo("Someone has been allocated to this event. You can still apply though!<br><br>");
+						}
 						echo("<a href = \"/SDP/register.php" . "\"> Apply </a> ");
 					}
 				?>

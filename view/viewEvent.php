@@ -64,8 +64,12 @@
 			</div>
 
 			<div class="event-details">
-				<div id="startDate" class="date"><i class="fa fa-calendar"></i> Starts <span class="dateToForm"><?php echo($row['startDate']); ?></span></div>
-				<div id="endDate" class="date"><i class="fa fa-calendar"></i> Ends <span class="dateToForm"><?php echo($row['endDate']); ?></span></div>
+				<div id="startDate" class="date"><i class="fa fa-calendar"></i> Starts <span class="dateToForm"><?php echo($row['startDate']); ?></span>
+					<span class="act-time"><i class="fa fa-clock-o"></i> Time: <span class="timeToForm"><?php echo($row['startTime']); ?></span></span>
+				</div>
+				<div id="endDate" class="date"><i class="fa fa-calendar"></i> Ends <span class="dateToForm"><?php echo($row['endDate']); ?></span>
+					<span class="act-time"><i class="fa fa-clock-o"></i> Time: <span class="timeToForm"><?php echo($row['endTime']); ?></span></span>
+				</div>
 				<div id="location"><i class="fa fa-map-marker"></i> <?php echo($row['location']); ?></div>
 
 				<div id="description"><?php echo($row['description']); ?></div>
@@ -103,7 +107,7 @@
 
 				<?php 
 					if(!empty($_SESSION))
-					if ($_SESSION['userID'] == $row['managerID']) 
+					if ($_SESSION['userID'] > 1) 
 					{
 						
 						$link1 = "<div class=\"event-activity-edit\"><a href=createActivity.php?eventid="; 
