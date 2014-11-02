@@ -119,7 +119,7 @@
 
 					<tr class="input">
 						<td class="label">Date of Birth</td>
-						<td class="field"><input type="date" id="dateOfBirth" value="<?php echo($row['DOB']) ?>"></td>
+						<td class="field"><input type="date" id="dateOfBirth" class="dateReg notLaterThanToday" friendly="Date of birth" value="<?php echo($row['DOB']) ?>"></td>
 					</tr>
 
 					<tr class="input">

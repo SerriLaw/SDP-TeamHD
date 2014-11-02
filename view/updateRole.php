@@ -1,4 +1,4 @@
-<?php include('../SDP/model/eventDate.php');?>
+<?php include('../SDP/model/uaDate.php');?>
 <html>
 	<head>
 		<title>BeanSprouts - Edit Role</title>
@@ -93,11 +93,11 @@
 					</tr>
 					<tr class="input">
 						<td class="label">Start Date</td>
-						<td class="field"><input type="date" id ="startDate" value="<?php echo($row['startDate']); ?>"></td>
+						<td class="field"><input type="date" id ="startDate" friendly="Start Date" value="<?php echo($row['startDate']); ?>"></td>
 					</tr>
 					<tr class="input">
 						<td class="label">End Date</td>
-						<td class="field"><input type="date" id ="endDate" value="<?php echo($row['endDate']); ?>"></td>
+						<td class="field"><input type="date" id ="endDate" friendly="End Date" value="<?php echo($row['endDate']); ?>"></td>
 					</tr>
 
 

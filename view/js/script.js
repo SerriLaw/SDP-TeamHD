@@ -7,6 +7,10 @@ $(document).ready(function() {
     kickerFourDigit();
     kickerEmailSign();
     kickerLetterHyphenApostropheOnly();
+    kickerDateRegression();
+    kickerEarlierThanToday();
+    kickerLaterThanToday();
+    kickerSamePageStartBeforeEnd();
 });
 
 
@@ -17,6 +21,7 @@ function dateFormat(param) {
 	var htmlDate = $(param).html().split("-");
     var month = (htmlDate[1] - 1);
     var date = new Date(htmlDate[0], month, htmlDate[2]);
+    $(param).attr("saveDate", date);
     date = date.toDateString();
 
     date = date.split(" ");
@@ -256,3 +261,186 @@ function kickerLetterHyphenApostropheOnly() {
 	letterHyphenApostropheOnly(className);
 }
 
+function dateRegression(array) {
+	
+	$(array).keyup(function (){
+		var err = 0;
+		
+		for (var i = 0; i < array.length; i++) {
+			var item = array[i];
+			var pattern = new RegExp("^[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]$");
+
+			if (pattern.test($(item).val()) || $(item).val() === "") {
+				
+				$(item).css("box-shadow","none");
+				
+				if (err === 0) {
+					$("#error").html("");
+					$(item).css("box-shadow","none");
+					$(".subBtn").prop("disabled", false);
+
+				}
+
+			} else {
+
+				$("#error").html("Error: " + $(item).attr("friendly") + " contains invalid date. Must be in format YYYY-MM-DD. ");
+				$(item).css("box-shadow","0 0 5px red");
+				err = 1;
+				$(".subBtn").prop("disabled", true);
+
+				
+			}
+		}
+
+	});
+}
+
+function kickerDateRegression() {
+	var className = $(".dateReg");
+	dateRegression(className);
+}
+
+
+
+
+function dateEarlierThanToday(array) {
+	
+
+	$(array).change(function (){
+		
+		var err = 0;
+		var today = new Date();
+
+		
+
+		for (var i = 0; i < array.length; i++) {
+			var item = array[i];
+
+			
+
+			var itemDate = formatToDate($(item).val());
+
+			
+
+			if ((itemDate) > today || $(item).val() === "") {
+				
+				$(item).css("box-shadow","none");
+				
+				if (err === 0) {
+					$("#error").html("");
+					$(item).css("box-shadow","none");
+					$(".subBtn").prop("disabled", false);
+
+				}
+
+			} else {
+
+				$("#error").html("Error: " + $(item).attr("friendly") + " contains invalid date. Date is earlier than today. ");
+				$(item).css("box-shadow","0 0 5px red");
+				err = 1;
+				$(".subBtn").prop("disabled", true);
+
+				
+			}
+		}
+
+	});
+}
+
+function dateLaterThanToday(array) {
+	
+
+	$(array).change(function (){
+		
+		var err = 0;
+		var today = new Date();
+
+		
+
+		for (var i = 0; i < array.length; i++) {
+			var item = array[i];
+
+			
+
+			var itemDate = formatToDate($(item).val());
+
+			
+
+			if ((itemDate) < today || $(item).val() === "") {
+				
+				$(item).css("box-shadow","none");
+				
+				if (err === 0) {
+					$("#error").html("");
+					$(item).css("box-shadow","none");
+					$(".subBtn").prop("disabled", false);
+
+				}
+
+			} else {
+
+				$("#error").html("Error: " + $(item).attr("friendly") + " contains invalid date. You can't be born in the future! ");
+				$(item).css("box-shadow","0 0 5px red");
+				err = 1;
+				$(".subBtn").prop("disabled", true);
+
+				
+			}
+		}
+
+	});
+}
+
+
+function formatToDate(numbers) {
+	
+	var htmlDate = numbers.split("-");
+    var month = (htmlDate[1] - 1);
+    var date = new Date(htmlDate[0], month, htmlDate[2]);
+
+    return date;
+}
+
+function kickerEarlierThanToday() {
+	var className = $(".notEarlierThanToday");
+	dateEarlierThanToday(className);
+}
+
+function kickerLaterThanToday() {
+	var className = $(".notLaterThanToday");
+	dateLaterThanToday(className);
+}
+
+function kickerSamePageStartBeforeEnd() {
+	var className = $(".dateReg");
+	samePageStartBeforeEnd(className);
+}
+
+function samePageStartBeforeEnd (array) {
+	$(array).change(function (){
+		var err = 0;
+		var start = formatToDate($("#startDate").val());
+		var end = formatToDate($("#endDate").val());
+
+		if (start > end) {
+			$("#error").html("Error: End date can NOT be before start date. ");
+			$("#startDate").css("box-shadow","0 0 5px red");
+			$("#endDate").css("box-shadow","0 0 5px red");
+			err = 1;
+			$(".subBtn").prop("disabled", true);
+		} else {
+			$("#startDate").css("box-shadow","none");
+			$("#endDate").css("box-shadow","none");
+			
+			if (err === 0) {
+				$("#error").html("");
+				$("#startDate").css("box-shadow","none");
+				$("#endDate").css("box-shadow","none");
+				$(".subBtn").prop("disabled", false);
+
+			}
+		}
+
+	});
+
+}

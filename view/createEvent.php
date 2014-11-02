@@ -104,11 +104,11 @@
 					</tr>
 					<tr class="input">
 						<td class="label">Start Date</td>
-						<td class="field"><input type="date" id ="startDate"></td>
+						<td class="field"><input type="date" class="dateReg notEarlierThanToday" friendly="Start Date" id ="startDate"></td>
 					</tr>
 					<tr class="input">
 						<td class="label">End Date</td>
-						<td class="field"><input type="date" id ="endDate"></td>
+						<td class="field"><input type="date" class="dateReg notEarlierThanToday" friendly="End Date" id ="endDate"></td>
 					</tr>
 					<tr class="input">
 						<td class="label">Start Time</td>

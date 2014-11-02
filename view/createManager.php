@@ -106,7 +106,7 @@
 					</tr>
 					<tr class="input">
 						<td class="label">Date of Birth</td>
-						<td class="field"><input type="date" id="dateOfBirth"></td>
+						<td class="field"><input type="date" class="dateReg notLaterThanToday" id="dateOfBirth" friendly="Date of birth"></td>
 					</tr>
 					<tr class="input">
 						<td class="label">Gender</td>

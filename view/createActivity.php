@@ -72,6 +72,7 @@
 
 
         <div id="wrap">
+			
 			<div class="heroname">Add New Activity</div>
 			<div id="error"></div>
 
@@ -88,11 +89,11 @@
 					</tr>
 					<tr class="input">
 						<td class="label">Start Date</td>
-						<td class="field"><input type="date" id ="startDate"></td>
+						<td class="field"><input type="date" class="dateReg notEarlierThanToday" id ="startDate" friendly="Start Date"></td>
 					</tr>
 					<tr class="input">
 						<td class="label">End Date</td>
-						<td class="field"><input type="date" id ="endDate"></td>
+						<td class="field"><input type="date" class="dateReg notEarlierThanToday" id ="endDate" friendly="End Date"></td>
 					</tr>
 
 

@@ -100,11 +100,11 @@
 					</tr>
 					<tr class="input">
 						<td class="label">Start Date</td>
-						<td class="field"><input type="date" id ="startDate" value="<?php echo($row['startDate']); ?>"></td>
+						<td class="field"><input type="date" id ="startDate" class="dateReg" friendly="Start Date" value="<?php echo($row['startDate']); ?>"></td>
 					</tr>
 					<tr class="input">
 						<td class="label">End Date</td>
-						<td class="field"><input type="date" id ="endDate" value="<?php echo($row['endDate']); ?>"></td>
+						<td class="field"><input type="date" id ="endDate" class="dateReg" friendly="End Date" value="<?php echo($row['endDate']); ?>"></td>
 					</tr>
 					<tr class="input">
 						<td class="label">Start Time</td>

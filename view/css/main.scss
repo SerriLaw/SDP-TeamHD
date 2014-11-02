@@ -22,6 +22,9 @@ $break-sml: 650px;
 $break-med: 768px;
 $break-lrg: 1000px;
 
+
+// styles
+
 body {
 	background-color: $lt-grey;
 	font-family: "Helvetica Neue", Arial, sans-serif;
@@ -41,7 +44,6 @@ body {
 #wrap {
 	width: 80%;
 	margin: 20px auto 40px auto;
-	//border: 1px red solid; // remove
 
 	@media screen and (max-width: $break-lrg) {
 		width: 90%;
@@ -106,7 +108,6 @@ body {
 
 
 	#hero {
-		//border: 1px blue solid; // remove
 		width: 80%;
 		margin: 5px auto;
 		text-align: center;
