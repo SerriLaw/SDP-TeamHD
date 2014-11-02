@@ -203,6 +203,9 @@ body {
     line-height: 30px; }
   #wrap .errormsg {
     color: red; }
+  #wrap .noaccount {
+    width: 250px;
+    margin: 40px auto; }
   #wrap .formButton {
     background: #00944a;
     color: #f0f0f0;

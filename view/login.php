@@ -70,7 +70,12 @@
 	<body>
         <?php include("menu.php"); ?>
 		<div id="wrap">
-			<div id="hero"><img src="view/img/icon.png" alt="BeanSprouts" id="bigbean"><span id="bigbeantext">BeanSprouts</span></div>
+			<div id="hero">
+				<img src="view/img/icon.png" alt="BeanSprouts" id="bigbean">
+				<span id="bigbeantext">BeanSprouts</span>
+
+
+			</div>
 
 			<form id="loginform" action="" method="post">
 			<span class="textfield">User ID: <input type="text" id="username"></span>
@@ -78,6 +83,9 @@
 			<input type="submit" value="Login" id="login" class="formButton">
 			<div id="error"></div>
 			</form>
+
+			<div class="noaccount">No account? <a href="/SDP/register.php">Click  here  to sign up!</a></div>
+
 			<div class="footer">
 				<img src="view/img/image-green.png" alt="BeanSprouts Footer">
 				<br>
