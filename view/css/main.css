@@ -184,6 +184,9 @@ body {
     #wrap .user-list-block .listStudentName {
       min-width: 120px;
       padding: 0 15px 0 0; }
+    #wrap .user-list-block .userType {
+      font-style: italic;
+      padding: 0 0 0 20px; }
   #wrap #error {
     margin: 12px 0;
     color: red; }
