@@ -5,6 +5,8 @@ $(document).ready(function() {
     kickerBiggerThanMax();
     kickerNumOnly();
     kickerFourDigit();
+    kickerEmailSign();
+    kickerLetterHyphenApostropheOnly();
 });
 
 
@@ -98,14 +100,14 @@ function kickerBiggerThanMax() {
 	biggerThanMax(className);
 }
 
-function numbersOnly(array) {
+function phoneNumbers(array) {
 	
 	$(array).keyup(function (){
 		var err = 0;
 		
 		for (var i = 0; i < array.length; i++) {
 			var item = array[i];
-			var pattern = new RegExp("[0-9]+");
+			var pattern = new RegExp("^([0-9]|\\+|,|\\s)+$");
 
 			if (pattern.test($(item).val()) || $(item).val() === "") {
 				
@@ -120,7 +122,7 @@ function numbersOnly(array) {
 
 			} else {
 
-				$("#error").html("Error: " + $(item).attr("friendly") + " can only contain numbers between 0 - 9.");
+				$("#error").html("Error: " + $(item).attr("friendly") + " can only contain numbers between 0 - 9, +, spaces and , .");
 				$(item).css("box-shadow","0 0 5px red");
 				err = 1;
 				$(".subBtn").prop("disabled", true);
@@ -134,7 +136,7 @@ function numbersOnly(array) {
 
 function kickerNumOnly() {
 	var className = $(".numOnly");
-	numbersOnly(className);
+	phoneNumbers(className);
 }
 
 function fourDigit(array) {
@@ -174,5 +176,83 @@ function fourDigit(array) {
 function kickerFourDigit() {
 	var className = $(".fourDigit");
 	fourDigit(className);
+}
+
+function emailSign(array) {
+	
+	$(array).keyup(function (){
+		var err = 0;
+		
+		for (var i = 0; i < array.length; i++) {
+			var item = array[i];
+			var pattern = new RegExp("^([A-z]|[0-9]|-|\\.)+@+([A-z]|[0-9]|-|)+\\.([A-z]|[0-9]|-|\\.)+$");
+
+			if (pattern.test($(item).val()) || $(item).val() === "") {
+				
+				$(item).css("box-shadow","none");
+				
+				if (err === 0) {
+					$("#error").html("");
+					$(item).css("box-shadow","none");
+					$(".subBtn").prop("disabled", false);
+
+				}
+
+			} else {
+
+				$("#error").html("Error: " + $(item).attr("friendly") + " contains invalid email address.");
+				$(item).css("box-shadow","0 0 5px red");
+				err = 1;
+				$(".subBtn").prop("disabled", true);
+
+				
+			}
+		}
+
+	});
+}
+
+function kickerEmailSign() {
+	var className = $(".emailSign");
+	emailSign(className);
+}
+
+function letterHyphenApostropheOnly(array) {
+	
+	$(array).keyup(function (){
+		var err = 0;
+		
+		for (var i = 0; i < array.length; i++) {
+			var item = array[i];
+			var pattern = new RegExp("^([A-z]|'|-)+$");
+
+			if (pattern.test($(item).val()) || $(item).val() === "") {
+				
+				$(item).css("box-shadow","none");
+				
+				if (err === 0) {
+					$("#error").html("");
+					$(item).css("box-shadow","none");
+					$(".subBtn").prop("disabled", false);
+
+				}
+
+			} else {
+
+				$("#error").html("Error: " + $(item).attr("friendly") + " contains invalid characters. Upper/lower case letters, hyphens, apostrophe only.");
+				$(item).css("box-shadow","0 0 5px red");
+				err = 1;
+				$(".subBtn").prop("disabled", true);
+
+				
+			}
+		}
+
+	});
+}
+
+function kickerLetterHyphenApostropheOnly() {
+	var className = $(".lha");
+	letterHyphenApostropheOnly(className);
 }
 

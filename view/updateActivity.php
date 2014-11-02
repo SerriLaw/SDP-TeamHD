@@ -100,11 +100,11 @@
 					</tr>
 					<tr class="input">
 						<td class="label">Start Time</td>
-						<td class="field"><input type="text" class="textbox hasMax" id="startTime" value="<?php echo($row['startTime']); ?>" friendly="Start Time" max-val="4"> (Format 0000)</td>
+						<td class="field"><input type="text" class="textbox hasMax fourDigit" id="startTime" value="<?php echo($row['startTime']); ?>" friendly="Start Time" max-val="4"> (Format 0000)</td>
 					</tr>
 					<tr class="input">
 						<td class="label">End Time</td>
-						<td class="field"><input type="text" class="textbox hasMax" id="endTime" value="<?php echo($row['endTime']); ?>" friendly="End Time" max-val="4"> (Format 0000)</td>
+						<td class="field"><input type="text" class="textbox hasMax fourDigit" id="endTime" value="<?php echo($row['endTime']); ?>" friendly="End Time" max-val="4"> (Format 0000)</td>
 					</tr>
 					<tr class="input">
 						<td colspan="2"><div class="input"><input type="submit" value="Save Activity" id="updateActivity" class="formButton subBtn"></div> </td>

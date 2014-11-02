@@ -95,21 +95,21 @@
 					</tr>
 					<tr class="input">
 						<td class="label">First Name</td>
-						<td class="field"><input type="text" id="firstName" class="textbox hasMax" value="<?php echo($row['firstName']) ?>" friendly="First Name" max-val="20"></td>
+						<td class="field"><input type="text" id="firstName" class="textbox hasMax lha" value="<?php echo($row['firstName']) ?>" friendly="First Name" max-val="20"></td>
 					</tr>
 					<tr class="input">
 						<td class="label">Last Name</td>
-						<td class="field"><input type="text" id="lastName" class="textbox hasMax" value="<?php echo($row['lastName']) ?>" friendly="Last Name" max-val="20"></td>
+						<td class="field"><input type="text" id="lastName" class="textbox hasMax lha" value="<?php echo($row['lastName']) ?>" friendly="Last Name" max-val="20"></td>
 					</tr>
 					<tr class="input">
 						<td class="label">Email</td>
-						<td class="field"><input type="text" id="email" class="textbox hasMax" value="<?php echo($row['email']) ?>" friendly="Email" max-val="30"></td>
+						<td class="field"><input type="text" id="email" class="textbox hasMax emailSign" value="<?php echo($row['email']) ?>" friendly="Email" max-val="30"></td>
 					</tr>
 
 
 					<tr class="input">
 						<td class="label">Phone Number</td>
-						<td class="field"><input type="text" id="phone" class="textbox hasMax" value="<?php echo($row['phone']) ?>" friendly="Phone Number" max-val="10"></td>
+						<td class="field"><input type="text" id="phone" class="textbox hasMax numOnly" value="<?php echo($row['phone']) ?>" friendly="Phone Number" max-val="10"></td>
 					</tr>
 
 					<tr class="input">
@@ -178,17 +178,6 @@
 					
 				</table>
 
-
-
-
-
-
-
-
-				
-				
-				
-			
 			</form>
 			<div class="footer">
 				<img src="view/img/image-green.png" alt="BeanSprouts Footer">

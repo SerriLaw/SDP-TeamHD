@@ -85,15 +85,15 @@
 					</tr>
 					<tr class="input">
 						<td class="label">First Name</td>
-						<td class="field"><input type="text" class="textbox hasMax" id="firstName" placeholder="e.g. Josh" friendly="First Name" max-val="20"></td>
+						<td class="field"><input type="text" class="textbox hasMax lha" id="firstName" placeholder="e.g. Josh" friendly="First Name" max-val="20"></td>
 					</tr>
 					<tr class="input">
 						<td class="label">Last Name</td>
-						<td class="field"><input type="text" class="textbox hasMax" id="lastName" placeholder="e.g. Lo" friendly="Last Name" max-val="20"></td>
+						<td class="field"><input type="text" class="textbox hasMax lha" id="lastName" placeholder="e.g. Lo" friendly="Last Name" max-val="20"></td>
 					</tr>
 					<tr class="input">
 						<td class="label">Email</td>
-						<td class="field"><input type="text" class="textbox hasMax" id="email" placeholder="e.g. joshlo@email.com" friendly="Email" max-val="30"></td>
+						<td class="field"><input type="text" class="textbox hasMax emailSign" id="email" placeholder="e.g. joshlo@email.com" friendly="Email" max-val="30"></td>
 					</tr>
 
 					<tr class="input">
